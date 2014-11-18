@@ -1,0 +1,35 @@
+[user]
+    name = akihyro
+    email = akihyro@users.noreply.github.com
+[core]
+    attributesfile = ~/.gitattributes
+    autocrlf = false
+[push]
+    default = current
+[color]
+    ui = true
+[alias]
+    a = add
+    aa = add .
+    b = branch --verbose
+    c = commit --verbose
+    co = checkout
+    cp = cherry-pick
+    d = diff
+    dl = diff --name-status
+    f = fetch --prune
+    l = log --pretty=fuller --abbrev-commit --name-status --decorate --date=iso
+    ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
+    lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
+    m = merge
+    p = pull
+    pu = push --set-upstream
+    s = status --branch --short
+    sh = show --pretty=fuller --abbrev-commit --decorate --date=iso
+    stl = stash list
+    stp = stash pop
+    sts = stash save --include-untracked
+[interactive]
+    singlekey = true
+[diff "properties"]
+    textconv = native2ascii -reverse
