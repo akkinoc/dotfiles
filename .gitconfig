@@ -12,6 +12,7 @@
     a = add
     aa = add .
     b = branch --verbose
+    br = branch
     c = commit --verbose
     co = checkout
     cp = cherry-pick
