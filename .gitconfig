@@ -19,8 +19,9 @@
     dl = diff --name-status
     f = fetch --prune
     l = log --pretty=fuller --abbrev-commit --name-status --decorate --date=iso
-    ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
     lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
+    ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
+    ls = ls-files
     m = merge
     p = pull
     pu = push --set-upstream
