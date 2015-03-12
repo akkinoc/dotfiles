@@ -34,5 +34,6 @@ function link_dotfile() {
 # メイン処理
 make_dotdotfiles
 . ${HOME}/.dotfiles
+link_dotfile .bash_profile  ${HOME}
 link_dotfile .gitconfig     ${HOME}
 link_dotfile .gitattributes ${HOME}
