@@ -19,11 +19,11 @@ function make_dotdotfiles() {
 function link_dotfile() {
     file_name=$1
     to_dir=$2
-    from_file=$DOTFILES_HOME/$file_name
+    from_file=$DOTFILES_HOME/dotfiles/$file_name
     to_file=$to_dir/$file_name
-    backup_dir=$DOTFILES_HOME/.backup/$to_dir
-    backup_file=$DOTFILES_HOME/.backup/$to_file.$timestamp
-    if [ -e $to_file ]; then
+    backup_dir=$DOTFILES_HOME/backup/$to_dir
+    backup_file=$DOTFILES_HOME/backup/$to_file.$timestamp
+    if [ -e $to_file -o -L $to_file ]; then
         mkdir -p $backup_dir
         mv $to_file $backup_file
     fi
