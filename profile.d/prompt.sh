@@ -16,7 +16,7 @@ function _ps1_result() {
         echo -e "${_ps1_red}"'(｡´･ω･`) NG...'" [${code}]${_ps1_reset}"
     fi
 }
-_ps1_user="${_ps1_green}\u@\h${_ps1_reset}"
+_ps1_user="${_ps1_green}\u@\H${_ps1_reset}"
 _ps1_dir="${_ps1_cyan}\w${_ps1_reset}"
 function _ps1_git() {
     echo -e "${_ps1_yellow}$(__git_ps1 2>/dev/null)${_ps1_reset}"
