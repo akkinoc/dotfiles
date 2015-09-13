@@ -10,7 +10,7 @@
     ui = true
 [alias]
     a = add
-    aa = add .
+    aa = !git add "$(git rev-parse --show-toplevel)"
     b = branch --verbose
     br = branch
     c = commit --verbose
