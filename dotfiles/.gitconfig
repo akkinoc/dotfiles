@@ -38,3 +38,5 @@
     textconv = native2ascii -reverse
 [push]
     default = current
+[rebase]
+    autostash = true
