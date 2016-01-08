@@ -4,10 +4,10 @@
 [core]
     attributesfile = ~/.gitattributes
     autocrlf = false
-[push]
-    default = current
 [color]
     ui = true
+[interactive]
+    singlekey = true
 [alias]
     a = add
     aa = !git add "$(git rev-parse --show-toplevel)"
@@ -34,7 +34,7 @@
     stl = stash list
     stp = stash pop
     sts = stash save --include-untracked
-[interactive]
-    singlekey = true
 [diff "properties"]
     textconv = native2ascii -reverse
+[push]
+    default = current
