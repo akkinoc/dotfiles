@@ -1,27 +1,41 @@
-# Colors
-_ps1_red="\e[31m"
-_ps1_green="\e[32m"
-_ps1_yellow="\e[33m"
-_ps1_blue="\e[34m"
-_ps1_purple="\e[35m"
-_ps1_cyan="\e[36m"
-_ps1_reset="\e[00m"
 
-# PS1 parts
-function _ps1_result() {
-    code=$?
-    if [ ${code} == 0 ]; then
-        echo -e "${_ps1_blue}"'(っ*´∀`*)っ OK!!'" [${code}]${_ps1_reset}"
+function _prompt_initialize() {
+
+    local reset='\[\e[00m\]'
+    local green='\[\e[32m\]'
+    local yellow='\[\e[33m\]'
+    local cyan='\[\e[36m\]'
+
+    local user='\u'
+    local host='\H'
+    local dir='\w'
+    local newline='\n'
+    local prompt='\$'
+    local git='`__git_ps1 2>/dev/null`'
+
+    PROMPT_COMMAND="_prompt_command"
+    PS1="${green}${user}@${host}${reset}"
+    PS1="${PS1}:${cyan}${dir}${reset}"
+    PS1="${PS1}${yellow}${git}${reset}"
+    PS1="${PS1}${newline}"
+    PS1="${PS1}${prompt} "
+    PS2="> "
+    PS3="#? "
+    PS4="+ "
+
+}
+
+function _prompt_command() {
+    local status=$?
+    local reset="\e[00m"
+    local blue="\e[34m"
+    local red="\e[31m"
+    echo
+    if [ ${status} = 0 ]; then
+        echo -e "${blue}"'(っ*´∀`*)っ OK!!'" [${status}]${reset}"
     else
-        echo -e "${_ps1_red}"'(｡´･ω･`) NG...'" [${code}]${_ps1_reset}"
+        echo -e "${red}"'(｡´･ω･`) NG...'" [${status}]${reset}"
     fi
 }
-_ps1_user="${_ps1_green}\u@\H${_ps1_reset}"
-_ps1_dir="${_ps1_cyan}\w${_ps1_reset}"
-function _ps1_git() {
-    echo -e "${_ps1_yellow}$(__git_ps1 2>/dev/null)${_ps1_reset}"
-}
-_ps1_prompt="\$ "
 
-# PS1
-export PS1="\n\$(_ps1_result)\n${_ps1_user}:${_ps1_dir}\$(_ps1_git)\n${_ps1_prompt}"
+_prompt_initialize
