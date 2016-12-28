@@ -34,8 +34,6 @@
     stl = stash list
     stp = stash pop
     sts = stash save --include-untracked
-[diff "properties"]
-    textconv = native2ascii -reverse
 [push]
     default = current
 [rebase]
