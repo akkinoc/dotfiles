@@ -34,6 +34,7 @@
     stl = stash list
     stp = stash pop
     sts = stash save --include-untracked
+    t = tag --list -n --sort=-taggerdate
 [push]
     default = current
 [rebase]
