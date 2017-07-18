@@ -1,1 +1,1 @@
-export GREP_OPTIONS='--colour=auto'
+alias grep='grep --colour=auto'
