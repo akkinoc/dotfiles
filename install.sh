@@ -28,7 +28,7 @@ function link_dotfile() {
     ln -s "$src_file" "$dest_file"
 }
 
-function show_result() {
+function report_result() {
     if [[ $? = 0 ]]; then
         printf "\e[32mThe dotfiles installation succeeded!\e[m\n"
     else
@@ -36,7 +36,7 @@ function show_result() {
     fi
 }
 
-trap show_result EXIT
+trap report_result EXIT
 create_bootstrap_script
 link_dotfile .bash_profile
 link_dotfile .gitattributes
