@@ -1,11 +1,9 @@
-dotfiles
-========
+# dotfiles
 
-My dotfiles.
+My dotfiles.  
 
-Installation
-------------
+## Installation
 
-```
-$ git clone git@github.com:akihyro/dotfiles.git; dotfiles/install.sh; exec $SHELL -l
+```console
+$ git clone git@github.com:akihyro/dotfiles.git && dotfiles/install.sh && exec $SHELL -l
 ```
