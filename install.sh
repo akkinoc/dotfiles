@@ -1,42 +1,44 @@
 #!/bin/bash
-#=======================================================================================================================
-# インストール
-#=======================================================================================================================
 
-set -eu
-set -o pipefail
-timestamp=$(date +"%Y-%m-%d_%H-%M-%S")
+set -eu -o pipefail
+cd "$(dirname "$0")"
 
-# ファンクション: ファイル "~/.dotfiles" を作成
-function create_dotdotfiles() {
-    pushd $(dirname $0) >/dev/null
-    echo "create: ${HOME}/.dotfiles (DOTFILES_HOME=$PWD)"
-    echo "export DOTFILES_HOME=$PWD" >$HOME/.dotfiles
-    popd >/dev/null
-    . ${HOME}/.dotfiles
+DOTFILES_HOME="$PWD"
+DOTFILES_DATA_DIR="$HOME/.dotfiles"
+DOTFILES_BOOTSTRAP_SCRIPT_FILE="$DOTFILES_DATA_DIR/bootstrap.sh"
+DOTFILES_HISTORY_DIR="$DOTFILES_DATA_DIR/history/$(date +%Y%m%dT%H%M%S)"
+
+function create_bootstrap_script() {
+    printf "\e[36mCreating bootstrap script... $DOTFILES_BOOTSTRAP_SCRIPT_FILE\e[m\n"
+    mkdir -p "$(dirname "$DOTFILES_BOOTSTRAP_SCRIPT_FILE")"
+    printf "export DOTFILES_HOME='$DOTFILES_HOME'\n" >"$DOTFILES_BOOTSTRAP_SCRIPT_FILE"
 }
 
-# ファンクション: シンボリックリンクを作成, 既存ファイルは退避
-# $1: ファイル名
-# $2: リンク先ディレクトリ
 function link_dotfile() {
-    file_name=$1
-    to_dir=$2
-    from_file=$DOTFILES_HOME/dotfiles/$file_name
-    to_file=$to_dir/$file_name
-    backup_dir=$DOTFILES_HOME/backup/${to_dir#/}
-    backup_file=$DOTFILES_HOME/backup/${to_file#/}.$timestamp
-    if [ -e $to_file -o -L $to_file ]; then
-        echo "move: $to_file => $backup_file"
-        mkdir -p $backup_dir
-        mv $to_file $backup_file
+    local target="$1"
+    local src_file="$DOTFILES_HOME/$target"
+    local dest_file="$HOME/$target"
+    local history_file="$DOTFILES_HISTORY_DIR/$target"
+    printf "\e[36mLinking dotfile... $dest_file\e[m\n"
+    if [[ -f $dest_file || -L $dest_file ]]; then
+        mkdir -p "$(dirname "$history_file")"
+        mv "$dest_file" "$history_file"
     fi
-    echo "link: $from_file => $to_file"
-    mkdir -p $to_dir
-    ln -s $from_file $to_file
+    mkdir -p "$(dirname "$dest_file")"
+    ln -s "$src_file" "$dest_file"
 }
 
-# メイン処理
-create_dotdotfiles
-link_dotfile .bash_profile  $HOME
-link_dotfile .gitconfig     $HOME
+function show_result() {
+    if [[ $? = 0 ]]; then
+        printf "\e[32mThe dotfiles installation succeeded!\e[m\n"
+    else
+        printf "\e[31mThe dotfiles installation failed...\e[m\n"
+    fi
+}
+
+trap show_result EXIT
+create_bootstrap_script
+link_dotfile .bash_profile
+link_dotfile .gitattributes
+link_dotfile .gitconfig
+link_dotfile .gitignore
