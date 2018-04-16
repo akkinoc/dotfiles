@@ -1,1 +1,1 @@
-alias sudo='sudo '
+alias sudo="sudo "

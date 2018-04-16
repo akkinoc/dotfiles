@@ -1,1 +1,1 @@
-alias relogin='exec $SHELL -l'
+alias relogin="exec '$SHELL' -l"
