@@ -30,11 +30,11 @@ function _prompt_command() {
     local reset="\e[00m"
     local blue="\e[34m"
     local red="\e[31m"
-    echo
+    printf "\n"
     if [ ${status} = 0 ]; then
-        echo -e "${blue}"'(っ*´∀`*)っ OK!!'" [${status}]${reset}"
+        printf "${blue}"'(っ*´∀`*)っ OK!!'" [${status}]${reset}\n"
     else
-        echo -e "${red}"'(｡´･ω･`) NG...'" [${status}]${reset}"
+        printf "${red}"'(｡´･ω･`) NG...'" [${status}]${reset}\n"
     fi
 }
 
