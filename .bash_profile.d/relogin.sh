@@ -1,1 +1,3 @@
-alias relogin="exec '$SHELL' -l"
+function relogin() {
+    exec "$SHELL" -l
+}
