@@ -30,6 +30,7 @@ function report_result() {
 }
 
 trap report_result EXIT
+link_dotfile .Brewfile
 link_dotfile .bash_profile
 link_dotfile .bash_profile.d
 link_dotfile .gitattributes
