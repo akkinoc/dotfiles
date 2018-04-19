@@ -2,6 +2,10 @@
 
 My dotfiles.  
 
+## Environment
+
+* Bash 3.2+
+
 ## Installation
 
 ```console
