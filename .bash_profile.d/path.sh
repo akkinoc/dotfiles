@@ -3,5 +3,5 @@ if [[ :$PATH: != *:$HOME/bin:* ]]; then
 fi
 
 function path() {
-    printf "${PATH//:/\n}\n"
+    printf "${PATH//:/\\n}\n"
 }
