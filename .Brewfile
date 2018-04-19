@@ -5,4 +5,5 @@ brew "bash-completion@2"
 brew "git"
 brew "maven"
 brew "node@8", link: true
+brew "peco"
 brew "ruby@2.3", link: true
