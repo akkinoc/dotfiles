@@ -1,3 +1,7 @@
+if [[ ${BASH_VERSINFO[0]} -ge 4 ]]; then
+    shopt -s autocd
+fi
+
 export HISTSIZE=10000
 export HISTTIMEFORMAT="%m/%d %H:%M:%S "
 if [[ :$PATH: != *:$HOME/bin:* ]]; then
