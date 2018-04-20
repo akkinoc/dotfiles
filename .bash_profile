@@ -1,4 +1,4 @@
-if [[ -f ~/.bashrc ]]; then
+if [[ -r ~/.bashrc ]]; then
     . ~/.bashrc
 fi
 for file in ~/.bash_profile.d/*.sh; do
