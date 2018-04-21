@@ -1,9 +1,10 @@
 alias ~="cd ~"
-alias -- -="cd -"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
+alias -- -="cd -"
+alias @="_cd_to_finder_path"
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"

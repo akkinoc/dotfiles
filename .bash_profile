@@ -3,7 +3,7 @@ if [[ -f ~/.bashrc ]]; then
 fi
 
 . ~/.bash_profile.d/shopts.sh
+. ~/.bash_profile.d/functions.sh
 . ~/.bash_profile.d/exports.sh
 . ~/.bash_profile.d/aliases.sh
-. ~/.bash_profile.d/functions.sh
 . ~/.bash_profile.d/sources.sh
