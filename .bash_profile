@@ -1,6 +1,8 @@
 if [[ -f ~/.bashrc ]]; then
     . ~/.bashrc
 fi
-for file in ~/.bash_profile.d/{shopts,exports,aliases,functions,sources}.sh; do
-    . "$file"
-done
+. ~/.bash_profile.d/shopts.sh
+. ~/.bash_profile.d/exports.sh
+. ~/.bash_profile.d/aliases.sh
+. ~/.bash_profile.d/functions.sh
+. ~/.bash_profile.d/sources.sh
