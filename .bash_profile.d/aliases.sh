@@ -28,4 +28,6 @@ alias gla="gls -al"
 
 alias o="_open_args_or_wd"
 
+alias rmf="rm -rf"
+
 alias sudo="sudo "
