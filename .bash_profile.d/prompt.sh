@@ -25,7 +25,7 @@ function _prompt_command() {
 
 PROMPT_COMMAND="_prompt_command"
 PROMPT_DIRTRIM=0
-PS1="\n\u at \H in \w\n\$ "
+PS1="\n\u at \H in \w\n\\\$ "
 PS2="> "
 PS3="#? "
 PS4="+ "
