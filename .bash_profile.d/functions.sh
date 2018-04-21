@@ -11,5 +11,5 @@ function path() {
 }
 
 function relogin() {
-    exec "$SHELL" -l
+    exec -l "$SHELL"
 }

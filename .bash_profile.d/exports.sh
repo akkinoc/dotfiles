@@ -1,9 +1,9 @@
-export HISTSIZE=10000
-export HISTTIMEFORMAT="%m/%d %H:%M:%S "
-
 if [[ :$PATH: != *:$HOME/bin:* ]]; then
     export PATH="$PATH:$HOME/bin"
 fi
+
+export HISTSIZE=10000
+export HISTTIMEFORMAT="%m/%d %H:%M:%S "
 
 
 function _prompt_initialize() {
