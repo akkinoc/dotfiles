@@ -13,11 +13,13 @@ function _prompt_command() {
     else
         PS1+="\[\e[1;35m\]\u\[\e[m\]"
     fi
-    PS1+=" at \[\e[36m\]\H\[\e[m\]"
+    PS1+=" at "
+    PS1+="\[\e[36m\]\H\[\e[m\]"
+    PS1+=" in "
     if [[ $PWD/ = $HOME/* ]]; then
-        PS1+=" in \[\e[34m\]\w\[\e[m\]"
+        PS1+="\[\e[34m\]\w\[\e[m\]"
     else
-        PS1+=" in \[\e[1;34m\]\w\[\e[m\]"
+        PS1+="\[\e[1;34m\]\w\[\e[m\]"
     fi
     if type -t __git_ps1 &>/dev/null; then
         PS1+="$(__git_ps1 " on \[\e[33m\]%s\[\e[m\]")"
