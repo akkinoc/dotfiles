@@ -3,7 +3,7 @@ function _prompt_command() {
     PS1="\[\e]0;\u at \h in \W\a\]"
     PS1+="\n"
     if [[ $result -eq 0 ]]; then
-        PS1+="\[\e[32m\]  OK!! [$result]\[\e[m\]"
+        PS1+="\[\e[32m\]OK!! [$result]\[\e[m\]"
     else
         PS1+="\[\e[31m\]NG... [$result]\[\e[m\]"
     fi
