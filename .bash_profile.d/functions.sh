@@ -3,7 +3,11 @@ function cdf() {
 }
 
 function o() {
-    open "${@:-.}"
+    if [[ $# -eq 0 ]]; then
+        open .
+    else
+        open "$@"
+    fi
 }
 
 function path() {

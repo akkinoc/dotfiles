@@ -22,7 +22,7 @@ function link_dotfile() {
 }
 
 function report_result() {
-    if [[ $? = 0 ]]; then
+    if [[ $? -eq 0 ]]; then
         printf "\e[32mThe dotfiles installation succeeded!\e[m\n"
     else
         printf "\e[31mThe dotfiles installation failed...\e[m\n"
