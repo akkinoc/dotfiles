@@ -5,14 +5,14 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 
-alias hist="history"
-
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias zgrep="zgrep --color=auto"
 alias zegrep="zegrep --color=auto"
 alias zfgrep="zfgrep --color=auto"
+
+alias hist="history"
 
 alias sudo="sudo "
 
