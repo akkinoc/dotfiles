@@ -1,6 +1,7 @@
 if [[ -f ~/.bashrc ]]; then
     . ~/.bashrc
 fi
+
 . ~/.bash_profile.d/shopts.sh
 . ~/.bash_profile.d/exports.sh
 . ~/.bash_profile.d/aliases.sh
