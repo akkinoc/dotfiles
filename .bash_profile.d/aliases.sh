@@ -21,7 +21,7 @@ elif ls -G &>/dev/null; then
 fi
 alias l="ls -l"
 alias la="ls -al"
-alias gls="gls --color"
+alias gls="gls --color=auto"
 alias gl="gls -l"
 alias gla="gls -al"
 
