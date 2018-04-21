@@ -26,4 +26,6 @@ alias gls="gls --color=auto"
 alias gl="gls -l"
 alias gla="gls -al"
 
+alias o="_open_args_or_wd"
+
 alias sudo="sudo "
