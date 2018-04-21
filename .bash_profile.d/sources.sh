@@ -1,3 +1,3 @@
-if type brew &>/dev/null && [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
+if brew --prefix &>/dev/null && [[ -f "$(brew --prefix)/etc/profile.d/bash_completion.sh" ]]; then
     . "$(brew --prefix)/etc/profile.d/bash_completion.sh"
 fi
