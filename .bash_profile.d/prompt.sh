@@ -15,7 +15,9 @@ function _prompt_command() {
     fi
     PS1+=" at \[\e[36m\]\H\[\e[m\]"
     PS1+=" in \[\e[34m\]\w\[\e[m\]"
-    PS1+="$(__git_ps1 ' on \[\e[33m\]%s\[\e[m\]')"
+    if type -t __git_ps1 &>/dev/null; then
+        PS1+="$(__git_ps1 " on \[\e[33m\]%s\[\e[m\]")"
+    fi
     PS1+="\n"
     PS1+="\\\$ "
     return $result
