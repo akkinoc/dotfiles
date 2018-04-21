@@ -1,7 +1,10 @@
 # dotfiles
 
+[![Works][Works Badge]][Works]
 [![License][License Badge]][License]
 
+[Works Badge]: https://cdn.rawgit.com/nikku/works-on-my-machine/v0.2.0/badge.svg
+[Works]: https://github.com/nikku/works-on-my-machine
 [License Badge]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [License]: LICENSE.txt
 
