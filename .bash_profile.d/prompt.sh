@@ -14,7 +14,11 @@ function _prompt_command() {
         PS1+="\[\e[1;35m\]\u\[\e[m\]"
     fi
     PS1+=" at "
-    PS1+="\[\e[36m\]\H\[\e[m\]"
+    if [[ -z $SSH_CONNECTION ]]; then
+        PS1+="\[\e[36m\]\h\[\e[m\]"
+    else
+        PS1+="\[\e[1;36m\]\H\[\e[m\]"
+    fi
     PS1+=" in "
     if [[ $PWD/ = $HOME/* ]]; then
         PS1+="\[\e[34m\]\w\[\e[m\]"
