@@ -1,7 +1,7 @@
 function _prompt_command() {
     local -a statuses=(${PIPESTATUS[@]})
     PS1="$(_ps1_title)"
-    PS1+="$(_ps1_result "${statuses[@]}")"
+    PS1+="$(_ps1_result ${statuses[@]})"
     PS1+="$(_ps1_user)"
     PS1+="$(_ps1_host)"
     PS1+="$(_ps1_wd)"
