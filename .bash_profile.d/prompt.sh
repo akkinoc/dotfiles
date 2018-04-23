@@ -21,9 +21,9 @@ function _ps1_result() {
         local -i status=${statuses[$index]}
         [[ $index -eq 0 ]] || printf "%s" ' | '
         if [[ $status -eq 0 ]]; then
-            printf "%s [%d]%s" '\[\e[32m\]✔' "$status" '\[\e[m\]'
+            printf "%s [%d]%s" '\[\e[32m\]✔' $status '\[\e[m\]'
         else
-            printf "%s [%d]%s" '\[\e[31m\]✘' "$status" '\[\e[m\]'
+            printf "%s [%d]%s" '\[\e[31m\]✘' $status '\[\e[m\]'
         fi
     done
 }
