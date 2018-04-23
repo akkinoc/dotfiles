@@ -15,11 +15,14 @@ function _ps1_title() {
 
 function _ps1_result() {
     local -a statuses=($@)
-    printf "%s" '\n'
     local -i index
     for index in ${!statuses[@]}; do
         local -i status=${statuses[$index]}
-        [[ $index -eq 0 ]] || printf "%s" ' | '
+        if [[ $index -eq 0 ]]; then
+            printf "%s" '\n'
+        else
+            printf "%s" ' | '
+        fi
         if [[ $status -eq 0 ]]; then
             printf "%s [%d]%s" '\[\e[32m\]✔' $status '\[\e[m\]'
         else
