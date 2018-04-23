@@ -1,5 +1,6 @@
 function path() {
     local IFS=":"
+    local path
     for path in ${PATH}; do
         printf "%s\n" "$path"
     done
