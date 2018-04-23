@@ -6,17 +6,17 @@ function _prompt_command() {
     else
         PS1+="\n\[\e[31m\]✘ \\\$? = $result\[\e[m\]"
     fi
-    if [[ $USER != "root" ]]; then
+    if [[ "$USER" != "root" ]]; then
         PS1+="\n\[\e[35m\]\u\[\e[m\]"
     else
         PS1+="\n\[\e[1;35m\]\u\[\e[m\]"
     fi
-    if [[ -z $SSH_CONNECTION ]]; then
+    if [[ -z "$SSH_CONNECTION" ]]; then
         PS1+=" at \[\e[36m\]\h\[\e[m\]"
     else
         PS1+=" at \[\e[1;36m\]\H\[\e[m\]"
     fi
-    if [[ $PWD/ = $HOME/* ]]; then
+    if [[ "$PWD/" == "$HOME/"* ]]; then
         PS1+=" in \[\e[34m\]\w\[\e[m\]"
     else
         PS1+=" in \[\e[1;34m\]\w\[\e[m\]"

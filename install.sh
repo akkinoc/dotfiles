@@ -13,7 +13,7 @@ function link_dotfile() {
     local dest_file="$HOME/$target"
     local hist_file="$DOTFILES_HIST_DIR/$target"
     printf "Linking... $src_file => $dest_file\n"
-    if [[ -f $dest_file || -d $dest_file || -h $dest_file ]]; then
+    if [[ -f "$dest_file" || -d "$dest_file" || -h "$dest_file" ]]; then
         mkdir -p "$(dirname "$hist_file")"
         mv "$dest_file" "$hist_file"
     fi
