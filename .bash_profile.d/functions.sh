@@ -1,5 +1,8 @@
 function path() {
-    printf "${PATH//:/\\n}\n"
+    local IFS=":"
+    for path in ${PATH}; do
+        printf "%s\n" "$path"
+    done
 }
 
 function relogin() {
