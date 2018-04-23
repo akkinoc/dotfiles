@@ -1,7 +1,8 @@
 function path() {
-    local IFS=":"
+    local -a paths
+    IFS=: read -a paths -d "" -r <<<"$PATH"
     local path
-    for path in ${PATH}; do
+    for path in "${paths[@]}"; do
         printf "%s\n" "$path"
     done
 }
