@@ -21,12 +21,12 @@ function _ps1_result() {
         if [[ $index -eq 0 ]]; then
             printf "%s" '\n'
         else
-            printf "%s" ' | '
+            printf "%s" ' → '
         fi
         if [[ $status -eq 0 ]]; then
-            printf "%s [%d]%s" '\[\e[32m\]✔' $status '\[\e[m\]'
+            printf "%s %d%s" '\[\e[32m\]✔' $status '\[\e[m\]'
         else
-            printf "%s [%d]%s" '\[\e[31m\]✘' $status '\[\e[m\]'
+            printf "%s %d%s" '\[\e[31m\]✘' $status '\[\e[m\]'
         fi
     done
 }
