@@ -1,5 +1,5 @@
 function _prompt_command() {
-    _prompt_pipestatus=(${PIPESTATUS[@]})
+    _prompt_status=$? _prompt_pipestatus=(${PIPESTATUS[@]})
     PS1="$(_ps1)"
 }
 
@@ -17,18 +17,29 @@ function _ps1_title() {
 
 function _ps1_result() {
     local status="$(_ps1_result_status)"
+    local pipestatus="$(_ps1_result_pipestatus)"
     printf '%s' "$status"
+    [[ -z "$pipestatus" ]] || printf ' piped [ %s ]' "$pipestatus"
 }
 
 function _ps1_result_status() {
+    if [[ $_prompt_status -eq 0 ]]; then
+        printf '\\[\\e[1;32m\\]✔ %d\\[\\e[m\\]' $_prompt_status
+    else
+        printf '\\[\\e[1;31m\\]✘ %d\\[\\e[m\\]' $_prompt_status
+    fi
+}
+
+function _ps1_result_pipestatus() {
+    [[ ${#_prompt_pipestatus[@]} -gt 1 || ${_prompt_pipestatus[0]} -ne $_prompt_status ]] || return
     local index
     for index in ${!_prompt_pipestatus[@]}; do
         local status=${_prompt_pipestatus[$index]}
-        [[ $index -eq 0 ]] || printf ' → '
+        [[ $index -eq 0 ]] || printf ' | '
         if [[ $status -eq 0 ]]; then
-            printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $status
+            printf '\\[\\e[32m\\]✓ %d\\[\\e[m\\]' $status
         else
-            printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $status
+            printf '\\[\\e[31m\\]✗ %d\\[\\e[m\\]' $status
         fi
     done
 }
