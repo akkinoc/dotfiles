@@ -1,6 +1,4 @@
-if [[ -f ~/.bashrc ]]; then
-    . ~/.bashrc
-fi
+[[ ! -f ~/.bashrc ]] || . ~/.bashrc
 
 . ~/.bash_profile.d/shopts.sh
 . ~/.bash_profile.d/functions.sh
