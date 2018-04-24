@@ -4,7 +4,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
-alias @="_cd_to_finder_path"
+alias @="cd_to_finder_path"
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -26,7 +26,7 @@ alias gls="gls --color=auto"
 alias gl="gls -l"
 alias gla="gls -al"
 
-alias o="_open_args_or_wd"
+alias o="open_args_or_wd"
 
 alias rmf="rm -fr"
 
