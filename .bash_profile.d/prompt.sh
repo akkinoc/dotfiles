@@ -19,23 +19,29 @@ function _ps1_result() {
     local status="$(_ps1_result_status)"
     local pipestatus="$(_ps1_result_pipestatus)"
     printf '%s' "$status"
-    [[ -z "$pipestatus" ]] || printf ' piped [ %s ]' "$pipestatus"
+    if [[ -n "$pipestatus" ]]; then
+        printf ' piped [ %s ]' "$pipestatus"
+    fi
 }
 
 function _ps1_result_status() {
     if [[ $_prompt_status -eq 0 ]]; then
-        printf '\\[\\e[1;32m\\]✔ %d\\[\\e[m\\]' $_prompt_status
+        printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $_prompt_status
     else
-        printf '\\[\\e[1;31m\\]✘ %d\\[\\e[m\\]' $_prompt_status
+        printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $_prompt_status
     fi
 }
 
 function _ps1_result_pipestatus() {
-    [[ ${#_prompt_pipestatus[@]} -gt 1 || ${_prompt_pipestatus[0]} -ne $_prompt_status ]] || return
+    if [[ ${#_prompt_pipestatus[@]} -eq 1 && ${_prompt_pipestatus[0]} -eq $_prompt_status ]]; then
+        return
+    fi
     local index
     for index in ${!_prompt_pipestatus[@]}; do
         local status=${_prompt_pipestatus[$index]}
-        [[ $index -eq 0 ]] || printf ' | '
+        if [[ $index -gt 0 ]]; then
+            printf ' | '
+        fi
         if [[ $status -eq 0 ]]; then
             printf '\\[\\e[32m\\]✓ %d\\[\\e[m\\]' $status
         else
@@ -50,7 +56,9 @@ function _ps1_location() {
     local wd="$(_ps1_location_wd)"
     local git="$(_ps1_location_git)"
     printf '%s at %s in %s' "$user" "$host" "$wd"
-    [[ -z "$git" ]] || printf ' on %s' "$git"
+    if [[ -n "$git" ]]; then
+        printf ' on %s' "$git"
+    fi
 }
 
 function _ps1_location_user() {
