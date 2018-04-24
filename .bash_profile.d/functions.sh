@@ -11,7 +11,7 @@ function open_args_or_wd() {
 }
 
 function path() {
-    local -a paths
+    local paths
     IFS=: read -r -a paths <<<"$PATH"
     printf "%s\n" "${paths[@]}"
 }
