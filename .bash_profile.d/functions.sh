@@ -1,10 +1,7 @@
 function path() {
     local -a paths
-    IFS=: read -a paths -d "" -r <<<"$PATH"
-    local path
-    for path in "${paths[@]}"; do
-        printf "%s\n" "$path"
-    done
+    IFS=: read -r -a paths <<<"$PATH"
+    printf "%s\n" "${paths[@]}"
 }
 
 function relogin() {
