@@ -7,7 +7,7 @@ DOTFILES_HOME="$PWD"
 DOTFILES_DATA_DIR="$HOME/.dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history/$(date +%Y%m%dT%H%M%S)"
 
-function link_dotfile() {
+function link_dotfile {
     local target="$1"
     local src_file="$DOTFILES_HOME/$target"
     local dest_file="$HOME/$target"
@@ -21,7 +21,7 @@ function link_dotfile() {
     ln -s "$src_file" "$dest_file"
 }
 
-function report_result() {
+function report_result {
     if [[ $? -eq 0 ]]; then
         printf '\e[32mThe dotfiles installation succeeded!\e[m\n'
     else
