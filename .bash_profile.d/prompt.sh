@@ -19,9 +19,7 @@ function _ps1_result() {
     local status="$(_ps1_result_status)"
     local pipestatus="$(_ps1_result_pipestatus)"
     printf '%s' "$status"
-    if [[ -n "$pipestatus" ]]; then
-        printf ' piped [ %s ]' "$pipestatus"
-    fi
+    [[ -z "$pipestatus" ]] || printf ' piped [ %s ]' "$pipestatus"
 }
 
 function _ps1_result_status() {
@@ -32,9 +30,7 @@ function _ps1_result_pipestatus() {
     local index
     for index in ${!_prompt_pipestatus[@]}; do
         local status=${_prompt_pipestatus[$index]}
-        if [[ $index -gt 0 ]]; then
-            printf ' | '
-        fi
+        [[ $index -eq 0 ]] || printf ' | '
         _ps1_result_status_by_code $status
     done
 }
@@ -46,19 +42,15 @@ function _ps1_result_status_by_code() {
     else
         local signal="$(_ps1_result_status_signal_by_code $status)"
         printf '\\[\\e[31m\\]✘ %d' $status
-        if [[ -n "$signal" ]]; then
-            printf ' (%s)' "$signal"
-        fi
+        [[ -z "$signal" ]] || printf ' (SIG%s)' "$signal"
         printf '\\[\\e[m\\]'
     fi
 }
 
 function _ps1_result_status_signal_by_code() {
     local status=$1
-    if [[ $status -le 128 ]]; then
-        return
-    fi
-    printf 'SIG%s' "$(kill -l $status 2>/dev/null)"
+    [[ $status -gt 128 ]] || return 0
+    printf '%s' "$(kill -l $status 2>/dev/null)"
 }
 
 function _ps1_location() {
@@ -67,9 +59,7 @@ function _ps1_location() {
     local wd="$(_ps1_location_wd)"
     local git="$(_ps1_location_git)"
     printf '%s at %s in %s' "$user" "$host" "$wd"
-    if [[ -n "$git" ]]; then
-        printf ' on %s' "$git"
-    fi
+    [[ -z "$git" ]] || printf ' on %s' "$git"
 }
 
 function _ps1_location_user() {
@@ -97,9 +87,8 @@ function _ps1_location_wd() {
 }
 
 function _ps1_location_git() {
-    if type -t __git_ps1 &>/dev/null; then
-        __git_ps1 '\\[\\e[33m\\]%s\\[\\e[m\\]'
-    fi
+    type -t __git_ps1 &>/dev/null || return 0
+    __git_ps1 '\\[\\e[33m\\]%s\\[\\e[m\\]'
 }
 
 function _ps1_prompt() {
