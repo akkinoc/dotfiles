@@ -59,7 +59,7 @@ function _akihyro_dotfiles_prompt_ps1_location {
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_user {
-    if [[ "$USER" != "root" ]]; then
+    if [[ -n "${USER:-}" && "$USER" != "root" ]]; then
         printf '\\[\\e[35m\\]\\u\\[\\e[m\\]'
     else
         printf '\\[\\e[1;35m\\]\\u\\[\\e[m\\]'
@@ -75,7 +75,7 @@ function _akihyro_dotfiles_prompt_ps1_location_host {
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_wd {
-    if [[ "$PWD/" == "$HOME/"* ]]; then
+    if [[ -n "${PWD:-}" && -n "${HOME:-}" && "$PWD/" == "$HOME/"* ]]; then
         printf '\\[\\e[34m\\]\\w\\[\\e[m\\]'
     else
         printf '\\[\\e[1;34m\\]\\w\\[\\e[m\\]'
