@@ -1,4 +1,4 @@
-function _akihyro_dotfiles_prompt {
+function _akihyro_dotfiles_prompt_command {
     _akihyro_dotfiles_prompt_status=$? _akihyro_dotfiles_prompt_pipestatus=(${PIPESTATUS[@]})
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
@@ -91,7 +91,7 @@ function _akihyro_dotfiles_prompt_ps1_prompt {
     printf '\\$ '
 }
 
-PROMPT_COMMAND="_akihyro_dotfiles_prompt"
+PROMPT_COMMAND="_akihyro_dotfiles_prompt_command"
 PROMPT_DIRTRIM=0
 PS1='\$ '
 PS2='> '
