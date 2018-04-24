@@ -25,29 +25,40 @@ function _ps1_result() {
 }
 
 function _ps1_result_status() {
-    if [[ $_prompt_status -eq 0 ]]; then
-        printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $_prompt_status
-    else
-        printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $_prompt_status
-    fi
+    _ps1_result_status_by_code $_prompt_status
 }
 
 function _ps1_result_pipestatus() {
-    if [[ ${#_prompt_pipestatus[@]} -eq 1 && ${_prompt_pipestatus[0]} -eq $_prompt_status ]]; then
-        return
-    fi
     local index
     for index in ${!_prompt_pipestatus[@]}; do
         local status=${_prompt_pipestatus[$index]}
         if [[ $index -gt 0 ]]; then
             printf ' | '
         fi
-        if [[ $status -eq 0 ]]; then
-            printf '\\[\\e[32m\\]✓ %d\\[\\e[m\\]' $status
-        else
-            printf '\\[\\e[31m\\]✗ %d\\[\\e[m\\]' $status
-        fi
+        _ps1_result_status_by_code $status
     done
+}
+
+function _ps1_result_status_by_code() {
+    local status=$1
+    if [[ $status -eq 0 ]]; then
+        printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $status
+    else
+        local signal="$(_ps1_result_status_signal_by_code $status)"
+        printf '\\[\\e[31m\\]✘ %d' $status
+        if [[ -n "$signal" ]]; then
+            printf ' (%s)' "$signal"
+        fi
+        printf '\\[\\e[m\\]'
+    fi
+}
+
+function _ps1_result_status_signal_by_code() {
+    local status=$1
+    if [[ $status -le 128 ]]; then
+        return
+    fi
+    printf 'SIG%s' "$(kill -l $status 2>/dev/null)"
 }
 
 function _ps1_location() {
