@@ -1,10 +1,30 @@
+function _akihyro_dotfiles_aliases_cd_to_finder {
+    cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')"
+}
+
+function _akihyro_dotfiles_aliases_open {
+    local args=("$@")
+    [[ ${#args[@]} -gt 0 ]] || args=(.)
+    open "${args[@]}"
+}
+
+function _akihyro_dotfiles_aliases_path {
+    local path
+    IFS=: read -r -a path <<<"$PATH"
+    printf '%s\n' "${path[@]}"
+}
+
+function _akihyro_dotfiles_aliases_relogin {
+    exec -l "$SHELL"
+}
+
 alias ~="cd ~"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias -- -="cd -"
-alias @="cd_to_finder_path"
+alias @="_akihyro_dotfiles_aliases_cd_to_finder"
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
@@ -26,7 +46,11 @@ alias gls="gls --color=auto"
 alias gl="gls -l"
 alias gla="gls -al"
 
-alias o="open_args_or_wd"
+alias o="_akihyro_dotfiles_aliases_open"
+
+alias path="_akihyro_dotfiles_aliases_path"
+
+alias relogin="_akihyro_dotfiles_aliases_relogin"
 
 alias rmf="rm -fr"
 
