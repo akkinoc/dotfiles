@@ -13,7 +13,7 @@ function open_args_or_wd() {
 function path() {
     local paths
     IFS=: read -r -a paths <<<"$PATH"
-    printf "%s\n" "${paths[@]}"
+    printf '%s\n' "${paths[@]}"
 }
 
 function relogin() {

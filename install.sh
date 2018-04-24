@@ -12,7 +12,7 @@ function link_dotfile() {
     local src_file="$DOTFILES_HOME/$target"
     local dest_file="$HOME/$target"
     local hist_file="$DOTFILES_HIST_DIR/$target"
-    printf "Linking... %s => %s\n" "$src_file" "$dest_file"
+    printf 'Linking... %s => %s\n' "$src_file" "$dest_file"
     if [[ -f "$dest_file" || -d "$dest_file" || -h "$dest_file" ]]; then
         mkdir -p "$(dirname "$hist_file")"
         mv "$dest_file" "$hist_file"
@@ -23,9 +23,9 @@ function link_dotfile() {
 
 function report_result() {
     if [[ $? -eq 0 ]]; then
-        printf "\e[32mThe dotfiles installation succeeded!\e[m\n"
+        printf '\e[32mThe dotfiles installation succeeded!\e[m\n'
     else
-        printf "\e[31mThe dotfiles installation failed...\e[m\n"
+        printf '\e[31mThe dotfiles installation failed...\e[m\n'
     fi
 }
 
