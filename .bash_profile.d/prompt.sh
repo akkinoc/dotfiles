@@ -1,68 +1,79 @@
 function _prompt_command() {
-    local -a statuses=(${PIPESTATUS[@]})
-    PS1="$(_ps1_title)"
-    PS1+="$(_ps1_result ${statuses[@]})"
-    PS1+="$(_ps1_user)"
-    PS1+="$(_ps1_host)"
-    PS1+="$(_ps1_wd)"
-    PS1+="$(_ps1_git)"
-    PS1+="$(_ps1_prompt)"
+    _prompt_pipestatus=(${PIPESTATUS[@]})
+    PS1="$(_ps1)"
+}
+
+function _ps1() {
+    local title="$(_ps1_title)"
+    local result="$(_ps1_result)"
+    local location="$(_ps1_location)"
+    local prompt="$(_ps1_prompt)"
+    printf '%s\\n%s\\n%s\\n%s' "$title" "$result" "$location" "$prompt"
 }
 
 function _ps1_title() {
-    printf "%s" '\[\e]0;\u at \h in \W\a\]'
+    printf '\\[\\e]0;\\u at \\h in \\W\\a\\]'
 }
 
 function _ps1_result() {
-    local -a statuses=($@)
-    local -i index
-    for index in ${!statuses[@]}; do
-        local -i status=${statuses[$index]}
-        if [[ $index -eq 0 ]]; then
-            printf "%s" '\n'
-        else
-            printf "%s" ' → '
-        fi
+    local status="$(_ps1_result_status)"
+    printf '%s' "$status"
+}
+
+function _ps1_result_status() {
+    local index
+    for index in ${!_prompt_pipestatus[@]}; do
+        local status=${_prompt_pipestatus[$index]}
+        [[ $index -eq 0 ]] || printf ' → '
         if [[ $status -eq 0 ]]; then
-            printf "%s (%d)%s" '\[\e[32m\]✔' $status '\[\e[m\]'
+            printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $status
         else
-            printf "%s (%d)%s" '\[\e[31m\]✘' $status '\[\e[m\]'
+            printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $status
         fi
     done
 }
 
-function _ps1_user() {
+function _ps1_location() {
+    local user="$(_ps1_location_user)"
+    local host="$(_ps1_location_host)"
+    local wd="$(_ps1_location_wd)"
+    local git="$(_ps1_location_git)"
+    printf '%s at %s in %s' "$user" "$host" "$wd"
+    [[ -z "$git" ]] || printf ' on %s' "$git"
+}
+
+function _ps1_location_user() {
     if [[ "$USER" != "root" ]]; then
-        printf "%s" '\n\[\e[35m\]\u\[\e[m\]'
+        printf '\\[\\e[35m\\]\\u\\[\\e[m\\]'
     else
-        printf "%s" '\n\[\e[1;35m\]\u\[\e[m\]'
+        printf '\\[\\e[1;35m\\]\\u\\[\\e[m\\]'
     fi
 }
 
-function _ps1_host() {
+function _ps1_location_host() {
     if [[ -z "${SSH_CONNECTION:-}" ]]; then
-        printf "%s" ' at \[\e[36m\]\h\[\e[m\]'
+        printf '\\[\\e[36m\\]\\h\\[\\e[m\\]'
     else
-        printf "%s" ' at \[\e[1;36m\]\H\[\e[m\]'
+        printf '\\[\\e[1;36m\\]\\H\\[\\e[m\\]'
     fi
 }
 
-function _ps1_wd() {
+function _ps1_location_wd() {
     if [[ "$PWD/" == "$HOME/"* ]]; then
-        printf "%s" ' in \[\e[34m\]\w\[\e[m\]'
+        printf '\\[\\e[34m\\]\\w\\[\\e[m\\]'
     else
-        printf "%s" ' in \[\e[1;34m\]\w\[\e[m\]'
+        printf '\\[\\e[1;34m\\]\\w\\[\\e[m\\]'
     fi
 }
 
-function _ps1_git() {
+function _ps1_location_git() {
     if type -t __git_ps1 &>/dev/null; then
-        __git_ps1 ' on \[\e[33m\]%s\[\e[m\]'
+        __git_ps1 '\\[\\e[33m\\]%s\\[\\e[m\\]'
     fi
 }
 
 function _ps1_prompt() {
-    printf "%s" '\n\$ '
+    printf '\\$ '
 }
 
 PROMPT_COMMAND="_prompt_command"
