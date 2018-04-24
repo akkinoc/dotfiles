@@ -1,68 +1,63 @@
-function _prompt_command {
-    _prompt_status=$? _prompt_pipestatus=(${PIPESTATUS[@]})
-    PS1="$(_ps1)"
+function _akihyro_dotfiles_prompt {
+    _akihyro_dotfiles_prompt_status=$? _akihyro_dotfiles_prompt_pipestatus=(${PIPESTATUS[@]})
+    PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
 
-function _ps1 {
-    local title="$(_ps1_title)"
-    local result="$(_ps1_result)"
-    local location="$(_ps1_location)"
-    local prompt="$(_ps1_prompt)"
+function _akihyro_dotfiles_prompt_ps1 {
+    local title="$(_akihyro_dotfiles_prompt_ps1_title)"
+    local result="$(_akihyro_dotfiles_prompt_ps1_result)"
+    local location="$(_akihyro_dotfiles_prompt_ps1_location)"
+    local prompt="$(_akihyro_dotfiles_prompt_ps1_prompt)"
     printf '%s\\n%s\\n%s\\n%s' "$title" "$result" "$location" "$prompt"
 }
 
-function _ps1_title {
+function _akihyro_dotfiles_prompt_ps1_title {
     printf '\\[\\e]0;\\u at \\h in \\W\\a\\]'
 }
 
-function _ps1_result {
-    local status="$(_ps1_result_status)"
-    local pipestatus="$(_ps1_result_pipestatus)"
+function _akihyro_dotfiles_prompt_ps1_result {
+    local status="$(_akihyro_dotfiles_prompt_ps1_result_status)"
+    local pipestatus="$(_akihyro_dotfiles_prompt_ps1_result_pipestatus)"
     printf '%s' "$status"
     [[ -z "$pipestatus" ]] || printf ' piped [ %s ]' "$pipestatus"
 }
 
-function _ps1_result_status {
-    _ps1_result_status_by_code $_prompt_status
+function _akihyro_dotfiles_prompt_ps1_result_status {
+    _akihyro_dotfiles_prompt_ps1_result_status_by_code $_akihyro_dotfiles_prompt_status
 }
 
-function _ps1_result_pipestatus {
+function _akihyro_dotfiles_prompt_ps1_result_pipestatus {
     local index
-    for index in ${!_prompt_pipestatus[@]}; do
-        local status=${_prompt_pipestatus[$index]}
+    for index in ${!_akihyro_dotfiles_prompt_pipestatus[@]}; do
+        local status=${_akihyro_dotfiles_prompt_pipestatus[$index]}
         [[ $index -eq 0 ]] || printf ' | '
-        _ps1_result_status_by_code $status
+        _akihyro_dotfiles_prompt_ps1_result_status_by_code $status
     done
 }
 
-function _ps1_result_status_by_code {
+function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
     local status=$1
     if [[ $status -eq 0 ]]; then
         printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $status
     else
-        local signal="$(_ps1_result_status_signal_by_code $status)"
-        printf '\\[\\e[31m\\]✘ %d' $status
-        [[ -z "$signal" ]] || printf ' (SIG%s)' "$signal"
-        printf '\\[\\e[m\\]'
+        printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $status
+        if [[ $status -gt 128 ]]; then
+            local signal="$(kill -l $status 2>/dev/null)"
+            [[ -z "$signal" ]] || printf '\\[\\e[31m\\]:%s\\[\\e[m\\]' "$signal"
+        fi
     fi
 }
 
-function _ps1_result_status_signal_by_code {
-    local status=$1
-    [[ $status -gt 128 ]] || return 0
-    printf '%s' "$(kill -l $status 2>/dev/null)"
-}
-
-function _ps1_location {
-    local user="$(_ps1_location_user)"
-    local host="$(_ps1_location_host)"
-    local wd="$(_ps1_location_wd)"
-    local git="$(_ps1_location_git)"
+function _akihyro_dotfiles_prompt_ps1_location {
+    local user="$(_akihyro_dotfiles_prompt_ps1_location_user)"
+    local host="$(_akihyro_dotfiles_prompt_ps1_location_host)"
+    local wd="$(_akihyro_dotfiles_prompt_ps1_location_wd)"
+    local git="$(_akihyro_dotfiles_prompt_ps1_location_git)"
     printf '%s at %s in %s' "$user" "$host" "$wd"
     [[ -z "$git" ]] || printf ' on %s' "$git"
 }
 
-function _ps1_location_user {
+function _akihyro_dotfiles_prompt_ps1_location_user {
     if [[ "$USER" != "root" ]]; then
         printf '\\[\\e[35m\\]\\u\\[\\e[m\\]'
     else
@@ -70,7 +65,7 @@ function _ps1_location_user {
     fi
 }
 
-function _ps1_location_host {
+function _akihyro_dotfiles_prompt_ps1_location_host {
     if [[ -z "${SSH_CONNECTION:-}" ]]; then
         printf '\\[\\e[36m\\]\\h\\[\\e[m\\]'
     else
@@ -78,7 +73,7 @@ function _ps1_location_host {
     fi
 }
 
-function _ps1_location_wd {
+function _akihyro_dotfiles_prompt_ps1_location_wd {
     if [[ "$PWD/" == "$HOME/"* ]]; then
         printf '\\[\\e[34m\\]\\w\\[\\e[m\\]'
     else
@@ -86,16 +81,16 @@ function _ps1_location_wd {
     fi
 }
 
-function _ps1_location_git {
+function _akihyro_dotfiles_prompt_ps1_location_git {
     type -t __git_ps1 &>/dev/null || return 0
     __git_ps1 '\\[\\e[33m\\]%s\\[\\e[m\\]'
 }
 
-function _ps1_prompt {
+function _akihyro_dotfiles_prompt_ps1_prompt {
     printf '\\$ '
 }
 
-PROMPT_COMMAND="_prompt_command"
+PROMPT_COMMAND="_akihyro_dotfiles_prompt"
 PROMPT_DIRTRIM=0
 PS1='\$ '
 PS2='> '
