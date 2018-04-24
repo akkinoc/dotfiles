@@ -23,7 +23,7 @@ function _akihyro_dotfiles_prompt_ps1_result {
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status {
-    _akihyro_dotfiles_prompt_ps1_result_status_by_code $_akihyro_dotfiles_prompt_status "1"
+    _akihyro_dotfiles_prompt_ps1_result_status_by_code $_akihyro_dotfiles_prompt_status
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_pipestatus {
@@ -37,14 +37,13 @@ function _akihyro_dotfiles_prompt_ps1_result_pipestatus {
 
 function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
     local status=$1
-    local style="${2:-}"
     if [[ $status -eq 0 ]]; then
-        printf '\\[\\e[%s32m\\]✔ %d\\[\\e[m\\]' "$style${style:+;}" $status
+        printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $status
     else
-        printf '\\[\\e[%s31m\\]✘ %d\\[\\e[m\\]' "$style${style:+;}" $status
+        printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $status
         if [[ $status -gt 128 ]]; then
             local signal="$(kill -l $status 2>/dev/null)"
-            [[ -z "$signal" ]] || printf '\\[\\e[%s31m\\]:%s\\[\\e[m\\]' "$style${style:+;}" "$signal"
+            [[ -z "$signal" ]] || printf '\\[\\e[31m\\]:%s\\[\\e[m\\]' "$signal"
         fi
     fi
 }
