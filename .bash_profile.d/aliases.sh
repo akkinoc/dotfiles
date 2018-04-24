@@ -15,9 +15,9 @@ alias zfgrep="zfgrep --color=auto"
 
 alias hist="history"
 
-if ls --color &>/dev/null; then
+if ls -d --color=auto &>/dev/null; then
     alias ls="ls --color=auto"
-elif ls -G &>/dev/null; then
+elif ls -Gd &>/dev/null; then
     alias ls="ls -G"
 fi
 alias l="ls -l"
