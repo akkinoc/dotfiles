@@ -5,7 +5,7 @@ _akihyro_dotfiles_prompt_ended=()
 
 function _akihyro_dotfiles_prompt_trap {
     if [[ ${#_akihyro_dotfiles_prompt_started[@]} -eq 0 || ${#_akihyro_dotfiles_prompt_ended[@]} -gt 0 ]]; then
-        readarray -t _akihyro_dotfiles_prompt_started < <(_akihyro_dotfiles_prompt_time "%H:%M:%S")
+        readarray -t _akihyro_dotfiles_prompt_started < <(_akihyro_dotfiles_prompt_time)
         _akihyro_dotfiles_prompt_ended=()
     fi
 }
@@ -15,20 +15,18 @@ function _akihyro_dotfiles_prompt_command {
     _akihyro_dotfiles_prompt_status=$status
     _akihyro_dotfiles_prompt_pipestatus=(${pipestatus[@]})
     if [[ ${#_akihyro_dotfiles_prompt_started[@]} -gt 0 && ${#_akihyro_dotfiles_prompt_ended[@]} -eq 0 ]]; then
-        readarray -t _akihyro_dotfiles_prompt_ended < <(_akihyro_dotfiles_prompt_time "%H:%M:%S")
+        readarray -t _akihyro_dotfiles_prompt_ended < <(_akihyro_dotfiles_prompt_time)
     fi
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
 
 if [[ ${BASH_VERSINFO[0]} -gt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -ge 2 ]]; then
     function _akihyro_dotfiles_prompt_time {
-        local format="$1"
-        printf '%(%s'$'\n'"$format"')T\n' -1
+        printf '%(%s'$'\n''%H:%M:%S)T\n' -1
     }
 else
     function _akihyro_dotfiles_prompt_time {
-        local format="$1"
-        date '+%s'$'\n'"$format"
+        date '+%s'$'\n''%H:%M:%S'
     }
 fi
 
