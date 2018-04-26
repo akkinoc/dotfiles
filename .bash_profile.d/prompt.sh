@@ -1,10 +1,22 @@
 _akihyro_dotfiles_prompt_status=
 _akihyro_dotfiles_prompt_pipestatus=()
+_akihyro_dotfiles_prompt_started=()
+_akihyro_dotfiles_prompt_ended=()
+
+function _akihyro_dotfiles_prompt_trap {
+    if [[ ${#_akihyro_dotfiles_prompt_started[@]} -eq 0 || ${#_akihyro_dotfiles_prompt_ended[@]} -gt 0 ]]; then
+        readarray -t _akihyro_dotfiles_prompt_started < <(_akihyro_dotfiles_prompt_time "%H:%M:%S")
+        _akihyro_dotfiles_prompt_ended=()
+    fi
+}
 
 function _akihyro_dotfiles_prompt_command {
     local status=$? pipestatus=(${PIPESTATUS[@]})
     _akihyro_dotfiles_prompt_status=$status
     _akihyro_dotfiles_prompt_pipestatus=(${pipestatus[@]})
+    if [[ ${#_akihyro_dotfiles_prompt_started[@]} -gt 0 && ${#_akihyro_dotfiles_prompt_ended[@]} -eq 0 ]]; then
+        readarray -t _akihyro_dotfiles_prompt_ended < <(_akihyro_dotfiles_prompt_time "%H:%M:%S")
+    fi
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
 
@@ -23,8 +35,10 @@ function _akihyro_dotfiles_prompt_ps1_title {
 function _akihyro_dotfiles_prompt_ps1_result {
     local status="$(_akihyro_dotfiles_prompt_ps1_result_status)"
     local pipestatus="$(_akihyro_dotfiles_prompt_ps1_result_pipestatus)"
+    local time="$(_akihyro_dotfiles_prompt_ps1_result_time)"
     printf '%s' "$status"
     [[ -z "$pipestatus" ]] || printf ' piped [ %s ]' "$pipestatus"
+    [[ -z "$time" ]] || printf ' took %s' "$time"
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status {
@@ -51,6 +65,15 @@ function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
             [[ -z "$signal" ]] || printf '\\[\\e[31m\\]:%s\\[\\e[m\\]' "$signal"
         fi
     fi
+}
+
+function _akihyro_dotfiles_prompt_ps1_result_time {
+    [[ ${#_akihyro_dotfiles_prompt_started[@]} -gt 0 && ${#_akihyro_dotfiles_prompt_ended[@]} -gt 0 ]] || return 0
+    local time=$(( ${_akihyro_dotfiles_prompt_ended[0]} - ${_akihyro_dotfiles_prompt_started[0]} ))
+    printf "\\[\\e[4m\\]%d s\\[\\e[m\\] \\[\\e[2m\\](%s - %s)\\[\\e[m\\]" \
+        $(( ${_akihyro_dotfiles_prompt_ended[0]} - ${_akihyro_dotfiles_prompt_started[0]} )) \
+        "${_akihyro_dotfiles_prompt_started[1]}" \
+        "${_akihyro_dotfiles_prompt_ended[1]}"
 }
 
 function _akihyro_dotfiles_prompt_ps1_location {
@@ -95,6 +118,19 @@ function _akihyro_dotfiles_prompt_ps1_prompt {
     printf '\\$ '
 }
 
+if [[ ${BASH_VERSINFO[0]} -gt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -ge 2 ]]; then
+    function _akihyro_dotfiles_prompt_time {
+        local format="$1"
+        printf '%(%s'$'\n'"$format"')T\n' -1
+    }
+else
+    function _akihyro_dotfiles_prompt_time {
+        local format="$1"
+        date '+%s'$'\n'"$format"
+    }
+fi
+
+trap "_akihyro_dotfiles_prompt_trap" DEBUG
 PROMPT_COMMAND="_akihyro_dotfiles_prompt_command"
 PROMPT_DIRTRIM=0
 PS1='\$ '
