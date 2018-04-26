@@ -67,14 +67,13 @@ function _akihyro_dotfiles_prompt_ps1_result_pipestatus {
 
 function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
     local code=$1
+    local signal="$([[ $code -le 128 ]] || kill -l $code 2>/dev/null)"
     if [[ $code -eq 0 ]]; then
         printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $code
-    else
+    elif [[ -z "$signal" ]]; then
         printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $code
-        if [[ $code -gt 128 ]]; then
-            local signal="$(kill -l $code 2>/dev/null)"
-            [[ -z "$signal" ]] || printf '\\[\\e[31m\\]:%s\\[\\e[m\\]' "$signal"
-        fi
+    else
+        printf '\\[\\e[31m\\]✘ %d:%s\\[\\e[m\\]' $code "$signal"
     fi
 }
 
