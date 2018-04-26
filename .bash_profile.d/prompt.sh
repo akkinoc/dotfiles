@@ -76,7 +76,6 @@ function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
 
 function _akihyro_dotfiles_prompt_ps1_result_time {
     [[ ${#_akihyro_dotfiles_prompt_started[@]} -gt 0 && ${#_akihyro_dotfiles_prompt_ended[@]} -gt 0 ]] || return 0
-    local time=$(( ${_akihyro_dotfiles_prompt_ended[0]} - ${_akihyro_dotfiles_prompt_started[0]} ))
     printf "\\[\\e[4m\\]%d s\\[\\e[m\\] \\[\\e[2m\\](%s - %s)\\[\\e[m\\]" \
         $(( ${_akihyro_dotfiles_prompt_ended[0]} - ${_akihyro_dotfiles_prompt_started[0]} )) \
         "${_akihyro_dotfiles_prompt_started[1]}" \
