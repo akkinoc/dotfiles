@@ -1,5 +1,7 @@
 function _akihyro_dotfiles_prompt_command {
-    _akihyro_dotfiles_prompt_status=$? _akihyro_dotfiles_prompt_pipestatus=(${PIPESTATUS[@]})
+    local status=$? pipestatus=(${PIPESTATUS[@]})
+    _akihyro_dotfiles_prompt_status=$status
+    _akihyro_dotfiles_prompt_pipestatus=(${pipestatus[@]})
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
 
