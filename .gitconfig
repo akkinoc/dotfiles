@@ -5,8 +5,6 @@
 [user]
     name = Akihiro Kondo
     email = akihyro@gmail.com
-[color]
-    ui = true
 [interactive]
     singlekey = true
 [alias]
