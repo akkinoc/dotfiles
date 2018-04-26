@@ -1,6 +1,6 @@
 [alias]
     a = add
-    aa = !git add "$(git rev-parse --show-toplevel)"
+    aa = add --all
     b = branch --verbose
     br = branch
     c = commit --verbose
