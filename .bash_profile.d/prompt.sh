@@ -46,23 +46,20 @@ function _akihyro_dotfiles_prompt_ps1_title {
 
 function _akihyro_dotfiles_prompt_ps1_result {
     local status="$(_akihyro_dotfiles_prompt_ps1_result_status)"
-    local pipestatus="$(_akihyro_dotfiles_prompt_ps1_result_pipestatus)"
     local time="$(_akihyro_dotfiles_prompt_ps1_result_time)"
     printf '%s' "$status"
-    [[ -z "$pipestatus" ]] || printf ' piped [ %s ]' "$pipestatus"
     [[ -z "$time" ]] || printf ' took %s' "$time"
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status {
     _akihyro_dotfiles_prompt_ps1_result_status_by_code $_akihyro_dotfiles_prompt_status
-}
-
-function _akihyro_dotfiles_prompt_ps1_result_pipestatus {
+    printf ' [ '
     local index
     for index in ${!_akihyro_dotfiles_prompt_pipestatus[@]}; do
         [[ $index -eq 0 ]] || printf ' | '
         _akihyro_dotfiles_prompt_ps1_result_status_by_code ${_akihyro_dotfiles_prompt_pipestatus[$index]}
     done
+    printf ' ]'
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
