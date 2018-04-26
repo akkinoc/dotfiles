@@ -3,8 +3,8 @@
     autocrlf = false
     excludesfile = ~/.gitignore
 [user]
-    name = Akihiro Kondo
     email = akihyro@gmail.com
+    name = Akihiro Kondo
 [color]
     ui = auto
 [interactive]
