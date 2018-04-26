@@ -60,20 +60,19 @@ function _akihyro_dotfiles_prompt_ps1_result_status {
 function _akihyro_dotfiles_prompt_ps1_result_pipestatus {
     local index
     for index in ${!_akihyro_dotfiles_prompt_pipestatus[@]}; do
-        local status=${_akihyro_dotfiles_prompt_pipestatus[$index]}
         [[ $index -eq 0 ]] || printf ' | '
-        _akihyro_dotfiles_prompt_ps1_result_status_by_code $status
+        _akihyro_dotfiles_prompt_ps1_result_status_by_code ${_akihyro_dotfiles_prompt_pipestatus[$index]}
     done
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
-    local status=$1
-    if [[ $status -eq 0 ]]; then
-        printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $status
+    local code=$1
+    if [[ $code -eq 0 ]]; then
+        printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $code
     else
-        printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $status
-        if [[ $status -gt 128 ]]; then
-            local signal="$(kill -l $status 2>/dev/null)"
+        printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $code
+        if [[ $code -gt 128 ]]; then
+            local signal="$(kill -l $code 2>/dev/null)"
             [[ -z "$signal" ]] || printf '\\[\\e[31m\\]:%s\\[\\e[m\\]' "$signal"
         fi
     fi
