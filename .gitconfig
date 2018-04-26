@@ -1,10 +1,10 @@
-[user]
-    name = Akihiro Kondo
-    email = akihyro@gmail.com
 [core]
     attributesfile = ~/.gitattributes
     autocrlf = false
     excludesfile = ~/.gitignore
+[user]
+    name = Akihiro Kondo
+    email = akihyro@gmail.com
 [color]
     ui = true
 [interactive]
