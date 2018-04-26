@@ -1,3 +1,6 @@
+_akihyro_dotfiles_prompt_status=
+_akihyro_dotfiles_prompt_pipestatus=()
+
 function _akihyro_dotfiles_prompt_command {
     local status=$? pipestatus=(${PIPESTATUS[@]})
     _akihyro_dotfiles_prompt_status=$status
