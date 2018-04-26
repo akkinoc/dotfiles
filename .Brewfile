@@ -1,5 +1,6 @@
 tap "homebrew/core"
 tap "homebrew/bundle"
+brew "awscli"
 brew "bash"
 brew "bash-completion@2"
 brew "coreutils"
