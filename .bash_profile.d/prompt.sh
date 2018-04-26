@@ -20,6 +20,18 @@ function _akihyro_dotfiles_prompt_command {
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
 
+if [[ ${BASH_VERSINFO[0]} -gt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -ge 2 ]]; then
+    function _akihyro_dotfiles_prompt_time {
+        local format="$1"
+        printf '%(%s'$'\n'"$format"')T\n' -1
+    }
+else
+    function _akihyro_dotfiles_prompt_time {
+        local format="$1"
+        date '+%s'$'\n'"$format"
+    }
+fi
+
 function _akihyro_dotfiles_prompt_ps1 {
     local title="$(_akihyro_dotfiles_prompt_ps1_title)"
     local result="$(_akihyro_dotfiles_prompt_ps1_result)"
@@ -117,18 +129,6 @@ function _akihyro_dotfiles_prompt_ps1_location_git {
 function _akihyro_dotfiles_prompt_ps1_prompt {
     printf '\\$ '
 }
-
-if [[ ${BASH_VERSINFO[0]} -gt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -ge 2 ]]; then
-    function _akihyro_dotfiles_prompt_time {
-        local format="$1"
-        printf '%(%s'$'\n'"$format"')T\n' -1
-    }
-else
-    function _akihyro_dotfiles_prompt_time {
-        local format="$1"
-        date '+%s'$'\n'"$format"
-    }
-fi
 
 trap "_akihyro_dotfiles_prompt_trap" DEBUG
 PROMPT_COMMAND="_akihyro_dotfiles_prompt_command"
