@@ -22,11 +22,11 @@ function _akihyro_dotfiles_prompt_command {
 
 if [[ ${BASH_VERSINFO[0]} -gt 4 || ${BASH_VERSINFO[0]} -eq 4 && ${BASH_VERSINFO[1]} -ge 2 ]]; then
     function _akihyro_dotfiles_prompt_time {
-        printf '%(%s'$'\n''%H:%M:%S)T\n' -1
+        printf '%(%s%n%H:%M:%S)T\n' -1
     }
 else
     function _akihyro_dotfiles_prompt_time {
-        date '+%s'$'\n''%H:%M:%S'
+        date '+%s%n%H:%M:%S'
     }
 fi
 
