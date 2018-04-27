@@ -1,4 +1,4 @@
-export HISTSIZE=10000
+export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 export LSCOLORS="exgxfxdxbxdxdxabhbaehe"
