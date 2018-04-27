@@ -11,8 +11,8 @@
     dl = diff --name-status
     f = fetch
     l = log --name-status
-    lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
-    ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
+    lg = log --pretty=line --graph --date=short
+    ll = log --pretty=line --date=short
     ls = ls-files
     m = merge --no-ff
     p = pull
@@ -44,6 +44,8 @@
     date = iso
     decorate = short
     follow = true
+[pretty]
+    line = %C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset
 [push]
     default = current
 [rebase]
