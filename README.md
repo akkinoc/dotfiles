@@ -17,7 +17,7 @@ My personal dotfiles.
 ## Installation
 
 ```console
-$ git clone git@github.com:akihyro/dotfiles.git && dotfiles/install.sh && exec -l "$SHELL"
+$ git clone git@github.com:akihyro/dotfiles.git && dotfiles/INSTALL.sh && exec -l "$SHELL"
 ```
 
 ## License
