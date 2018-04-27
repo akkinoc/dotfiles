@@ -9,7 +9,7 @@
     cp = cherry-pick
     d = diff
     dl = diff --name-status
-    f = fetch --prune
+    f = fetch
     l = log --pretty=fuller --abbrev-commit --name-status --decorate --date=iso
     lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
     ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
@@ -34,6 +34,8 @@
     excludesfile = ~/.gitignore
 [diff]
     colormoved = dimmed_zebra
+[fetch]
+    prune = true
 [interactive]
     singlekey = true
 [push]
