@@ -10,7 +10,7 @@
     d = diff
     dl = diff --name-status
     f = fetch
-    l = log --name-status --decorate --date=iso
+    l = log --name-status --decorate
     lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
     ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
     ls = ls-files
@@ -18,7 +18,7 @@
     p = pull
     pu = push --set-upstream
     s = status --branch --short
-    sh = show --decorate --date=iso
+    sh = show --decorate
     stl = stash list
     stp = stash pop
     sts = stash save --include-untracked
@@ -41,6 +41,7 @@
     singlekey = true
 [log]
     abbrevcommit = true
+    date = iso
 [push]
     default = current
 [rebase]
