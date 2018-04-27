@@ -43,6 +43,7 @@
     abbrevcommit = true
     date = iso
     decorate = short
+    follow = true
 [push]
     default = current
 [rebase]
