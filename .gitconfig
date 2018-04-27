@@ -10,7 +10,7 @@
     d = diff
     dl = diff --name-status
     f = fetch
-    l = log --pretty=fuller --abbrev-commit --name-status --decorate --date=iso
+    l = log --abbrev-commit --name-status --decorate --date=iso
     lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
     ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
     ls = ls-files
@@ -18,7 +18,7 @@
     p = pull
     pu = push --set-upstream
     s = status --branch --short
-    sh = show --pretty=fuller --abbrev-commit --decorate --date=iso
+    sh = show --abbrev-commit --decorate --date=iso
     stl = stash list
     stp = stash pop
     sts = stash save --include-untracked
@@ -35,6 +35,8 @@
     colormoved = dimmed_zebra
 [fetch]
     prune = true
+[format]
+    pretty=fuller
 [interactive]
     singlekey = true
 [push]
