@@ -14,7 +14,6 @@
     lg = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --graph --date=short
     ll = log --pretty=format:'%C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset' --date=short
     ls = ls-files
-    lt = ls-tree --abbrev --long HEAD
     m = merge --no-ff
     p = pull
     pu = push --set-upstream
