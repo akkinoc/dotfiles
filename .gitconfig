@@ -36,7 +36,7 @@
 [fetch]
     prune = true
 [format]
-    pretty=fuller
+    pretty = fuller
 [interactive]
     singlekey = true
 [log]
