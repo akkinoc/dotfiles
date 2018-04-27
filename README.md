@@ -10,6 +10,10 @@
 
 My personal dotfiles.  
 
+![Image]
+
+[Image]: IMAGE.png
+
 ## Environment
 
 * Bash 3.2+
