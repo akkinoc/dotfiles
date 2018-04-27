@@ -17,6 +17,7 @@ My personal dotfiles.
 ## Environment
 
 * Bash 3.2+
+* Git 2.15+
 
 ## Installation
 
