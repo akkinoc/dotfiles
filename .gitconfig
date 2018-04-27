@@ -1,6 +1,7 @@
 [alias]
     a = add
     aa = add --all
+    ap = add --patch
     b = branch --verbose
     ba = branch --all --verbose
     c = commit
