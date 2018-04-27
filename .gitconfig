@@ -18,6 +18,7 @@
     m = merge --no-ff
     p = pull
     pu = push --set-upstream
+    r = rebase
     s = status --branch --short
     sh = show
     stl = stash list
