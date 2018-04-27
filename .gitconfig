@@ -2,7 +2,6 @@
     a = add
     aa = add --all
     b = branch --verbose
-    br = branch
     c = commit --verbose
     ca = commit --amend --no-edit
     co = checkout
