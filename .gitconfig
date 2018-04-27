@@ -33,6 +33,8 @@
     attributesfile = ~/.gitattributes
     autocrlf = false
     excludesfile = ~/.gitignore
+[diff]
+    colormoved = dimmed_zebra
 [interactive]
     singlekey = true
 [push]
