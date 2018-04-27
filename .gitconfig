@@ -15,8 +15,6 @@
     ls = ls-files
     lt = ls-tree --abbrev --long HEAD
     m = merge --no-ff
-    modx = update-index --chmod=+x
-    mod-x = update-index --chmod=-x
     p = pull
     pu = push --set-upstream
     s = status --branch --short
