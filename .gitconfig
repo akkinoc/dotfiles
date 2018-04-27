@@ -2,7 +2,7 @@
     a = add
     aa = add --all
     b = branch --verbose
-    c = commit --verbose
+    c = commit
     ca = commit --amend --no-edit
     co = checkout
     cp = cherry-pick
@@ -27,6 +27,8 @@
     t = tag --list -n --sort=-taggerdate
 [color]
     ui = auto
+[commit]
+    verbose = true
 [core]
     attributesfile = ~/.gitattributes
     autocrlf = false
