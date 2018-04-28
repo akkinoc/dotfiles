@@ -4,7 +4,7 @@ function _akihyro_dotfiles_aliases_cd_to_finder {
 
 function _akihyro_dotfiles_aliases_open {
     local args=("$@")
-    [[ ${#args[@]} -gt 0 ]] || args=(.)
+    (( ${#args[@]} )) || args=(.)
     open "${args[@]}"
 }
 
