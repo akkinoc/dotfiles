@@ -18,6 +18,7 @@
     pu = push --set-upstream
     rb = rebase
     rbi = rebase --interactive
+    rv = revert
     s = status
     sh = show
     st = stash
