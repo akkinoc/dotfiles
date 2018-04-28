@@ -26,15 +26,15 @@ alias .....="cd ../../../.."
 alias -- -="cd -"
 alias @="_akihyro_dotfiles_aliases_cd_to_finder"
 
+alias g="git"
+! type -t __git_complete &>/dev/null || __git_complete g __git_main
+
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
 alias fgrep="fgrep --color=auto"
 alias zgrep="zgrep --color=auto"
 alias zegrep="zegrep --color=auto"
 alias zfgrep="zfgrep --color=auto"
-
-alias g="git"
-! type -t __git_complete &>/dev/null || __git_complete g __git_main
 
 alias hist="history"
 
