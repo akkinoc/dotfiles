@@ -15,7 +15,6 @@
     ls = ls-files --abbrev --stage
     m = merge --no-edit
     p = pull
-    pu = push --set-upstream
     r = rebase
     ri = rebase --interactive
     s = status
@@ -28,6 +27,7 @@
     sts = stash show
     t = tag
     tl = tag --list -n
+    u = push --set-upstream
 [color]
     ui = auto
 [commit]
