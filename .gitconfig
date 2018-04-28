@@ -6,6 +6,7 @@
     ba = branch --all --verbose --verbose
     c = commit
     ca = commit --amend --no-edit
+    cl = clean -d --force
     co = checkout
     cp = cherry-pick
     d = diff
