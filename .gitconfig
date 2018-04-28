@@ -51,6 +51,7 @@
     ff = only
 [push]
     default = current
+    followtags = true
 [rebase]
     autostash = true
 [tag]
