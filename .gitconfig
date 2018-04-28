@@ -36,6 +36,7 @@
     colormoved = dimmed_zebra
 [fetch]
     prune = true
+    prunetags = true
 [format]
     pretty = fuller
 [interactive]
