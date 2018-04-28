@@ -70,12 +70,10 @@ function _akihyro_dotfiles_prompt_ps1_result_time {
 }
 
 function _akihyro_dotfiles_prompt_ps1_location {
-    local user="$(_akihyro_dotfiles_prompt_ps1_location_user)"
-    local host="$(_akihyro_dotfiles_prompt_ps1_location_host)"
-    local wd="$(_akihyro_dotfiles_prompt_ps1_location_wd)"
-    local git="$(_akihyro_dotfiles_prompt_ps1_location_git)"
-    printf '%s at %s in %s' "$user" "$host" "$wd"
-    [[ -z "$git" ]] || printf ' on %s' "$git"
+    _akihyro_dotfiles_prompt_ps1_location_user
+    _akihyro_dotfiles_prompt_ps1_location_host
+    _akihyro_dotfiles_prompt_ps1_location_wd
+    _akihyro_dotfiles_prompt_ps1_location_git
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_user {
@@ -88,23 +86,23 @@ function _akihyro_dotfiles_prompt_ps1_location_user {
 
 function _akihyro_dotfiles_prompt_ps1_location_host {
     if [[ -z "${SSH_CONNECTION:-}" ]]; then
-        printf '\\[\\e[36m\\]\\h\\[\\e[m\\]'
+        printf ' at \\[\\e[36m\\]\\h\\[\\e[m\\]'
     else
-        printf '\\[\\e[1;36m\\]\\H\\[\\e[m\\]'
+        printf ' at \\[\\e[1;36m\\]\\H\\[\\e[m\\]'
     fi
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_wd {
     if [[ "$PWD/" == "$HOME/"* ]]; then
-        printf '\\[\\e[34m\\]\\w\\[\\e[m\\]'
+        printf ' in \\[\\e[34m\\]\\w\\[\\e[m\\]'
     else
-        printf '\\[\\e[1;34m\\]\\w\\[\\e[m\\]'
+        printf ' in \\[\\e[1;34m\\]\\w\\[\\e[m\\]'
     fi
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_git {
     type -t __git_ps1 &>/dev/null || return 0
-    __git_ps1 '\\[\\e[33m\\]%s\\[\\e[m\\]'
+    __git_ps1 ' on \\[\\e[33m\\]%s\\[\\e[m\\]'
 }
 
 function _akihyro_dotfiles_prompt_ps1_prompt {
