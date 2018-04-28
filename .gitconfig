@@ -9,7 +9,7 @@
     cl = clean -d --force
     co = checkout
     cp = cherry-pick
-    d = diff
+    d = diff --patch-with-stat
     f = fetch
     l = log --graph --name-status
     ls = ls-files --abbrev --stage
