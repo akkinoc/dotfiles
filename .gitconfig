@@ -24,7 +24,8 @@
     stl = stash list
     stp = stash pop
     sts = stash save --include-untracked
-    t = tag --list -n --sort=-taggerdate
+    t = tag
+    tl = tag --list -n
 [color]
     ui = auto
 [commit]
@@ -52,6 +53,8 @@
     default = current
 [rebase]
     autostash = true
+[tag]
+    sort = -taggerdate
 [user]
     email = akihyro@gmail.com
     name = Akihiro Kondo
