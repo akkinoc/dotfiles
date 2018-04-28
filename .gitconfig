@@ -17,6 +17,7 @@
     p = pull
     pu = push --set-upstream
     r = rebase
+    ri = rebase -i
     s = status
     sh = show
     st = stash
