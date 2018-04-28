@@ -19,9 +19,12 @@
     r = rebase
     s = status
     sh = show
+    st = stash
+    std = stash drop
+    sti = stash push --include-untracked
     stl = stash list
-    stp = stash pop
-    sts = stash save --include-untracked
+    sto = stash pop
+    sts = stash show
     t = tag
     tl = tag --list -n
 [color]
@@ -59,6 +62,8 @@
     abbreviatecommands = true
     autostash = true
     stat = true
+[stash]
+    showstat = true
 [status]
     branch = true
     short = true
