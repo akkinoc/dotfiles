@@ -33,10 +33,8 @@ function _akihyro_dotfiles_prompt_ps1_title {
 }
 
 function _akihyro_dotfiles_prompt_ps1_result {
-    local status="$(_akihyro_dotfiles_prompt_ps1_result_status)"
-    local time="$(_akihyro_dotfiles_prompt_ps1_result_time)"
-    printf '%s' "$status"
-    [[ -z "$time" ]] || printf ' took %s' "$time"
+    _akihyro_dotfiles_prompt_ps1_result_status
+    _akihyro_dotfiles_prompt_ps1_result_time
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status {
@@ -44,7 +42,7 @@ function _akihyro_dotfiles_prompt_ps1_result_status {
     printf ' [ '
     local index
     for index in ${!_akihyro_dotfiles_prompt_pipestatus[@]}; do
-        [[ $index -eq 0 ]] || printf ' | '
+        (( ! $index )) || printf ' | '
         _akihyro_dotfiles_prompt_ps1_result_status_by_code ${_akihyro_dotfiles_prompt_pipestatus[$index]}
     done
     printf ' ]'
@@ -52,8 +50,9 @@ function _akihyro_dotfiles_prompt_ps1_result_status {
 
 function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
     local code=$1
-    local signal="$([[ $code -le 128 ]] || kill -l $code 2>/dev/null)"
-    if [[ $code -eq 0 ]]; then
+    local signal=
+    (( $code <= 128 )) || signal="$(kill -l $(( $code - 128 )) 2>/dev/null)"
+    if (( ! $code )); then
         printf '\\[\\e[32m\\]✔ %d\\[\\e[m\\]' $code
     elif [[ -z "$signal" ]]; then
         printf '\\[\\e[31m\\]✘ %d\\[\\e[m\\]' $code
@@ -63,8 +62,8 @@ function _akihyro_dotfiles_prompt_ps1_result_status_by_code {
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_time {
-    [[ ${#_akihyro_dotfiles_prompt_started[@]} -gt 0 && ${#_akihyro_dotfiles_prompt_ended[@]} -gt 0 ]] || return 0
-    printf '\\[\\e[4m\\]%'\''d s\\[\\e[m\\] \\[\\e[2m\\](%s - %s)\\[\\e[m\\]' \
+    (( ${#_akihyro_dotfiles_prompt_started[@]} && ${#_akihyro_dotfiles_prompt_ended[@]} )) || return 0
+    printf ' took \\[\\e[4m\\]%'\''d s\\[\\e[m\\] \\[\\e[2m\\](%s - %s)\\[\\e[m\\]' \
         $(( ${_akihyro_dotfiles_prompt_ended[0]} - ${_akihyro_dotfiles_prompt_started[0]} )) \
         "${_akihyro_dotfiles_prompt_started[1]}" \
         "${_akihyro_dotfiles_prompt_ended[1]}"
