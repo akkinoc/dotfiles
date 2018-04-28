@@ -10,7 +10,6 @@
     co = checkout
     cp = cherry-pick
     d = diff
-    dl = diff --name-status
     f = fetch
     l = log --graph --name-status
     ls = ls-files --abbrev --stage
