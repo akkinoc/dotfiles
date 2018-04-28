@@ -18,7 +18,7 @@
     r = rebase
     ri = rebase --interactive
     s = status
-    sh = show
+    sh = show --patch-with-stat
     st = stash
     std = stash drop
     sti = stash push --include-untracked
