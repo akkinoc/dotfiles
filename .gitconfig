@@ -16,8 +16,8 @@
     m = merge --no-edit
     p = pull
     pu = push --set-upstream
-    rb = rebase
-    rbi = rebase --interactive
+    r = rebase
+    ri = rebase --interactive
     rs = reset
     rv = revert
     s = status
