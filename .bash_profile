@@ -1,6 +1,7 @@
 [[ ! -f ~/.bashrc ]] || . ~/.bashrc
 
 [[ ${BASH_VERSINFO[0]} -lt 4 ]] || shopt -s autocd
+shopt -s failglob
 [[ ${BASH_VERSINFO[0]} -lt 4 ]] || shopt -s globstar
 shopt -s histappend
 
