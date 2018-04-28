@@ -22,7 +22,6 @@ function _akihyro_dotfiles_prompt_command {
 
 function _akihyro_dotfiles_prompt_ps1 {
     _akihyro_dotfiles_prompt_ps1_title
-    printf '\\n'
     _akihyro_dotfiles_prompt_ps1_result
     _akihyro_dotfiles_prompt_ps1_location
     _akihyro_dotfiles_prompt_ps1_prompt
@@ -33,6 +32,7 @@ function _akihyro_dotfiles_prompt_ps1_title {
 }
 
 function _akihyro_dotfiles_prompt_ps1_result {
+    printf '\\n'
     _akihyro_dotfiles_prompt_ps1_result_status
     _akihyro_dotfiles_prompt_ps1_result_time
     printf '\\n'
