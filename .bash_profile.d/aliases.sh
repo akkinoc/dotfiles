@@ -34,7 +34,7 @@ alias zegrep="zegrep --color=auto"
 alias zfgrep="zfgrep --color=auto"
 
 alias g="git"
-! type -t __git_complete || __git_complete g __git_main
+! type -t __git_complete &>/dev/null || __git_complete g __git_main
 
 alias hist="history"
 
