@@ -27,6 +27,7 @@
 [color]
     ui = auto
 [commit]
+    cleanup = scissors
     verbose = true
 [core]
     attributesfile = ~/.gitattributes
