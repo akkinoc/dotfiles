@@ -21,11 +21,10 @@ function _akihyro_dotfiles_prompt_command {
 }
 
 function _akihyro_dotfiles_prompt_ps1 {
-    local title="$(_akihyro_dotfiles_prompt_ps1_title)"
-    local result="$(_akihyro_dotfiles_prompt_ps1_result)"
-    local location="$(_akihyro_dotfiles_prompt_ps1_location)"
-    local prompt="$(_akihyro_dotfiles_prompt_ps1_prompt)"
-    printf '%s\\n%s\\n%s\\n%s' "$title" "$result" "$location" "$prompt"
+    _akihyro_dotfiles_prompt_ps1_title
+    _akihyro_dotfiles_prompt_ps1_result
+    _akihyro_dotfiles_prompt_ps1_location
+    _akihyro_dotfiles_prompt_ps1_prompt
 }
 
 function _akihyro_dotfiles_prompt_ps1_title {
@@ -33,8 +32,10 @@ function _akihyro_dotfiles_prompt_ps1_title {
 }
 
 function _akihyro_dotfiles_prompt_ps1_result {
+    printf '\\n'
     _akihyro_dotfiles_prompt_ps1_result_status
     _akihyro_dotfiles_prompt_ps1_result_time
+    printf '\\n'
 }
 
 function _akihyro_dotfiles_prompt_ps1_result_status {
@@ -74,6 +75,7 @@ function _akihyro_dotfiles_prompt_ps1_location {
     _akihyro_dotfiles_prompt_ps1_location_host
     _akihyro_dotfiles_prompt_ps1_location_wd
     _akihyro_dotfiles_prompt_ps1_location_git
+    printf '\\n'
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_user {
