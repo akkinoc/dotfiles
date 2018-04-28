@@ -16,8 +16,8 @@
     m = merge --no-edit
     p = pull
     pu = push --set-upstream
-    r = rebase
-    ri = rebase --interactive
+    rb = rebase
+    rbi = rebase --interactive
     s = status
     sh = show
     st = stash
