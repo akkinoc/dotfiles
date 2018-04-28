@@ -2,8 +2,8 @@
     a = add
     aa = add --all
     ap = add --patch
-    b = branch --verbose
-    ba = branch --all --verbose
+    b = branch --verbose --verbose
+    ba = branch --all --verbose --verbose
     c = commit
     ca = commit --amend --no-edit
     co = checkout
