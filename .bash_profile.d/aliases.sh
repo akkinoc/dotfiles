@@ -33,6 +33,9 @@ alias zgrep="zgrep --color=auto"
 alias zegrep="zegrep --color=auto"
 alias zfgrep="zfgrep --color=auto"
 
+alias g="git"
+! type -t __git_complete || __git_complete g __git_main
+
 alias hist="history"
 
 if ls -d --color=auto &>/dev/null; then
