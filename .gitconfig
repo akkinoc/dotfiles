@@ -17,7 +17,7 @@
     p = pull
     pu = push --set-upstream
     r = rebase
-    s = status --branch --short
+    s = status
     sh = show
     stl = stash list
     stp = stash pop
@@ -58,6 +58,9 @@
     abbreviatecommands = true
     autostash = true
     stat = true
+[status]
+    branch = true
+    short = true
 [tag]
     sort = -version:refname
 [user]
