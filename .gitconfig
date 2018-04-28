@@ -55,6 +55,7 @@
     default = current
     followtags = true
 [rebase]
+    abbreviatecommands = true
     autostash = true
     stat = true
 [tag]
