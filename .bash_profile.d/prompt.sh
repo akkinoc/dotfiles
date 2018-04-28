@@ -5,7 +5,7 @@ _akihyro_dotfiles_prompt_ended=()
 
 function _akihyro_dotfiles_prompt_trap {
     if (( ! ${#_akihyro_dotfiles_prompt_started[@]} || ${#_akihyro_dotfiles_prompt_ended[@]} )); then
-        IFS=$'\t' read -r -a _akihyro_dotfiles_prompt_started < <(date '+%s%t%H:%M:%S' 2>/dev/null)
+        IFS=$'\t' read -r -a _akihyro_dotfiles_prompt_started < <(date '+%s%t%H:%M:%S')
         _akihyro_dotfiles_prompt_ended=()
     fi
 }
@@ -15,7 +15,7 @@ function _akihyro_dotfiles_prompt_command {
     _akihyro_dotfiles_prompt_status=$status
     _akihyro_dotfiles_prompt_pipestatus=(${pipestatus[@]})
     if (( ${#_akihyro_dotfiles_prompt_started[@]} && ! ${#_akihyro_dotfiles_prompt_ended[@]} )); then
-        IFS=$'\t' read -r -a _akihyro_dotfiles_prompt_ended < <(date '+%s%t%H:%M:%S' 2>/dev/null)
+        IFS=$'\t' read -r -a _akihyro_dotfiles_prompt_ended < <(date '+%s%t%H:%M:%S')
     fi
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
 }
