@@ -61,6 +61,7 @@
 [status]
     branch = true
     short = true
+    showuntrackedfiles = all
 [tag]
     sort = -version:refname
 [user]
