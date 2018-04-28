@@ -11,10 +11,8 @@
     d = diff
     dl = diff --name-status
     f = fetch
-    l = log --name-status
-    lg = log --graph --date=short --pretty=line
-    ll = log --date=short --pretty=line
-    ls = ls-files
+    l = log --graph --name-status
+    ls = ls-files --abbrev --stage
     m = merge --no-ff
     p = pull
     pu = push --set-upstream
@@ -47,8 +45,6 @@
     date = iso
     decorate = short
     follow = true
-[pretty]
-    line = %C(yellow)%h%Creset %ad %s %C(green)<%an>%Creset%C(cyan)%d%Creset
 [pull]
     ff = only
 [push]
