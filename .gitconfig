@@ -4,6 +4,7 @@
     ap = add --patch
     b = branch --verbose --verbose
     ba = branch --all --verbose --verbose
+    br = browse
     c = commit
     ca = commit --amend --no-edit
     cl = clean -d --force
