@@ -27,7 +27,9 @@ alias -- -="cd -"
 alias @="_akihyro_dotfiles_aliases_cd_to_finder"
 
 alias g="git"
-! type -t __git_complete &>/dev/null || __git_complete g __git_main
+if type -t __git_complete &>/dev/null; then
+    __git_complete g __git_main
+fi
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
