@@ -48,11 +48,9 @@ if ls -d --color=auto &>/dev/null; then
 elif ls -Gd &>/dev/null; then
     alias ls="ls -G"
 fi
+alias gls="gls --color=auto"
 alias l="ls -l"
 alias la="ls -al"
-alias gls="gls --color=auto"
-alias gl="gls -l"
-alias gla="gls -al"
 
 alias o="_akihyro_dotfiles_aliases_open"
 
