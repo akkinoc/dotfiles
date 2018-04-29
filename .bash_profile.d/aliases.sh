@@ -26,7 +26,11 @@ alias .....="cd ../../../.."
 alias -- -="cd -"
 alias @="_akihyro_dotfiles_aliases_cd_to_finder"
 
-alias g="git"
+if type -t hub &>/dev/null; then
+    alias g="hub"
+else
+    alias g="git"
+fi
 if type -t __git_complete &>/dev/null; then
     __git_complete g __git_main
 fi
