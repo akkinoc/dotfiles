@@ -34,6 +34,7 @@ trap report_result EXIT
 link_dotfile .Brewfile
 link_dotfile .bash_profile
 link_dotfile .bash_profile.d
+link_dotfile .dotfiles/bin
 link_dotfile .gitattributes
 link_dotfile .gitconfig
 link_dotfile .gitignore

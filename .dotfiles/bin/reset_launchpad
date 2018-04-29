@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -eu -o pipefail
+
+function report_result {
+    local code=$?
+    if (( ! $code )); then
+        printf '\e[32mThe LaunchPad resetting succeeded!\e[m\n'
+    else
+        printf '\e[31mThe LaunchPad resetting failed...\e[m\n'
+    fi
+}
+
+trap report_result EXIT
+defaults write com.apple.dock ResetLaunchPad -bool true
+killall Dock
