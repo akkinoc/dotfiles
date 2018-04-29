@@ -15,7 +15,7 @@ brew "jq"
 brew "kotlin"
 brew "maven"
 brew "maven-completion"
-brew "node@8", link: true
+brew "node"
 brew "peco"
 brew "perl"
 brew "ruby"
