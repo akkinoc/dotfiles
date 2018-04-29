@@ -35,6 +35,9 @@ alias fgrep="fgrep --color=auto"
 alias zgrep="zgrep --color=auto"
 alias zegrep="zegrep --color=auto"
 alias zfgrep="zfgrep --color=auto"
+alias ggrep="ggrep --color=auto"
+alias gegrep="gegrep --color=auto"
+alias gfgrep="gfgrep --color=auto"
 
 alias hist="history"
 
