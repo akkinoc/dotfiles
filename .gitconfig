@@ -33,6 +33,7 @@
     ui = auto
 [commit]
     cleanup = scissors
+    gpgsign = true
     verbose = true
 [core]
     attributesfile = ~/.gitattributes
@@ -72,6 +73,7 @@
     short = true
     showuntrackedfiles = all
 [tag]
+    forcesignannotated = true
     sort = -version:refname
 [user]
     email = akihyro@gmail.com
