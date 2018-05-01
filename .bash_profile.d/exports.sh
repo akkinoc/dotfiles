@@ -1,3 +1,5 @@
+export GPG_TTY="$(tty)"
+
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
