@@ -52,6 +52,7 @@
     date = iso
     decorate = short
     follow = true
+    showsignature = true
 [merge]
     ff = false
     stat = true
