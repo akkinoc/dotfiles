@@ -41,6 +41,11 @@ fi
 if type -t gfgrep &>/dev/null; then
     alias gfgrep='gfgrep --color=auto'
 fi
+if type -t ggrep &>/dev/null; then
+    alias ge='ggrep -EInr --exclude-dir=.git'
+elif type -t grep &>/dev/null; then
+    alias ge='grep -EInr --exclude-dir=.git'
+fi
 
 alias hist='history'
 
