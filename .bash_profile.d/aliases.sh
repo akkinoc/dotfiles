@@ -23,15 +23,6 @@ fi
 if type -t fgrep &>/dev/null; then
     alias fgrep='fgrep --color=auto'
 fi
-if type -t zgrep &>/dev/null; then
-    alias zgrep='zgrep --color=auto'
-fi
-if type -t zegrep &>/dev/null; then
-    alias zegrep='zegrep --color=auto'
-fi
-if type -t zfgrep &>/dev/null; then
-    alias zfgrep='zfgrep --color=auto'
-fi
 if type -t ggrep &>/dev/null; then
     alias ggrep='ggrep --color=auto'
 fi
