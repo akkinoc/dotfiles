@@ -12,18 +12,18 @@ function ensure_dir {
     [[ -z "$mode" ]] || chmod "$mode" "$dir"
 }
 
-function link_dotfile {
+function link_item {
     local target="$1" mode="${2:-}"
-    local src_file="$DOTFILES_HOME/$target"
-    local dest_file="$HOME/$target"
-    local hist_file="$DOTFILES_HIST_DIR/$target"
-    printf 'Linking... %s => %s\n' "$src_file" "$dest_file"
-    if [[ -f "$dest_file" || -d "$dest_file" || -h "$dest_file" ]]; then
-        mkdir -p "$(dirname "$hist_file")"
-        mv "$dest_file" "$hist_file"
+    local src_item="$DOTFILES_HOME/$target"
+    local dest_item="$HOME/$target"
+    local hist_item="$DOTFILES_HIST_DIR/$target"
+    printf 'Linking... %s => %s\n' "$src_item" "$dest_item"
+    if [[ -f "$dest_item" || -d "$dest_item" || -h "$dest_item" ]]; then
+        mkdir -p "$(dirname "$hist_item")"
+        mv "$dest_item" "$hist_item"
     fi
-    ln -s "$src_file" "$dest_file"
-    [[ -z "$mode" ]] || chmod "$mode" "$dest_file"
+    ln -s "$src_item" "$dest_item"
+    [[ -z "$mode" ]] || chmod "$mode" "$dest_item"
 }
 
 function report_result {
@@ -37,13 +37,13 @@ function report_result {
 
 trap report_result EXIT
 
-link_dotfile .Brewfile
-link_dotfile .bash_completion
-link_dotfile .bash_profile
-link_dotfile .bash_profile.d
-link_dotfile .gitattributes
-link_dotfile .gitconfig
-link_dotfile .gitignore
+link_item .Brewfile
+link_item .bash_completion
+link_item .bash_profile
+link_item .bash_profile.d
+link_item .gitattributes
+link_item .gitconfig
+link_item .gitignore
 
 ensure_dir .dotfiles
-link_dotfile .dotfiles/bin
+link_item .dotfiles/bin
