@@ -57,8 +57,13 @@ fi
 if type -t gls &>/dev/null; then
     alias gls='gls --color=auto'
 fi
-alias l='ls -l'
-alias la='ls -al'
+if type -t gls &>/dev/null; then
+    alias l='gls -l'
+    alias la='gls -al'
+else
+    alias l='ls -l'
+    alias la='ls -al'
+fi
 
 alias relogin='exec -l "$SHELL"'
 
