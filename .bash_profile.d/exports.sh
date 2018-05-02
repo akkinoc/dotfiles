@@ -2,8 +2,17 @@ if type -t gpg-agent tty &>/dev/null; then
     export GPG_TTY="$(tty)"
 fi
 
-export GREP_COLOR="1;31"
-export GREP_COLORS="ms=1;31:mc=1;31:fn=35:ln=32:bn=32:se=36"
+if
+    type -t grep &>/dev/null ||
+    type -t egrep &>/dev/null ||
+    type -t fgrep &>/dev/null ||
+    type -t ggrep &>/dev/null ||
+    type -t gegrep &>/dev/null ||
+    type -t gfgrep &>/dev/null
+then
+    export GREP_COLOR="1;31"
+    export GREP_COLORS="ms=1;31:mc=1;31:fn=35:ln=32:bn=32:se=36"
+fi
 
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
