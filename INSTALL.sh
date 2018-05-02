@@ -4,7 +4,7 @@ set -eu -o pipefail
 
 DOTFILES_HOME="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES_DATA_DIR="$HOME/.dotfiles"
-DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history/$(date '+%Y%m%dT%H%M%S')"
+DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history/$(date "+%Y%m%dT%H%M%S")"
 
 function ensure_dir {
     local dir="$1" mode="${2:-}"
