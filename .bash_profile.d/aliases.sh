@@ -31,9 +31,6 @@ if type -t hub &>/dev/null; then
 else
     alias g="git"
 fi
-if type -t __git_complete &>/dev/null; then
-    __git_complete g __git_main
-fi
 
 alias grep="grep --color=auto"
 alias egrep="egrep --color=auto"
