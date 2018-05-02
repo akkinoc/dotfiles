@@ -12,6 +12,7 @@
     cp = cherry-pick
     d = diff --patch-with-stat
     f = fetch
+    ge = grep -I
     l = log --graph --name-status
     ls = ls-files --abbrev --stage
     m = merge --no-edit
@@ -46,6 +47,9 @@
     prunetags = true
 [format]
     pretty = fuller
+[grep]
+    lineNumber = true
+    patternType = extended
 [interactive]
     singlekey = true
 [log]
