@@ -12,5 +12,6 @@ function report_result {
 }
 
 trap report_result EXIT
+
 defaults write com.apple.dock ResetLaunchPad -bool true
 killall Dock
