@@ -32,6 +32,11 @@
     u = push -u
 [color]
     ui = auto
+[color "grep"]
+    filename = magenta
+    linenumber = green
+    match = bold red
+    separator = cyan
 [commit]
     cleanup = scissors
     gpgsign = true
