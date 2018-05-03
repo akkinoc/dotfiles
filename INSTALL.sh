@@ -12,29 +12,32 @@ function ensure_dir {
     [[ -z "$mode" ]] || chmod "$mode" "$dir"
 }
 
-function link_item {
+function install_item {
     local target="$1" mode="${2:-}"
-    local src_item="$(resolve_linking_src_item "$DOTFILES_HOME/$target")"
+    local src_item="$(resolve_conditional_src_item "$DOTFILES_HOME/$target")"
     local dest_item="$HOME/$target"
     local hist_item="$DOTFILES_HIST_DIR/$target"
-    [[ -n "$src_item" ]] || return 0
-    printf 'Linking... %s => %s\n' "$src_item" "$dest_item"
-    if [[ -f "$dest_item" || -d "$dest_item" || -h "$dest_item" ]]; then
+    printf '[\e[33m%s\e[m]\n' "$target"
+    if [[ -e "$dest_item" || -h "$dest_item" ]]; then
+        printf 'Saving... \e[36m%s\e[m => \e[34m%s\e[m\n' "$dest_item" "$hist_item"
         mkdir -p "$(dirname "$hist_item")"
         mv "$dest_item" "$hist_item"
     fi
-    ln -s "$src_item" "$dest_item"
-    [[ -z "$mode" ]] || chmod "$mode" "$dest_item"
+    if [[ -e "$src_item" ]]; then
+        printf 'Linking... \e[35m%s\e[m => \e[36m%s\e[m\n' "$src_item" "$dest_item"
+        ln -s "$src_item" "$dest_item"
+        [[ -z "$mode" ]] || chmod "$mode" "$dest_item"
+    else
+        printf 'Skipping...\n'
+    fi
 }
 
-function resolve_linking_src_item {
+function resolve_conditional_src_item {
     local item="$1"
     local dir="$(dirname "$item")"
     local name="$(basename "$item")"
     if [[ -e "$dir/[macos]$name" && "$OSTYPE" == "darwin"* ]]; then
         item="$dir/[macos]$name"
-    elif [[ ! -e "$item" ]]; then
-        item=
     fi
     printf '%s' "$item"
 }
@@ -50,13 +53,13 @@ function report_results {
 
 trap report_results EXIT
 
-link_item .Brewfile
-link_item .bash_completion
-link_item .bash_profile
-link_item .bash_profile.d
-link_item .gitattributes
-link_item .gitconfig
-link_item .gitignore
+install_item .Brewfile
+install_item .bash_completion
+install_item .bash_profile
+install_item .bash_profile.d
+install_item .gitattributes
+install_item .gitconfig
+install_item .gitignore
 
 ensure_dir .dotfiles
-link_item .dotfiles/bin
+install_item .dotfiles/bin
