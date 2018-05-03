@@ -14,9 +14,10 @@ function ensure_dir {
 
 function link_item {
     local target="$1" mode="${2:-}"
-    local src_item="$DOTFILES_HOME/$target"
+    local src_item="$(resolve_linking_src_item "$DOTFILES_HOME/$target")"
     local dest_item="$HOME/$target"
     local hist_item="$DOTFILES_HIST_DIR/$target"
+    [[ -n "$src_item" ]] || return 0
     printf 'Linking... %s => %s\n' "$src_item" "$dest_item"
     if [[ -f "$dest_item" || -d "$dest_item" || -h "$dest_item" ]]; then
         mkdir -p "$(dirname "$hist_item")"
@@ -24,6 +25,18 @@ function link_item {
     fi
     ln -s "$src_item" "$dest_item"
     [[ -z "$mode" ]] || chmod "$mode" "$dest_item"
+}
+
+function resolve_linking_src_item {
+    local item="$1"
+    local dir="$(dirname "$item")"
+    local name="$(basename "$item")"
+    if [[ -e "$dir/[macos]$name" && "$OSTYPE" == "darwin"* ]]; then
+        item="$dir/[macos]$name"
+    elif [[ ! -e "$item" ]]; then
+        item=
+    fi
+    printf '%s' "$item"
 }
 
 function report_results {
