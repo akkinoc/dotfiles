@@ -14,7 +14,7 @@ function ensure_dir {
 
 function install_item {
     local target="$1" mode="${2:-}"
-    local src_item="$(resolve_conditional_src_item "$DOTFILES_HOME/$target")"
+    local src_item="$(resolve_env_src_item "$DOTFILES_HOME/$target")"
     local dest_item="$HOME/$target"
     local hist_item="$DOTFILES_HIST_DIR/$target"
     printf '[\e[33m%s\e[m]\n' "$target"
@@ -32,7 +32,7 @@ function install_item {
     fi
 }
 
-function resolve_conditional_src_item {
+function resolve_env_src_item {
     local item="$1"
     local dir="$(dirname "$item")"
     local name="$(basename "$item")"
