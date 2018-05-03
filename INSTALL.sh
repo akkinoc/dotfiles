@@ -26,7 +26,7 @@ function link_item {
     [[ -z "$mode" ]] || chmod "$mode" "$dest_item"
 }
 
-function report_result {
+function report_results {
     local code=$?
     if (( ! $code )); then
         printf '\e[32mThe dotfiles installation succeeded!\e[m\n'
@@ -35,7 +35,7 @@ function report_result {
     fi
 }
 
-trap report_result EXIT
+trap report_results EXIT
 
 link_item .Brewfile
 link_item .bash_completion

@@ -2,7 +2,7 @@
 
 set -eu -o pipefail
 
-function report_result {
+function report_results {
     local code=$?
     if (( ! $code )); then
         printf '\e[32mThe LaunchPad resetting succeeded!\e[m\n'
@@ -11,7 +11,7 @@ function report_result {
     fi
 }
 
-trap report_result EXIT
+trap report_results EXIT
 
 defaults write com.apple.dock ResetLaunchPad -bool true
 killall Dock
