@@ -56,6 +56,10 @@ else
     alias la='ls -al'
 fi
 
+if type -t open-args-or-wd &>/dev/null; then
+    alias o='open-args-or-wd'
+fi
+
 alias relogin='exec -l "$SHELL"'
 
 alias rmf='rm -fr'
