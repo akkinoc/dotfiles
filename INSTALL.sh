@@ -63,3 +63,7 @@ install_item .gitignore
 
 ensure_dir .dotfiles
 install_item .dotfiles/bin
+
+ensure_dir .gnupg go-rwx
+install_item .gnupg/gpg.conf
+install_item .gnupg/gpg-agent.conf
