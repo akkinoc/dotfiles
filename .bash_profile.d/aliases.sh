@@ -4,8 +4,8 @@ alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 alias -- -='cd -'
-if type -t osascript &>/dev/null; then
-    alias @='cd "$(osascript -e "tell app \"Finder\" to POSIX path of (insertion location as alias)")"'
+if type -t pwd-ext &>/dev/null; then
+    alias @='cd "$(pwd-ext)"'
 fi
 
 if type -t hub &>/dev/null; then

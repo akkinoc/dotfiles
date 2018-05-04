@@ -1,0 +1,3 @@
+#!/usr/bin/osascript
+
+tell app "Finder" to POSIX path of (insertion location as alias)
