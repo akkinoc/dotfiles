@@ -7,7 +7,8 @@ DOTFILES_DATA_DIR="$HOME/.dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history/$(date "+%Y%m%dT%H%M%S")"
 
 function ensure_dir {
-    local dir="$1" mode="${2:-}"
+    local target="$1" mode="${2:-}"
+    local dir="$HOME/$target"
     mkdir -p "$dir"
     [[ -z "$mode" ]] || chmod "$mode" "$dir"
 }
