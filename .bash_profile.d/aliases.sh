@@ -8,6 +8,10 @@ if type -t pwd-ext &>/dev/null; then
     alias @='cd "$(pwd-ext)"'
 fi
 
+if type -t code &>/dev/null; then
+    alias c='code'
+fi
+
 if type -t hub &>/dev/null; then
     alias g='hub'
 elif type -t git &>/dev/null; then
