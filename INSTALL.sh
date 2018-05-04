@@ -18,7 +18,7 @@ function install_item {
     local dest_item="$HOME/$target"
     local hist_item="$DOTFILES_HIST_DIR/$target"
     printf '[\e[33m%s\e[m]\n' "$target"
-    if [[ -e "$dest_item" || -h "$dest_item" ]]; then
+    if [[ -e "$dest_item" || -L "$dest_item" ]]; then
         printf 'Saving... \e[36m%s\e[m => \e[34m%s\e[m\n' "$dest_item" "$hist_item"
         mkdir -p "$(dirname "$hist_item")"
         mv "$dest_item" "$hist_item"
