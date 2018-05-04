@@ -1,5 +1,4 @@
 shopt -s extglob
-shopt -s failglob
 shopt -s histappend
 if (( ${BASH_VERSINFO[0]} >= 4 )); then
     shopt -s autocd
