@@ -9,7 +9,9 @@ if type -t pwd-ext &>/dev/null; then
 fi
 
 if type -t code &>/dev/null; then
-    alias c='code'
+    alias e='code'
+else
+    alias e='${EDITOR:-vi}'
 fi
 
 if type -t hub &>/dev/null; then
