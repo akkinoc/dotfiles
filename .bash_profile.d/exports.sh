@@ -1,3 +1,9 @@
+if type -t vim &>/dev/null; then
+    export EDITOR="vim"
+elif type -t vi &>/dev/null; then
+    export EDITOR="vi"
+fi
+
 if type -t gpg-agent tty &>/dev/null; then
     export GPG_TTY="$(tty)"
 fi
