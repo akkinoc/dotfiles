@@ -46,7 +46,7 @@ function resolve_env_item {
 function shorten_item {
     local item="$1"
     if [[ "$item" == "$HOME/"* ]]; then
-        item="~/${item##$HOME/}"
+        item="~/${item#"$HOME/"}"
     fi
     printf '%s' "$item"
 }
