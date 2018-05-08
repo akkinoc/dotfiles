@@ -19,7 +19,7 @@ function install_item {
         mv "$dest_item" "$hist_item"
     fi
     printf '[\e[33m%s\e[m] Linking... \e[35m%s\e[m => \e[36m%s\e[m\n' \
-            "$target" "$(shorten_item "$src_item")" "$(shorten_item "$dest_item")"
+        "$target" "$(shorten_item "$src_item")" "$(shorten_item "$dest_item")"
     mkdir -p "$(dirname "$dest_item")"
     ln -s "$src_item" "$dest_item"
 }
