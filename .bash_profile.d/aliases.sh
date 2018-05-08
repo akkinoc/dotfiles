@@ -10,8 +10,8 @@ fi
 
 if type -t code &>/dev/null; then
     alias e='code'
-else
-    alias e='${EDITOR:-vi}'
+elif [[ -n "$EDITOR" ]]; then
+    alias e='$EDITOR'
 fi
 
 if type -t hub &>/dev/null; then
