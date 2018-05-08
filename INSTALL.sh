@@ -80,5 +80,8 @@ install_item .gitconfig
 install_item .gitignore
 install_item .gnupg/gpg.conf
 install_item .gnupg/gpg-agent.conf
+install_item .ssh/config
+install_item .ssh/github.hosts
 
 polish_item_mode .gnupg go-rwx
+polish_item_mode .ssh go-rwx
