@@ -1,4 +1,150 @@
 {
     "Profiles": [
+        {
+            "Guid": "7096D1B9-8B33-423A-80C7-59CA99F030FC",
+            "//": "========== General ==========",
+            "Name": "Akihiro: Default",
+            "//": "========== Colors ==========",
+            "Foreground Color": {
+                "Red Component": 0.72378784418106079,
+                "Green Component": 0.73772752285003662,
+                "Blue Component": 0.72799122333526611
+            },
+            "Background Color": {
+                "Red Component": 0.1205105185508728,
+                "Green Component": 0.12050691246986389,
+                "Blue Component": 0.12050896137952805
+            },
+            "Bold Color": {
+                "Red Component": 0.99575066566467285,
+                "Green Component": 1,
+                "Blue Component": 0.69725716114044189
+            },
+            "Selection Color": {
+                "Red Component": 0.16332042217254639,
+                "Green Component": 0.17529888451099396,
+                "Blue Component": 0.19518557190895081
+            },
+            "Selected Text Color": {
+                "Red Component": 0.72378784418106079,
+                "Green Component": 0.73772752285003662,
+                "Blue Component": 0.72799122333526611
+            },
+            "Cursor Color": {
+                "Red Component": 0.9727436900138855,
+                "Green Component": 0.24263888597488403,
+                "Blue Component": 0.098565541207790375
+            },
+            "Cursor Text Color": {
+                "Red Component": 0.089511208236217499,
+                "Green Component": 0.089508526027202606,
+                "Blue Component": 0.089510045945644379
+            },
+            "Ansi 0 Color": {
+                "Red Component": 0.22909823060035706,
+                "Green Component": 0.23855249583721161,
+                "Blue Component": 0.26370203495025635
+            },
+            "Ansi 1 Color": {
+                "Red Component": 0.74655872583389282,
+                "Green Component": 0.24612078070640564,
+                "Blue Component": 0.28296563029289246
+            },
+            "Ansi 2 Color": {
+                "Red Component": 0.52787607908248901,
+                "Green Component": 0.60448122024536133,
+                "Blue Component": 0.23052853345870972
+            },
+            "Ansi 3 Color": {
+                "Red Component": 0.77161651849746704,
+                "Green Component": 0.65007597208023071,
+                "Blue Component": 0.2083030492067337
+            },
+            "Ansi 4 Color": {
+                "Red Component": 0.3079511821269989,
+                "Green Component": 0.46348986029624939,
+                "Blue Component": 0.63280379772186279
+            },
+            "Ansi 5 Color": {
+                "Red Component": 0.5216478705406189,
+                "Green Component": 0.36032408475875854,
+                "Blue Component": 0.5548633337020874
+            },
+            "Ansi 6 Color": {
+                "Red Component": 0.34018850326538086,
+                "Green Component": 0.56019961833953857,
+                "Blue Component": 0.64178985357284546
+            },
+            "Ansi 7 Color": {
+                "Red Component": 0.72378784418106079,
+                "Green Component": 0.73772752285003662,
+                "Blue Component": 0.72799122333526611
+            },
+            "Ansi 8 Color": {
+                "Red Component": 0.53400516510009766,
+                "Green Component": 0.53847712278366089,
+                "Blue Component": 0.52966117858886719
+            },
+            "Ansi 9 Color": {
+                "Red Component": 0.98592376708984375,
+                "Green Component": 0,
+                "Blue Component": 0.11970168352127075
+            },
+            "Ansi 10 Color": {
+                "Red Component": 0.058273889124393463,
+                "Green Component": 0.44594758749008179,
+                "Blue Component": 0.18262514472007751
+            },
+            "Ansi 11 Color": {
+                "Red Component": 0.76750457286834717,
+                "Green Component": 0.44065150618553162,
+                "Blue Component": 0.20107564330101013
+            },
+            "Ansi 12 Color": {
+                "Red Component": 0.093434453010559082,
+                "Green Component": 0.42590731382369995,
+                "Blue Component": 0.89109110832214355
+            },
+            "Ansi 13 Color": {
+                "Red Component": 0.98593467473983765,
+                "Green Component": 0,
+                "Blue Component": 0.40404337644577026
+            },
+            "Ansi 14 Color": {
+                "Red Component": 0.1796993762254715,
+                "Green Component": 0.43889713287353516,
+                "Blue Component": 0.42635926604270935
+            },
+            "Ansi 15 Color": {
+                "Red Component": 0.99088609218597412,
+                "Green Component": 1,
+                "Blue Component": 0.72441869974136353
+            },
+            "//": "========== Text ==========",
+            "Cursor Type": 1,
+            "Blinking Cursor": true,
+            "Use Bold Font": true,
+            "Use Bright Bold": true,
+            "Blink Allowed" : true,
+            "Use Italic Font": true,
+            "Ambiguous Double Width": true,
+            "Normal Font": "RictyDiminishedDiscord-Regular 12",
+            "//": "========== Window ==========",
+            "Transparency": 0.5,
+            "Columns": 120,
+            "Rows": 30,
+            "//": "========== Terminal ==========",
+            "Scrollback Lines": 100000,
+            "//": "========== Session ==========",
+            "Prompt Before Closing 2": 2,
+            "Jobs to Ignore": [
+                "rlogin",
+                "slogin",
+                "ssh",
+                "telnet"
+            ],
+            "Automatically Log": true,
+            "Log Directory": "\/Users\/akihiro\/.iterm\/logs"
+        }
     ]
 }
