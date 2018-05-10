@@ -70,18 +70,18 @@ trap report_results EXIT
 
 initialize_data
 
-install_item .Brewfile
-install_item .bash_completion
-install_item .bash_profile
-install_item .bash_profile.d
-install_item .dotfiles/bin
-install_item .gitattributes
-install_item .gitconfig
-install_item .gitignore
-install_item .gnupg/gpg.conf
-install_item .gnupg/gpg-agent.conf
-install_item .ssh/config
-install_item .ssh/github.hosts
+install_item ".Brewfile"
+install_item ".bash_completion"
+install_item ".bash_profile"
+install_item ".bash_profile.d"
+install_item ".dotfiles/bin"
+install_item ".gitattributes"
+install_item ".gitconfig"
+install_item ".gitignore"
+install_item ".gnupg/gpg.conf"
+install_item ".gnupg/gpg-agent.conf"
+install_item ".ssh/config"
+install_item ".ssh/github.hosts"
 
-polish_item_mode .gnupg go-rwx
-polish_item_mode .ssh go-rwx
+polish_item_mode ".gnupg" go-rwx
+polish_item_mode ".ssh" go-rwx
