@@ -45,6 +45,7 @@
     attributesfile = ~/.gitattributes
     autocrlf = false
     excludesfile = ~/.gitignore
+    quotepath = false
 [diff]
     colormoved = dimmed_zebra
 [fetch]
