@@ -147,6 +147,16 @@
             "Log Directory": "/Users/akihiro/Library/Logs/iTerm2/Sessions",
             "//": "========== Keys ==========",
             "Keyboard Map": {
+                "0xf702-0x280000": {
+                    "//": "Option + Left: backward-word",
+                    "Action": 10,
+                    "Text": "b"
+                },
+                "0xf703-0x280000": {
+                    "//": "Option + Right: forward-word",
+                    "Action": 10,
+                    "Text": "f"
+                }
             }
         }
     ]
