@@ -156,6 +156,16 @@
                     "//": "Option + Right: forward-word",
                     "Action": 10,
                     "Text": "f"
+                },
+                "0x7f-0x80000": {
+                    "//": "Option + Delete: backward-kill-word",
+                    "Action": 11,
+                    "Text": "0x1b 0x7f"
+                },
+                "0xf728-0x80000": {
+                    "//": "Option + Forward Delete: kill-word",
+                    "Action": 10,
+                    "Text": "d"
                 }
             }
         }
