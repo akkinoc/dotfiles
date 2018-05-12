@@ -144,7 +144,10 @@
                 "telnet"
             ],
             "Automatically Log": true,
-            "Log Directory": "/Users/akihiro/Library/Logs/iTerm2/Sessions"
+            "Log Directory": "/Users/akihiro/Library/Logs/iTerm2/Sessions",
+            "//": "========== Keys ==========",
+            "Keyboard Map": {
+            }
         }
     ]
 }
