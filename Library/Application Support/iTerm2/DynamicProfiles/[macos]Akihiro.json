@@ -144,7 +144,7 @@
                 "telnet"
             ],
             "Automatically Log": true,
-            "Log Directory": "\/Users\/akihiro\/.iterm\/logs"
+            "Log Directory": "/Users/akihiro/Library/Logs/iTerm2/Sessions"
         }
     ]
 }
