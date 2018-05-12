@@ -12,7 +12,7 @@ function initialize_data {
     mkdir -p -m go-rwx "$DOTFILES_DATA_DIR" "$DOTFILES_HIST_DIR" "$DOTFILES_SAVE_DIR"
 }
 
-function install_item {
+function link_item {
     local target="$1"
     local src_item="$(resolve_env_item "$DOTFILES_HOME/$target")"
     local dest_item="$HOME/$target"
@@ -70,19 +70,24 @@ trap report_results EXIT
 
 initialize_data
 
-install_item ".Brewfile"
-install_item ".bash_completion"
-install_item ".bash_profile"
-install_item ".bash_profile.d"
-install_item ".dotfiles/bin"
-install_item ".gitattributes"
-install_item ".gitconfig"
-install_item ".gitignore"
-install_item ".gnupg/gpg.conf"
-install_item ".gnupg/gpg-agent.conf"
-install_item ".ssh/config"
-install_item ".ssh/github.hosts"
-install_item "Library/Application Support/iTerm2/DynamicProfiles/Akihiro.json"
+link_item ".bash_completion"
+link_item ".bash_profile"
+link_item ".bash_profile.d"
 
+link_item ".dotfiles/bin"
+
+link_item ".gitattributes"
+link_item ".gitconfig"
+link_item ".gitignore"
+
+link_item ".gnupg/gpg.conf"
+link_item ".gnupg/gpg-agent.conf"
 polish_item_mode ".gnupg" go-rwx
+
+link_item ".ssh/config"
+link_item ".ssh/github.hosts"
 polish_item_mode ".ssh" go-rwx
+
+link_item ".Brewfile"
+
+link_item "Library/Application Support/iTerm2/DynamicProfiles/Akihiro.json"
