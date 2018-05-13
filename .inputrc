@@ -1,1 +1,4 @@
 set completion-ignore-case on
+set completion-query-items 100
+set page-completions off
+set show-all-if-ambiguous on
