@@ -148,32 +148,32 @@
             "//": "========== Keys ==========",
             "Keyboard Map": {
                 "0xf702-0x300000" : {
-                    "//": "Command + Left: beginning-of-line",
+                    "//": "Command + Left: beginning-of-line (C-a)",
                     "Action" : 11,
                     "Text": "0x1"
                 },
                 "0xf703-0x300000" : {
-                    "//": "Command + Right: end-of-line",
+                    "//": "Command + Right: end-of-line (C-e)",
                     "Action" : 11,
                     "Text": "0x5"
                 },
                 "0xf702-0x280000": {
-                    "//": "Option + Left: backward-word",
+                    "//": "Option + Left: backward-word (M-b)",
                     "Action": 10,
                     "Text": "b"
                 },
                 "0xf703-0x280000": {
-                    "//": "Option + Right: forward-word",
+                    "//": "Option + Right: forward-word (M-f)",
                     "Action": 10,
                     "Text": "f"
                 },
                 "0x7f-0x80000": {
-                    "//": "Option + Delete: backward-kill-word",
+                    "//": "Option + Delete: backward-kill-word (M-Rubout)",
                     "Action": 11,
                     "Text": "0x1b 0x7f"
                 },
                 "0xf728-0x80000": {
-                    "//": "Option + Forward Delete: kill-word",
+                    "//": "Option + Forward Delete: kill-word (M-d)",
                     "Action": 10,
                     "Text": "d"
                 }
