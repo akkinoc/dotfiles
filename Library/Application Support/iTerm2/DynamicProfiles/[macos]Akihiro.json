@@ -125,7 +125,7 @@
             "Blinking Cursor": true,
             "Use Bold Font": true,
             "Use Bright Bold": true,
-            "Blink Allowed" : true,
+            "Blink Allowed": true,
             "Use Italic Font": true,
             "Ambiguous Double Width": true,
             "Normal Font": "RictyDiminishedDiscord-Regular 12",
@@ -147,14 +147,14 @@
             "Log Directory": "/Users/akihiro/Library/Logs/iTerm2/Sessions",
             "//": "========== Keys ==========",
             "Keyboard Map": {
-                "0xf702-0x300000" : {
+                "0xf702-0x300000": {
                     "//": "Command + Left: beginning-of-line (C-a)",
-                    "Action" : 11,
+                    "Action": 11,
                     "Text": "0x1"
                 },
-                "0xf703-0x300000" : {
+                "0xf703-0x300000": {
                     "//": "Command + Right: end-of-line (C-e)",
-                    "Action" : 11,
+                    "Action": 11,
                     "Text": "0x5"
                 },
                 "0xf702-0x280000": {
@@ -167,12 +167,12 @@
                     "Action": 10,
                     "Text": "f"
                 },
-                "0x7f-0x100000" : {
+                "0x7f-0x100000": {
                     "//": "Command + Delete: backward-kill-line (C-x Rubout)",
                     "Action": 11,
                     "Text": "0x18 0x7f"
                 },
-                "0xf728-0x100000" : {
+                "0xf728-0x100000": {
                     "//": "Command + Forward Delete: kill-line (C-k)",
                     "Action": 11,
                     "Text": "0xb"
