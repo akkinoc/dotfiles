@@ -167,6 +167,16 @@
                     "Action": 10,
                     "Text": "f"
                 },
+                "0x7f-0x100000" : {
+                    "//": "Command + Delete: backward-kill-line (C-x Rubout)",
+                    "Action": 11,
+                    "Text": "0x18 0x7f"
+                },
+                "0xf728-0x100000" : {
+                    "//": "Command + Forward Delete: kill-line (C-k)",
+                    "Action": 11,
+                    "Text": "0xb"
+                },
                 "0x7f-0x80000": {
                     "//": "Option + Delete: backward-kill-word (M-Rubout)",
                     "Action": 11,
