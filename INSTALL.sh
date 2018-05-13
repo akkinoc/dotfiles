@@ -92,6 +92,8 @@ link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
 polish_item_mode ".gnupg" go-rwx
 
+link_item ".inputrc"
+
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
 polish_item_mode ".ssh" go-rwx
