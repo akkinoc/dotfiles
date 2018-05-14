@@ -90,6 +90,7 @@ link_item ".gitignore"
 
 link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
+link_item ".gnupg/gpg-ownertrust.txt"
 polish_item_mode ".gnupg" go-rwx
 
 link_item ".inputrc"
