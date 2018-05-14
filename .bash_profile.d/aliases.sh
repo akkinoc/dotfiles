@@ -66,7 +66,7 @@ if type -t open-args-or-wd &>/dev/null; then
     alias o='open-args-or-wd'
 fi
 
-alias relogin='exec -l "$SHELL"'
+alias reload='exec -l "$SHELL"'
 
 alias rmf='rm -fr'
 
