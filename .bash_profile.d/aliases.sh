@@ -73,3 +73,7 @@ alias rmf='rm -fr'
 if type -t sudo &>/dev/null; then
     alias sudo='sudo '
 fi
+
+if type -t vim &>/dev/null; then
+    alias vi="vim"
+fi

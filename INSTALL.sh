@@ -99,6 +99,8 @@ link_item ".ssh/config"
 link_item ".ssh/github.hosts"
 polish_item_mode ".ssh" go-rwx
 
+link_item ".vimrc"
+
 link_item ".Brewfile"
 
 link_item "Library/Application Support/iTerm2/DynamicProfiles/Akihiro.json"
