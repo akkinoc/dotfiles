@@ -47,7 +47,7 @@ $ pbcopy <~/.ssh/github.pub
 Clone the Git repository.  
 
 ```console
-$ git clone git@github.com:akihyro/dotfiles.git
+$ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" git clone git@github.com:akihyro/dotfiles.git
 ```
 
 Install dotfiles and reload shell.  
@@ -78,7 +78,7 @@ Required: [Keybase], [GnuPG].
 [Keybase]: https://keybase.io/
 [GnuPG]: https://www.gnupg.org/
 
-Export and import the GPG key from Keybase.  
+Export the GPG key from Keybase and import it.  
 
 ```console
 $ keybase login
