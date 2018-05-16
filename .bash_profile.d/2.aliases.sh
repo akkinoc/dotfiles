@@ -31,7 +31,7 @@ if type -t sudo &>/dev/null; then
 fi
 
 if type -t vim &>/dev/null; then
-    alias vi="vim"
+    alias vi='vim'
 fi
 
 alias ~='cd ~'
