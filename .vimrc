@@ -1,4 +1,5 @@
 colorscheme desert
+set ambiwidth=double
 set autoindent
 set clipboard=unnamed
 set expandtab
