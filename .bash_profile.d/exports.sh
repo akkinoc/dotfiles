@@ -32,6 +32,10 @@ export LS_COLORS="di=34:ln=36:so=35:pi=32:ex=31:bd=33:cd=33:su=30;41:sg=37;41:tw
 export LS_COLORS+=":or=2;36:do=2;35:st=2;30;44"
 export TIME_STYLE="long-iso"
 
+if type -t less &>/dev/null; then
+    export PAGER="less"
+fi
+
 if [[ ":$PATH:" != *:"$HOME/.dotfiles/bin":* ]]; then
     export PATH+=":$HOME/.dotfiles/bin"
 fi
