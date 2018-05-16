@@ -8,7 +8,7 @@ fi
 for _akihyro_dotfiles_profile_file in \
     /usr/local/etc/profile.d/*.sh \
     ~/.bashrc \
-    ~/.bash_profile.d/{exports,aliases,prompt}.sh
+    ~/.bash_profile.d/*.sh
 do
     [[ -f "$_akihyro_dotfiles_profile_file" ]] || continue
     . "$_akihyro_dotfiles_profile_file"

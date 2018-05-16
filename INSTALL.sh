@@ -78,7 +78,6 @@ trap report_results EXIT
 
 initialize_data
 
-link_item ".bash_completion"
 link_item ".bash_profile"
 link_item ".bash_profile.d"
 
