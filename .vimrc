@@ -1,6 +1,8 @@
 colorscheme desert
 set ambiwidth=double
 set autoindent
+set backspace=eol,indent,start
+set nobackup
 set clipboard=unnamed
 set expandtab
 set hlsearch
@@ -9,13 +11,14 @@ set incsearch
 set laststatus=2
 set list
 set listchars=eol:<,tab:>-,trail:-,extends:>,precedes:<
-set mouse=a
 set number
 set ruler
 set scrolloff=3
 set shiftround
 set shiftwidth=4
+set showcmd
 set showmode
+set noswapfile
 set tabstop=4
 set whichwrap=b,s,h,l,<,>,[,],~
 syntax on
