@@ -31,7 +31,16 @@ if type -t sudo &>/dev/null; then
 fi
 
 if type -t vim &>/dev/null; then
+    alias ex='vim -e'
+    alias exim='vim -E'
+    alias rvim='vim -Z'
+    alias rview='vim -RZ'
     alias vi='vim'
+    alias view='vim -R'
+    alias vimdiff='vim -d'
+elif type -t vi &>/dev/null; then
+    alias ex='vi -e'
+    alias view='vi -R'
 fi
 
 alias ~='cd ~'
