@@ -68,8 +68,6 @@ elif type -t grep &>/dev/null; then
     alias ge='grep -EIn --exclude-dir=.git'
 fi
 
-alias hist='history'
-
 if type -t gls &>/dev/null; then
     alias l='gls -l'
     alias la='gls -al'
