@@ -80,11 +80,11 @@ elif type -t grep &>/dev/null; then
 fi
 
 if type -t gls &>/dev/null; then
-    alias l='gls -l'
-    alias la='gls -al'
+    alias l='gls -Fl'
+    alias la='gls -Fal'
 else
-    alias l='ls -l'
-    alias la='ls -al'
+    alias l='ls -Fl'
+    alias la='ls -Fal'
 fi
 
 if type -t open-args-or-wd &>/dev/null; then
