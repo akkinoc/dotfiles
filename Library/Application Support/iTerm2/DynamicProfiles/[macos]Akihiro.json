@@ -40,6 +40,12 @@
                 "Green Component": 0.089508526027202606,
                 "Blue Component": 0.089510045945644379
             },
+            "Use Cursor Guide": true,
+            "Cursor Guide Color": {
+                "Red Component" : 0.23137254901960785,
+                "Green Component" : 0.23137254901960785,
+                "Blue Component" : 0.23137254901960785
+            },
             "Ansi 0 Color": {
                 "Red Component": 0.22909823060035706,
                 "Green Component": 0.23855249583721161,
