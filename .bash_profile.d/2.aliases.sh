@@ -1,3 +1,7 @@
+if type -t colordiff &>/dev/null; then
+    alias diff='colordiff'
+fi
+
 if type -t grep &>/dev/null; then
     alias grep='grep --color=auto'
 fi
@@ -53,9 +57,7 @@ if type -t pwd-ext &>/dev/null; then
     alias @='cd "$(pwd-ext)"'
 fi
 
-if type -t colordiff &>/dev/null; then
-    alias d='colordiff -u'
-elif type -t diff &>/dev/null; then
+if type -t diff &>/dev/null; then
     alias d='diff -u'
 fi
 
