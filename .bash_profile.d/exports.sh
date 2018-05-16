@@ -23,6 +23,10 @@ fi
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
+if type -t less &>/dev/null; then
+    export LESS="-IMRx4"
+fi
+
 export LSCOLORS="exgxfxdxbxdxdxabhbaehe"
 export LS_COLORS="di=34:ln=36:so=35:pi=32:ex=31:bd=33:cd=33:su=30;41:sg=37;41:tw=30;44:ow=37;44"
 export LS_COLORS+=":or=2;36:do=2;35:st=2;30;44"
