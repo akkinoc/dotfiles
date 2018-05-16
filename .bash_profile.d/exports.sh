@@ -24,7 +24,7 @@ export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
 if type -t less &>/dev/null; then
-    export LESS="-IMRx4"
+    export LESS="-FIMRx4"
 fi
 
 export LSCOLORS="exgxfxdxbxdxdxabhbaehe"
