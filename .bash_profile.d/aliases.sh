@@ -8,6 +8,12 @@ if type -t pwd-ext &>/dev/null; then
     alias @='cd "$(pwd-ext)"'
 fi
 
+if type -t colordiff &>/dev/null; then
+    alias d='colordiff -u'
+elif type -t diff &>/dev/null; then
+    alias d='diff -u'
+fi
+
 if type -t code &>/dev/null; then
     alias e='code'
 elif [[ -n "$EDITOR" ]]; then
