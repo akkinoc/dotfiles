@@ -94,3 +94,7 @@ fi
 alias reload='exec -l "$SHELL"'
 
 alias rmf='rm -fr'
+
+if type -t view &>/dev/null; then
+    alias v='view'
+fi
