@@ -4,6 +4,10 @@ elif type -t vi &>/dev/null; then
     export EDITOR="vi"
 fi
 
+if type -t fzf &>/dev/null; then
+    export FZF_DEFAULT_OPTS="--ansi --cycle"
+fi
+
 if type -t gpg-agent tty &>/dev/null; then
     export GPG_TTY="$(tty)"
 fi
