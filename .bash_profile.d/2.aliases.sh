@@ -99,6 +99,8 @@ alias reload="exec -l \"$SHELL\""
 
 alias rmf="rm -fr"
 
-if type -t view &>/dev/null; then
-    alias v="view"
+if type -t vimless &>/dev/null; then
+    alias v="vimless"
+elif [[ -n "$PAGER" ]]; then
+    alias v="\"$PAGER\""
 fi
