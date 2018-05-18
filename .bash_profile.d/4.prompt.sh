@@ -18,6 +18,9 @@ function _akihyro_dotfiles_prompt_command {
         IFS=$'\t' read -r -a _akihyro_dotfiles_prompt_ended < <(date '+%s%t%H:%M:%S')
     fi
     PS1="$(_akihyro_dotfiles_prompt_ps1)"
+    history -a
+    history -c
+    history -r
 }
 
 function _akihyro_dotfiles_prompt_ps1 {
