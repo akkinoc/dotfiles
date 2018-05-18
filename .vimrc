@@ -18,6 +18,7 @@ set shiftround
 set shiftwidth=4
 set showcmd
 set showmode
+set smartcase
 set noswapfile
 set tabstop=4
 set whichwrap=b,s,h,l,<,>,[,],~
