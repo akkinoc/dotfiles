@@ -35,8 +35,6 @@ if type -t sudo &>/dev/null; then
 fi
 
 if type -t vim &>/dev/null; then
-    _akihyro_dotfiles_aliases_vim_runtime="$(vim -e -T dumb --cmd 'exe "se t_cm=\<C-M>" | ec $VIMRUNTIME | q')"
-    _akihyro_dotfiles_aliases_vim_runtime="${_akihyro_dotfiles_aliases_vim_runtime//$'\r'}"
     alias ex="vim -e"
     alias exim="vim -E"
     alias rvim="vim -Z"
@@ -44,8 +42,10 @@ if type -t vim &>/dev/null; then
     alias vi="vim"
     alias view="vim -R"
     alias vimdiff="vim -d"
-    alias vimless="\"$_akihyro_dotfiles_aliases_vim_runtime/macros/less.sh\""
-    unset _akihyro_dotfiles_aliases_vim_runtime
+    _akihyro_dotfiles_aliases_vimruntime="$(vim -e -T dumb --cmd 'exe "se t_cm=\<C-M>" | ec $VIMRUNTIME | q')"
+    _akihyro_dotfiles_aliases_vimruntime="${_akihyro_dotfiles_aliases_vimruntime//$'\r'}"
+    alias vimless="\"$_akihyro_dotfiles_aliases_vimruntime/macros/less.sh\""
+    unset _akihyro_dotfiles_aliases_vimruntime
 elif type -t vi &>/dev/null; then
     alias ex="vi -e"
     alias view="vi -R"
