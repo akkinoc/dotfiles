@@ -5,7 +5,7 @@ elif type -t vi &>/dev/null; then
 fi
 
 if type -t fzf &>/dev/null; then
-    export FZF_DEFAULT_OPTS="--ansi --cycle"
+    export FZF_DEFAULT_OPTS="--ansi --cycle --inline-info"
 fi
 
 if type -t gpg-agent tty &>/dev/null; then
