@@ -14,6 +14,7 @@
     f = fetch
     ge = grep -I
     l = log --graph --name-status
+    ll = log --date=short --pretty=line --no-show-signature
     ls = ls-files -s --abbrev
     m = merge --no-edit
     p = pull
@@ -67,6 +68,8 @@
 [merge]
     ff = false
     stat = true
+[pretty]
+    line = %C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(magenta)%<(13,trunc)%an%C(reset) %s%C(auto)%d%C(reset)
 [pull]
     ff = only
 [push]
