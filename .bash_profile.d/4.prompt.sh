@@ -82,7 +82,7 @@ function _akihyro_dotfiles_prompt_ps1_location {
 }
 
 function _akihyro_dotfiles_prompt_ps1_location_user {
-    if [[ "$USER" != "root" ]]; then
+    if (( $UID > 100 )); then
         printf '\\[\\e[35m\\]\\u\\[\\e[m\\]'
     else
         printf '\\[\\e[1;35m\\]\\u\\[\\e[m\\]'
