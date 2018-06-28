@@ -99,7 +99,7 @@ fi
 
 alias reload="exec -l \"$SHELL\""
 
-alias rmf="rm -fr"
+alias rmf="rm -frv"
 
 if type -t vimless &>/dev/null; then
     alias v="vimless"
