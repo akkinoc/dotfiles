@@ -37,15 +37,15 @@ $ ssh-keygen \
 $ ssh-keygen \
     -t rsa \
     -b 4096 \
-    -C "Akihiro Kondo @CyberZ:AdAgency (${HOSTNAME%.local} => GitHub)" \
-    -f ~/.ssh/cyberz-adagency.github
+    -C "Akihiro Kondo @CyberZ (${HOSTNAME%.local} => GitHub)" \
+    -f ~/.ssh/cyberz.github
 ```
 
 Copy the SSH keys and add them to GitHub account.  
 
 ```console
 $ pbcopy <~/.ssh/github.pub
-$ pbcopy <~/.ssh/cyberz-adagency.github.pub
+$ pbcopy <~/.ssh/cyberz.github.pub
 ```
 
 ### Installing dotfiles

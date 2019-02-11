@@ -96,6 +96,7 @@ link_item ".inputrc"
 
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
+link_item ".ssh/cyberz.github.hosts"
 polish_item_mode ".ssh" go-rwx
 
 link_item ".vimrc"
