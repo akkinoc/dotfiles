@@ -24,9 +24,9 @@ Requires the following software.
 
 ## Installation
 
-### Setting SSH key for GitHub
+### Setting SSH keys for GitHub
 
-Generate a SSH key for GitHub.  
+Generate SSH keys for GitHub.  
 
 ```console
 $ ssh-keygen \
@@ -34,12 +34,18 @@ $ ssh-keygen \
     -b 4096 \
     -C "Akihiro Kondo (${HOSTNAME%.local} => GitHub)" \
     -f ~/.ssh/github
+$ ssh-keygen \
+    -t rsa \
+    -b 4096 \
+    -C "Akihiro Kondo @CyberZ:AdAgency (${HOSTNAME%.local} => GitHub)" \
+    -f ~/.ssh/cyberz-adagency.github
 ```
 
-Copy the SSH key and add it to GitHub account.  
+Copy the SSH keys and add them to GitHub account.  
 
 ```console
 $ pbcopy <~/.ssh/github.pub
+$ pbcopy <~/.ssh/cyberz-adagency.github.pub
 ```
 
 ### Installing dotfiles
