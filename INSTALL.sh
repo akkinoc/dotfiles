@@ -85,6 +85,7 @@ link_item ".dotfiles/bin"
 
 link_item ".gitattributes"
 link_item ".gitconfig"
+link_item ".gitconfig.cyberz"
 link_item ".gitignore"
 
 link_item ".gnupg/gpg.conf"

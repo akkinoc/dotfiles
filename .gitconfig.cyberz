@@ -1,0 +1,6 @@
+[commit]
+    gpgsign = false
+[user]
+    email = kondo-akihiro@cyber-z.co.jp
+    name = Akihiro Kondo
+    signingkey =

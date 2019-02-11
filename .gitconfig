@@ -92,3 +92,5 @@
     email = akihyro@gmail.com
     name = Akihiro Kondo
     signingkey = 932FFD92C489B5AD
+[includeIf "gitdir:cyberz.*"]
+    path = .gitconfig.cyberz
