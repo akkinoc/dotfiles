@@ -136,7 +136,6 @@
             "Ambiguous Double Width": true,
             "Normal Font": "RictyDiminishedDiscord-Regular 12",
             "//": "========== Window ==========",
-            "Transparency": 0.5,
             "Columns": 120,
             "Rows": 30,
             "//": "========== Terminal ==========",
