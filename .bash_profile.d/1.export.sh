@@ -1,3 +1,7 @@
+if [[ -d /usr/local/etc/bash_completion.d ]]; then
+    export BASH_COMPLETION_COMPAT_DIR="/usr/local/etc/bash_completion.d"
+fi
+
 if type -t vim &>/dev/null; then
     export EDITOR="vim"
 elif type -t vi &>/dev/null; then

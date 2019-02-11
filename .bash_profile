@@ -6,7 +6,6 @@ if (( ${BASH_VERSINFO[0]} >= 4 )); then
 fi
 
 for _akihyro_dotfiles_profile_file in \
-    /usr/local/etc/profile.d/*.sh \
     ~/.bashrc \
     ~/.bash_profile.d/*.sh
 do
