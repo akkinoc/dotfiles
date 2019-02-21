@@ -11,7 +11,7 @@
     co = checkout
     cp = cherry-pick
     d = diff -p --stat
-    f = fetch
+    f = fetch --all
     ge = grep -I
     l = log --graph --name-status --show-signature
     ll = log --date=short --pretty=line
