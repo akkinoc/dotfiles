@@ -14,7 +14,7 @@ function initialize_data {
 
 function link_item {
     local target="$1"
-    local src_item="$(resolve_env_item "$DOTFILES_HOME/$target")"
+    local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
     local save_item="$DOTFILES_SAVE_DIR/$target"
     [[ -e "$src_item" ]] || return 0
@@ -32,7 +32,7 @@ function link_item {
 
 function ensure_dir {
     local target="$1"
-    local src_item="$(resolve_env_item "$DOTFILES_HOME/$target")"
+    local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
     [[ -d "$src_item" ]] || return 0
     printf '[\e[33m%s\e[m] Ensuring... \e[36m%s\e[m\n' "$target" "$(shorten_item "$dest_item")"
@@ -45,16 +45,6 @@ function polish_item_mode {
     [[ -e "$dest_item" ]] || return 0
     printf '[\e[33m%s\e[m] Polishing... \e[36m%s\e[m (mode: %s)\n' "$target" "$(shorten_item "$dest_item")" "$mode"
     chmod "$mode" "$dest_item"
-}
-
-function resolve_env_item {
-    local item="$1"
-    local dir="$(dirname "$item")"
-    local name="$(basename "$item")"
-    if [[ -e "$dir/[macos]$name" && "$OSTYPE" == "darwin"* ]]; then
-        item="$dir/[macos]$name"
-    fi
-    printf '%s' "$item"
 }
 
 function shorten_item {
