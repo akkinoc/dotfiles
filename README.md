@@ -56,7 +56,7 @@ $ akihyro.dotfiles/INSTALL.sh
 $ exec -l "$SHELL"
 ```
 
-## Optional additional installation
+## Additional installation
 
 ### Installing Homebrew packages
 
