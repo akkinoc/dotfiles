@@ -53,7 +53,8 @@ $ pbcopy <~/.ssh/cyberz.github.pub
 Clone the Git repository.  
 
 ```console
-$ git clone git@github.com:akihyro/dotfiles.git akihyro.dotfiles
+$ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" \
+    git clone git@github.com:akihyro/dotfiles.git akihyro.dotfiles
 ```
 
 Install dotfiles and reload shell.  
