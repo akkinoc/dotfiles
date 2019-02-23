@@ -69,8 +69,8 @@ fi
 
 if type -t code &>/dev/null; then
     alias e="code"
-elif [[ -n "$EDITOR" ]]; then
-    alias e="\"$EDITOR\""
+else
+    alias e="\"\${EDITOR:?}\""
 fi
 
 if type -t hub &>/dev/null; then
@@ -97,12 +97,12 @@ if type -t open-args-or-wd &>/dev/null; then
     alias o="open-args-or-wd"
 fi
 
-alias reload="exec -l \"$SHELL\""
+alias reload="exec -l \"\${SHELL:?}\""
 
 alias rmf="rm -frv"
 
 if type -t vimless &>/dev/null; then
     alias v="vimless"
-elif [[ -n "$PAGER" ]]; then
-    alias v="\"$PAGER\""
+else
+    alias v="\"\${PAGER:?}\""
 fi
