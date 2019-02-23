@@ -18,9 +18,7 @@ My personal dotfiles for macOS.
 
 ### Setting SSH keys for GitHub
 
-Generate SSH keys for [GitHub].  
-
-[GitHub]: https://github.com/
+Generate SSH keys for GitHub.  
 
 ```console
 $ ssh-keygen \
@@ -80,7 +78,7 @@ $ sudo dscl . -create "/Users/$USER" UserShell "$SHELL"
 $ reload
 ```
 
-### Importing the GPG key
+### Importing the GPG key from Keybase
 
 Required: [Keybase].  
 
