@@ -26,7 +26,9 @@ Requires the following software.
 
 ### Setting SSH keys for GitHub
 
-Generate SSH keys for GitHub.  
+Generate SSH keys for [GitHub].  
+
+[GitHub]: https://github.com/
 
 ```console
 $ ssh-keygen \
