@@ -42,7 +42,7 @@ $ pbcopy <~/.ssh/cyberz.github.pub
 
 ### Installing dotfiles
 
-Clone this Git repository.  
+Clone this git repository.  
 
 ```console
 $ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" \
