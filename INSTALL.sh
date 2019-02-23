@@ -8,7 +8,7 @@ DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history"
 DOTFILES_SAVE_DIR="$DOTFILES_HIST_DIR/$(date "+%Y%m%dT%H%M%S")"
 
 function initialize_data {
-    printf 'Initializing... \e[34m%s\e[m\n' "$(shorten_item "$DOTFILES_DATA_DIR")"
+    printf '\e[35m%s\e[m: Initializing...\n' "$(shorten_item "$DOTFILES_DATA_DIR")"
     mkdir -p -m go-rwx "$DOTFILES_DATA_DIR" "$DOTFILES_HIST_DIR" "$DOTFILES_SAVE_DIR"
 }
 
@@ -17,33 +17,26 @@ function link_item {
     local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
     local save_item="$DOTFILES_SAVE_DIR/$target"
-    [[ -e "$src_item" ]] || return 0
+    printf '\e[35m%s\e[m: Linking...\n' "$(shorten_item "$dest_item")"
     if [[ -e "$dest_item" || -L "$dest_item" ]]; then
-        printf '[\e[33m%s\e[m] Saving... \e[36m%s\e[m => \e[34m%s\e[m\n' \
-            "$target" "$(shorten_item "$dest_item")" "$(shorten_item "$save_item")"
         mkdir -p "$(dirname "$save_item")"
         mv "$dest_item" "$save_item"
     fi
-    printf '[\e[33m%s\e[m] Linking... \e[35m%s\e[m => \e[36m%s\e[m\n' \
-        "$target" "$(shorten_item "$src_item")" "$(shorten_item "$dest_item")"
     mkdir -p "$(dirname "$dest_item")"
     ln -s "$src_item" "$dest_item"
 }
 
 function ensure_dir {
     local target="$1"
-    local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
-    [[ -d "$src_item" ]] || return 0
-    printf '[\e[33m%s\e[m] Ensuring... \e[36m%s\e[m\n' "$target" "$(shorten_item "$dest_item")"
+    printf '\e[35m%s\e[m: Ensuring...\n' "$(shorten_item "$dest_item")"
     mkdir -p "$dest_item"
 }
 
 function polish_item_mode {
     local target="$1" mode="$2"
     local dest_item="$HOME/$target"
-    [[ -e "$dest_item" ]] || return 0
-    printf '[\e[33m%s\e[m] Polishing... \e[36m%s\e[m (mode: %s)\n' "$target" "$(shorten_item "$dest_item")" "$mode"
+    printf '\e[35m%s\e[m: Polishing... (mode: %s)\n' "$(shorten_item "$dest_item")" "$mode"
     chmod "$mode" "$dest_item"
 }
 
@@ -58,9 +51,9 @@ function shorten_item {
 function report_results {
     local code=$?
     if (( ! $code )); then
-        printf '\e[32mThe dotfiles installation succeeded!\e[m\n'
+        printf '\e[32m✔ The dotfiles installation succeeded!\e[m\n'
     else
-        printf '\e[31mThe dotfiles installation failed...\e[m\n'
+        printf '\e[31m✘ The dotfiles installation failed...\e[m\n'
     fi
 }
 
@@ -78,17 +71,19 @@ link_item ".gitconfig"
 link_item ".gitconfig.cyberz"
 link_item ".gitignore"
 
+ensure_dir ".gnupg"
+polish_item_mode ".gnupg" go-rwx
 link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
 link_item ".gnupg/gpg-ownertrust.txt"
-polish_item_mode ".gnupg" go-rwx
 
 link_item ".inputrc"
 
+ensure_dir ".ssh"
+polish_item_mode ".ssh" go-rwx
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
 link_item ".ssh/cyberz.github.hosts"
-polish_item_mode ".ssh" go-rwx
 
 link_item ".vimrc"
 
