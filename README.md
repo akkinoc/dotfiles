@@ -41,7 +41,7 @@ $ ssh-keygen \
     -f ~/.ssh/cyberz.github
 ```
 
-Copy the SSH keys and add them to each GitHub account.  
+Copy the SSH public keys and add them to each GitHub account.  
 
 ```console
 $ pbcopy <~/.ssh/github.pub
@@ -53,13 +53,13 @@ $ pbcopy <~/.ssh/cyberz.github.pub
 Clone the Git repository.  
 
 ```console
-$ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" git clone git@github.com:akihyro/dotfiles.git
+$ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" git clone git@github.com:akihyro/dotfiles.git akihyro.dotfiles
 ```
 
 Install dotfiles and reload shell.  
 
 ```console
-$ dotfiles/INSTALL.sh
+$ akihyro.dotfiles/INSTALL.sh
 $ exec -l "$SHELL"
 ```
 
