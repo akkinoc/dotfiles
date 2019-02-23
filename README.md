@@ -43,7 +43,7 @@ $ ssh-keygen \
     -f ~/.ssh/cyberz.github
 ```
 
-Copy each SSH public key and add it to GitHub account.  
+Copy each SSH public key and add it to paired GitHub account.  
 
 ```console
 $ pbcopy <~/.ssh/github.pub
