@@ -8,19 +8,11 @@
 [License Badge]: https://img.shields.io/badge/license-MIT-brightgreen.svg
 [License]: LICENSE.txt
 
-My personal dotfiles.  
+My personal dotfiles for macOS.  
 
 ![Image]
 
 [Image]: IMAGE.png
-
-## Requirements
-
-Requires the following software.  
-
-* Bash 3.2+
-* Git 2.15+
-* OpenSSH 5.3+
 
 ## Installation
 
@@ -52,7 +44,7 @@ $ pbcopy <~/.ssh/cyberz.github.pub
 
 ### Installing dotfiles
 
-Clone the Git repository.  
+Clone this Git repository.  
 
 ```console
 $ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" \
@@ -68,7 +60,7 @@ $ exec -l "$SHELL"
 
 ## Optional additional installation
 
-### Installing Homebrew packages (for macOS)
+### Installing Homebrew packages
 
 Required: [Homebrew].  
 
@@ -80,12 +72,19 @@ Install Homebrew packages.
 $ brew bundle --global
 ```
 
-### Importing GPG key
+Change login shell to Bash installed via Homebrew.  
 
-Required: [Keybase], [GnuPG].  
+```console
+$ export SHELL="/usr/local/bin/bash"
+$ sudo dscl . -create "/Users/$USER" UserShell "$SHELL"
+$ reload
+```
+
+### Importing the GPG key
+
+Required: [Keybase].  
 
 [Keybase]: https://keybase.io/
-[GnuPG]: https://www.gnupg.org/
 
 Export the GPG key from Keybase and import it.  
 
