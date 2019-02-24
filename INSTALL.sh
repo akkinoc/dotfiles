@@ -42,9 +42,7 @@ function polish_item_mode {
 
 function shorten_item {
     local item="$1"
-    if [[ "$item" == "$HOME/"* ]]; then
-        item="~/${item#"$HOME/"}"
-    fi
+    item="${item/#$HOME/~}"
     printf '%s' "$item"
 }
 
