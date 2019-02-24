@@ -149,7 +149,7 @@
                 "telnet"
             ],
             "Automatically Log": true,
-            "Log Directory": "/Users/akihiro/Library/Logs/iTerm2/Sessions",
+            "Log Directory": "/Users/.akihyro/Library/Logs/iTerm2/Sessions",
             "//": "========== Keys ==========",
             "Keyboard Map": {
                 "0xf702-0x300000": {
