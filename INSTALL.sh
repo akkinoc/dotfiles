@@ -79,4 +79,4 @@ link_item ".vimrc"
 link_item ".Brewfile"
 
 link_item "Library/Application Support/iTerm2/DynamicProfiles/Akihiro Kondo.json"
-ensure_dir "Library/Logs/iTerm2/Sessions"
+ensure_dir "Library/Logs/iTerm2/Sessions" go-rwx
