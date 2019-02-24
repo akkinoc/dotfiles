@@ -16,7 +16,7 @@ function link_item {
     local target="$1"
     local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
-    local save_item="$DOTFILES_SAVE_DIR/$dest_item"
+    local save_item="$DOTFILES_SAVE_DIR/${dest_item/#\//}"
     printf '\e[35m%s\e[m: Linking... \e[2m(src: %s)\e[m\n' "$(shorten_item "$dest_item")" "$(shorten_item "$src_item")"
     if [[ -e "$dest_item" || -L "$dest_item" ]]; then
         mkdir -p "$(dirname "$save_item")"
