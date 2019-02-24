@@ -17,7 +17,7 @@ function link_item {
     local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
     local save_item="$DOTFILES_SAVE_DIR/$target"
-    printf '\e[35m%s\e[m: Linking...\n' "$(shorten_item "$dest_item")"
+    printf '\e[35m%s\e[m: Linking... \e[2m(src: %s)\e[m\n' "$(shorten_item "$dest_item")" "$(shorten_item "$src_item")"
     if [[ -e "$dest_item" || -L "$dest_item" ]]; then
         mkdir -p "$(dirname "$save_item")"
         mv "$dest_item" "$save_item"
@@ -27,17 +27,10 @@ function link_item {
 }
 
 function ensure_dir {
-    local target="$1"
+    local target="$1" mode="${2:--}"
     local dest_item="$HOME/$target"
-    printf '\e[35m%s\e[m: Ensuring...\n' "$(shorten_item "$dest_item")"
-    mkdir -p "$dest_item"
-}
-
-function polish_item_mode {
-    local target="$1" mode="$2"
-    local dest_item="$HOME/$target"
-    printf '\e[35m%s\e[m: Polishing... (mode: %s)\n' "$(shorten_item "$dest_item")" "$mode"
-    chmod "$mode" "$dest_item"
+    printf '\e[35m%s\e[m: Ensuring... \e[2m(mode: %s)\e[m\n' "$(shorten_item "$dest_item")" "$mode"
+    mkdir -p -m "$mode" "$dest_item"
 }
 
 function shorten_item {
@@ -69,16 +62,14 @@ link_item ".gitconfig"
 link_item ".gitconfig.cyberz"
 link_item ".gitignore"
 
-ensure_dir ".gnupg"
-polish_item_mode ".gnupg" go-rwx
+ensure_dir ".gnupg" go-rwx
 link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
 link_item ".gnupg/gpg-ownertrust.txt"
 
 link_item ".inputrc"
 
-ensure_dir ".ssh"
-polish_item_mode ".ssh" go-rwx
+ensure_dir ".ssh" go-rwx
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
 link_item ".ssh/cyberz.github.hosts"
