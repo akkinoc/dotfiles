@@ -6,10 +6,24 @@ DOTFILES_HOME="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES_DATA_DIR="$HOME/.dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history"
 DOTFILES_SAVE_DIR="$DOTFILES_HIST_DIR/$(date "+%Y%m%dT%H%M%S")"
+DOTFILES_FIXED_HOME="/Users/.akihyro"
 
 function initialize_data {
     printf '\e[35m%s\e[m: Initializing...\n' "$(shorten_item "$DOTFILES_DATA_DIR")"
     mkdir -p -m go-rwx "$DOTFILES_DATA_DIR" "$DOTFILES_HIST_DIR" "$DOTFILES_SAVE_DIR"
+}
+
+function link_fixed_home {
+    local src_item="$HOME"
+    local dest_item="$DOTFILES_FIXED_HOME"
+    local save_item="$DOTFILES_SAVE_DIR/${dest_item/#\//}"
+    printf '\e[35m%s\e[m: Linking... \e[2m(src: %s)\e[m\n' "$(shorten_item "$dest_item")" "$(shorten_item "$src_item")"
+    if [[ -e "$dest_item" || -L "$dest_item" ]]; then
+        mkdir -p "$(dirname "$save_item")"
+        sudo mv "$dest_item" "$save_item"
+    fi
+    sudo ln -s "$src_item" "$dest_item"
+    sudo chown -h "$USER:$GROUPS" "$dest_item"
 }
 
 function link_item {
@@ -51,6 +65,7 @@ function report_results {
 trap report_results EXIT
 
 initialize_data
+link_fixed_home
 
 link_item ".bash_profile"
 link_item ".bash_profile.d"
