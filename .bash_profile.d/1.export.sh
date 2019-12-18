@@ -27,8 +27,8 @@ fi
 export HISTSIZE=100000
 export HISTTIMEFORMAT="%Y-%m-%d %H:%M:%S "
 
-if [[ -x /usr/libexec/java_home ]] && /usr/libexec/java_home -v 1.8 &>/dev/null; then
-    export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+if [[ -x /usr/libexec/java_home ]] && /usr/libexec/java_home -v 11 &>/dev/null; then
+    export JAVA_HOME="$(/usr/libexec/java_home -v 11)"
 fi
 
 if type -t less &>/dev/null; then
