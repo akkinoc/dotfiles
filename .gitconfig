@@ -78,6 +78,7 @@
 [rebase]
     abbreviatecommands = true
     autostash = true
+    backend = apply
     stat = true
 [stash]
     showstat = true
