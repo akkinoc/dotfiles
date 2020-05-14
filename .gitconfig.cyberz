@@ -1,8 +1,0 @@
-[commit]
-    gpgsign = false
-[url "git@cyberz.github.com"]
-    insteadOf = git@github.com
-[user]
-    email = kondo-akihiro@cyber-z.co.jp
-    name = Akihiro Kondo
-    signingkey =

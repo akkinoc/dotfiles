@@ -16,9 +16,9 @@ My personal dotfiles for macOS.
 
 ## Installation
 
-### Setting SSH keys for GitHub
+### Setting SSH key for GitHub
 
-Generate SSH keys for GitHub.  
+Generate SSH key for GitHub.  
 
 ```console
 $ ssh-keygen \
@@ -26,18 +26,12 @@ $ ssh-keygen \
     -b 4096 \
     -C "Akihiro Kondo (${HOSTNAME%.local} => GitHub)" \
     -f ~/.ssh/github
-$ ssh-keygen \
-    -t rsa \
-    -b 4096 \
-    -C "Akihiro Kondo @CyberZ (${HOSTNAME%.local} => GitHub)" \
-    -f ~/.ssh/cyberz.github
 ```
 
-Copy each SSH public key and add it to pairing GitHub account.  
+Copy the SSH public key and add it to pairing GitHub account.  
 
 ```console
 $ pbcopy <~/.ssh/github.pub
-$ pbcopy <~/.ssh/cyberz.github.pub
 ```
 
 ### Installing dotfiles
@@ -45,14 +39,13 @@ $ pbcopy <~/.ssh/cyberz.github.pub
 Clone this git repository.  
 
 ```console
-$ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" \
-    git clone git@github.com:akihyro/dotfiles.git akihyro.dotfiles
+$ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" git clone git@github.com:akihyro/dotfiles.git
 ```
 
 Install dotfiles and reload shell.  
 
 ```console
-$ akihyro.dotfiles/INSTALL.sh
+$ dotfiles/INSTALL.sh
 $ exec -l "$SHELL"
 ```
 
