@@ -74,7 +74,6 @@ link_item ".dotfiles/bin"
 
 link_item ".gitattributes"
 link_item ".gitconfig"
-link_item ".gitconfig.cyberz"
 link_item ".gitignore"
 
 ensure_dir ".gnupg" go-rwx
@@ -87,7 +86,6 @@ link_item ".inputrc"
 ensure_dir ".ssh" go-rwx
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
-link_item ".ssh/cyberz.github.hosts"
 
 link_item ".vimrc"
 
