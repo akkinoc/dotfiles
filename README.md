@@ -25,7 +25,7 @@ Place the SSH key for GitHub.
 
 ### Installing dotfiles
 
-Clone this git repository.  
+Clone this Git repository.  
 
 ```console
 $ GIT_SSH_COMMAND="ssh -i ~/.ssh/github" git clone git@github.com:akkinoc/dotfiles.git
