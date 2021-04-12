@@ -60,22 +60,12 @@ $ sudo dscl . -create "/Users/$USER" UserShell "$SHELL"
 $ reload
 ```
 
-### Importing the GPG key from Keybase
+### Setting GPG key
 
-Required: [Keybase].  
-
-[Keybase]: https://keybase.io/
-
-Export the GPG key from Keybase and import it.  
+Import the GPG key.  
 
 ```console
-$ keybase login
 $ gpg --import <(keybase pgp export --secret)
-```
-
-Import the ownertrust.  
-
-```console
 $ gpg --import-ownertrust <~/.gnupg/gpg-ownertrust.txt
 ```
 

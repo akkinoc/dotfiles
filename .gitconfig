@@ -92,6 +92,6 @@
 [url "ssh://git@github.com"]
     insteadOf = https://github.com
 [user]
-    email = akihyro@gmail.com
+    email = akkinoc@gmail.com
     name = Akihiro Kondo
-    signingkey = 932FFD92C489B5AD
+    signingkey = C1C97CE293FB5803
