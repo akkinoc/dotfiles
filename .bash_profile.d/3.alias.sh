@@ -42,12 +42,12 @@ if type -t vim &>/dev/null; then
     alias vi="vim"
     alias view="vim -R"
     alias vimdiff="vim -d"
-    _akihyro_dotfiles_alias_vimruntime="$(vim -e -T dumb --cmd 'exe "se t_cm=\<C-M>" | ec $VIMRUNTIME | q')"
-    _akihyro_dotfiles_alias_vimruntime="${_akihyro_dotfiles_alias_vimruntime//$'\r'}"
-    if [[ -x "$_akihyro_dotfiles_alias_vimruntime/macros/less.sh" ]]; then
-        alias vimless="\"$_akihyro_dotfiles_alias_vimruntime/macros/less.sh\""
+    _akkinoc_dotfiles_alias_vimruntime="$(vim -e -T dumb --cmd 'exe "se t_cm=\<C-M>" | ec $VIMRUNTIME | q')"
+    _akkinoc_dotfiles_alias_vimruntime="${_akkinoc_dotfiles_alias_vimruntime//$'\r'}"
+    if [[ -x "$_akkinoc_dotfiles_alias_vimruntime/macros/less.sh" ]]; then
+        alias vimless="\"$_akkinoc_dotfiles_alias_vimruntime/macros/less.sh\""
     fi
-    unset _akihyro_dotfiles_alias_vimruntime
+    unset _akkinoc_dotfiles_alias_vimruntime
 elif type -t vi &>/dev/null; then
     alias ex="vi -e"
     alias view="vi -R"

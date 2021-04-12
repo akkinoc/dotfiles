@@ -5,11 +5,11 @@ if (( ${BASH_VERSINFO[0]} >= 4 )); then
     shopt -s globstar
 fi
 
-for _akihyro_dotfiles_profile_file in \
+for _akkinoc_dotfiles_profile_file in \
     ~/.bashrc \
     ~/.bash_profile.d/*.sh
 do
-    [[ -f "$_akihyro_dotfiles_profile_file" ]] || continue
-    . "$_akihyro_dotfiles_profile_file"
+    [[ -f "$_akkinoc_dotfiles_profile_file" ]] || continue
+    . "$_akkinoc_dotfiles_profile_file"
 done
-unset _akihyro_dotfiles_profile_file
+unset _akkinoc_dotfiles_profile_file
