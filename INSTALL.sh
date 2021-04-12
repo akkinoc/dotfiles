@@ -6,7 +6,7 @@ DOTFILES_HOME="$(cd "$(dirname "$0")" && pwd)"
 DOTFILES_DATA_DIR="$HOME/.dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history"
 DOTFILES_SAVE_DIR="$DOTFILES_HIST_DIR/$(date "+%Y%m%dT%H%M%S")"
-DOTFILES_FIXED_HOME="/Users/.akihyro"
+DOTFILES_FIXED_HOME="/Users/.akkinoc"
 
 function initialize_data {
     printf '\e[35m%s\e[m: Initializing...\n' "$(shorten_item "$DOTFILES_DATA_DIR")"
