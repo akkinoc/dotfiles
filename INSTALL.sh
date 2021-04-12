@@ -79,7 +79,6 @@ link_item ".gitignore"
 ensure_dir ".gnupg" go-rwx
 link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
-link_item ".gnupg/gpg-ownertrust.txt"
 
 link_item ".inputrc"
 

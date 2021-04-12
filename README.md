@@ -65,8 +65,8 @@ $ reload
 Import the GPG key.  
 
 ```console
-$ gpg --import <(keybase pgp export --secret)
-$ gpg --import-ownertrust <~/.gnupg/gpg-ownertrust.txt
+$ gpg --import <{Key}
+$ echo "{Fingerprint}:6:" | gpg --import-ownertrust
 ```
 
 ## License
