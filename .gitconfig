@@ -90,7 +90,7 @@
     forcesignannotated = true
     sort = -version:refname
 [url "ssh://git@github.com"]
-	insteadOf = https://github.com
+    insteadOf = https://github.com
 [user]
     email = akihyro@gmail.com
     name = Akihiro Kondo
