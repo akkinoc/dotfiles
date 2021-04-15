@@ -13,7 +13,7 @@
     d = diff -p --stat
     f = fetch --all
     ge = grep -I
-    l = log --graph --name-status --show-signature
+    l = log --graph --name-status
     ll = log --date=short --pretty=line
     ls = ls-files -s --abbrev
     m = merge --no-edit
@@ -21,7 +21,7 @@
     r = rebase
     ri = rebase -i
     s = status
-    sh = show -p --show-signature --stat
+    sh = show -p --stat
     st = stash
     std = stash drop
     sti = stash push -u
@@ -64,7 +64,6 @@
     date = iso
     decorate = short
     follow = true
-    showsignature = false
 [merge]
     ff = false
     stat = true

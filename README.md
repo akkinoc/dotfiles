@@ -62,18 +62,15 @@ $ reload
 
 ### Setting GPG key
 
+Required: [GnuPG].  
+
+[GnuPG]: https://gnupg.org/
+
 Import the GPG key.  
 
 ```console
 $ gpg --import <{Key}
 $ echo "{Fingerprint}:6:" | gpg --import-ownertrust
-```
-
-Fetch and sign the GitHub public key.  
-
-```console
-$ gpg --fetch-keys https://github.com/web-flow.gpg
-$ gpg --sign-key 4AEE18F83AFDEB23
 ```
 
 ## License
