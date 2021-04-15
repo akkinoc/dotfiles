@@ -18,7 +18,7 @@ My personal dotfiles for macOS.
 
 ### Setting SSH key
 
-Place the SSH key.  
+Place my SSH key.  
 
 * SSH secret key: `~/.ssh/akkinoc`
 * SSH public key: `~/.ssh/akkinoc.pub`
@@ -66,7 +66,7 @@ Required: [GnuPG].
 
 [GnuPG]: https://gnupg.org/
 
-Import the GPG key.  
+Import my GPG key.  
 
 ```console
 $ gpg --import <{Key}
