@@ -57,6 +57,8 @@
 [grep]
     linenumber = true
     patterntype = extended
+[init]
+    defaultbranch = main
 [interactive]
     singlekey = true
 [log]
