@@ -55,8 +55,8 @@
 [format]
     pretty = fuller
 [grep]
-    lineNumber = true
-    patternType = extended
+    linenumber = true
+    patterntype = extended
 [interactive]
     singlekey = true
 [log]
@@ -89,7 +89,7 @@
     forcesignannotated = true
     sort = -version:refname
 [url "ssh://git@github.com"]
-    insteadOf = https://github.com
+    insteadof = https://github.com
 [user]
     email = akkinoc@gmail.com
     name = Akihiro Kondo
