@@ -1,11 +1,11 @@
 # dotfiles
 
-![Works on my machine][Works Badge]
-[![License][License Badge]][License]
+![works on my machine][works badge]
+[![license][license Badge]][license]
 
-[Works Badge]: https://img.shields.io/badge/Works-on%20my%20machine-brightgreen
-[License Badge]: https://img.shields.io/badge/License-MIT-blue.svg
-[License]: LICENSE.txt
+[works badge]: https://img.shields.io/badge/works-on%20my%20machine-brightgreen
+[license badge]: https://img.shields.io/badge/license-MIT-blue
+[license]: LICENSE.txt
 
 My personal dotfiles for macOS.  
 
