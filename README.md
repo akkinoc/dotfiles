@@ -1,11 +1,11 @@
 # dotfiles
 
-![works on my machine][works badge]
-[![license][license Badge]][license]
+![works badge]
+[![license badge]][license]
 
 [works badge]: https://img.shields.io/badge/works-on%20my%20machine-brightgreen
-[license badge]: https://img.shields.io/badge/license-MIT-blue
 [license]: LICENSE.txt
+[license badge]: https://img.shields.io/github/license/akkinoc/akkinoc.github.io?color=blue
 
 My personal dotfiles for macOS.  
 
@@ -74,6 +74,4 @@ $ echo "{Fingerprint}:6:" | gpg --import-ownertrust
 
 ## License
 
-Licensed under the [MIT License].  
-
-[MIT License]: LICENSE.txt
+Licensed under the [MIT License][license].  
