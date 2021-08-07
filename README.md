@@ -9,10 +9,6 @@
 
 My personal dotfiles for macOS.  
 
-![Image]
-
-[Image]: IMAGE.png
-
 ## Installation
 
 ### Setting SSH key
