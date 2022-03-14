@@ -61,6 +61,12 @@ Required: [GnuPG].
 
 [GnuPG]: https://gnupg.org/
 
+Disable option to store password in macOS keychain.
+
+```console
+$ defaults write org.gpgtools.common DisableKeychain -bool yes
+```
+
 Import my GPG key.  
 
 ```console
