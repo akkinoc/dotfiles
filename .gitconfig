@@ -90,8 +90,6 @@
 [tag]
     forcesignannotated = true
     sort = -version:refname
-[url "ssh://git@github.com"]
-    insteadof = https://github.com
 [user]
     email = akkinoc@gmail.com
     name = Akihiro Kondo
