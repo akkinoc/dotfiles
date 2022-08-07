@@ -7,26 +7,26 @@
 [license]: LICENSE.txt
 [license badge]: https://img.shields.io/github/license/akkinoc/akkinoc.github.io?color=blue
 
-My personal dotfiles for macOS.  
+My personal dotfiles for macOS.
 
 ## Installation
 
 ### Setting SSH key
 
-Place my SSH key.  
+Place my SSH key.
 
 * SSH secret key: `~/.ssh/akkinoc`
 * SSH public key: `~/.ssh/akkinoc.pub`
 
 ### Installing dotfiles
 
-Clone this Git repository.  
+Clone this Git repository.
 
 ```console
 $ GIT_SSH_COMMAND="ssh -i ~/.ssh/akkinoc" git clone git@github.com:akkinoc/dotfiles.git
 ```
 
-Install dotfiles and reload shell.  
+Install dotfiles and reload shell.
 
 ```console
 $ dotfiles/INSTALL.sh
@@ -37,17 +37,17 @@ $ exec -l "$SHELL"
 
 ### Installing Homebrew packages
 
-Required: [Homebrew].  
+Required: [Homebrew].
 
 [Homebrew]: https://brew.sh/
 
-Install Homebrew packages.  
+Install Homebrew packages.
 
 ```console
 $ brew bundle --global
 ```
 
-Change login shell to Bash installed via Homebrew.  
+Change login shell to Bash installed via Homebrew.
 
 ```console
 $ export SHELL="/usr/local/bin/bash"
@@ -57,7 +57,7 @@ $ reload
 
 ### Setting GPG key
 
-Required: [GnuPG].  
+Required: [GnuPG].
 
 [GnuPG]: https://gnupg.org/
 
@@ -67,7 +67,7 @@ Disable option to store password in macOS keychain.
 $ defaults write org.gpgtools.common DisableKeychain -bool yes
 ```
 
-Import my GPG key.  
+Import my GPG key.
 
 ```console
 $ gpg --import <{Key}
@@ -76,4 +76,4 @@ $ echo "{Fingerprint}:6:" | gpg --import-ownertrust
 
 ## License
 
-Licensed under the [MIT License][license].  
+Licensed under the [MIT License][license].
