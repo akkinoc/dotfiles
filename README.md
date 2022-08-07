@@ -2,10 +2,13 @@
 
 ![works badge]
 [![license badge]][license]
+[![sponsor badge]][sponsor]
 
 [works badge]: https://img.shields.io/badge/works-on%20my%20machine-brightgreen
 [license]: LICENSE.txt
 [license badge]: https://img.shields.io/github/license/akkinoc/dotfiles?color=blue
+[sponsor]: https://github.com/sponsors/akkinoc
+[sponsor badge]: https://img.shields.io/static/v1?logo=github&label=sponsor&message=%E2%9D%A4&color=db61a2
 
 My personal dotfiles for macOS.
 
