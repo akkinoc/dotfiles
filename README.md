@@ -5,7 +5,7 @@
 
 [works badge]: https://img.shields.io/badge/works-on%20my%20machine-brightgreen
 [license]: LICENSE.txt
-[license badge]: https://img.shields.io/github/license/akkinoc/akkinoc.github.io?color=blue
+[license badge]: https://img.shields.io/github/license/akkinoc/dotfiles?color=blue
 
 My personal dotfiles for macOS.
 
