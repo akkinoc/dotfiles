@@ -98,7 +98,7 @@ function _akkinoc_dotfiles_prompt_ps1_location_host {
 }
 
 function _akkinoc_dotfiles_prompt_ps1_location_wd {
-    if [[ "$PWD/" == "$HOME/"* ]]; then
+    if [[ "$PWD/" == "$HOME"/* ]]; then
         printf ' in \\[\\e[34m\\]\\w\\[\\e[m\\]'
     else
         printf ' in \\[\\e[1;34m\\]\\w\\[\\e[m\\]'

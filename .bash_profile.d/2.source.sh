@@ -1,6 +1,6 @@
-if [[ -d /usr/local/etc/profile.d ]]; then
+if [[ -d "$HOMEBREW_PREFIX/etc/profile.d" ]]; then
     for _akkinoc_dotfiles_source_file in \
-        /usr/local/etc/profile.d/*.sh
+        "$HOMEBREW_PREFIX/etc/profile.d"/*.sh
     do
         [[ -f "$_akkinoc_dotfiles_source_file" ]] || continue
         . "$_akkinoc_dotfiles_source_file"
