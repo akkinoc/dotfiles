@@ -53,7 +53,7 @@ $ brew bundle --global
 Change login shell to Bash installed via Homebrew.
 
 ```console
-$ export SHELL="/usr/local/bin/bash"
+$ export SHELL="/opt/homebrew/bin/bash" # or "/usr/local/bin/bash"
 $ sudo dscl . -create "/Users/$USER" UserShell "$SHELL"
 $ reload
 ```
