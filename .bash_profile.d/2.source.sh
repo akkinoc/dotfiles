@@ -16,3 +16,7 @@ do
     . "$_akkinoc_dotfiles_source_file"
 done
 unset _akkinoc_dotfiles_source_file
+
+if type -t rbenv &>/dev/null; then
+    eval "$(rbenv init - bash)"
+fi
