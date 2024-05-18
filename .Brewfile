@@ -1,7 +1,5 @@
 tap "1password/tap"
 tap "homebrew/bundle"
-tap "homebrew/cask-fonts"
-tap "homebrew/cask-versions"
 brew "awscli"
 brew "bash"
 brew "bash-completion@2"
