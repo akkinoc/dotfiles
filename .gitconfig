@@ -88,7 +88,7 @@
     short = true
     showuntrackedfiles = all
 [tag]
-    forcesignannotated = true
+    gpgsign = true
     sort = -version:refname
 [user]
     email = akkinoc@gmail.com
