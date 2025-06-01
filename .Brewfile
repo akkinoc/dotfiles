@@ -1,4 +1,3 @@
-tap "1password/tap"
 brew "awscli"
 brew "bash"
 brew "bash-completion@2"
