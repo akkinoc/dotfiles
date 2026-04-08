@@ -1,64 +1,59 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
-set -eu -o pipefail
+setopt err_exit no_unset pipe_fail
 
-DOTFILES_HOME="$(cd "$(dirname "$0")" && pwd)"
+DOTFILES_HOME="${${(%):-%x}:A:h}"
 DOTFILES_DATA_DIR="$HOME/.dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history"
 DOTFILES_SAVE_DIR="$DOTFILES_HIST_DIR/$(date "+%Y%m%dT%H%M%S")"
 DOTFILES_FIXED_HOME="/Users/.akkinoc"
 
-function initialize_data {
-    printf '\e[35m%s\e[m: Initializing...\n' "$(shorten_item "$DOTFILES_DATA_DIR")"
+initialize_data() {
+    print -P "%F{magenta}${DOTFILES_DATA_DIR/#$HOME/~}%f: Initializing..."
     mkdir -p -m go-rwx "$DOTFILES_DATA_DIR" "$DOTFILES_HIST_DIR" "$DOTFILES_SAVE_DIR"
 }
 
-function link_fixed_home {
+link_fixed_home() {
     local src_item="$HOME"
     local dest_item="$DOTFILES_FIXED_HOME"
     local save_item="$DOTFILES_SAVE_DIR/${dest_item/#\//}"
-    printf '\e[35m%s\e[m: Linking... \e[2m(src: %s)\e[m\n' "$(shorten_item "$dest_item")" "$(shorten_item "$src_item")"
+    print -P "%F{magenta}${dest_item/#$HOME/~}%f: Linking... %F{8}(src: ${src_item/#$HOME/~})%f"
     if [[ -e "$dest_item" || -L "$dest_item" ]]; then
-        mkdir -p "$(dirname "$save_item")"
+        mkdir -p "${save_item:h}"
         sudo mv "$dest_item" "$save_item"
     fi
     sudo ln -s "$src_item" "$dest_item"
-    sudo chown -h "$USER:$GROUPS" "$dest_item"
+    sudo chown -h "$(id -nu):$(id -gn)" "$dest_item"
 }
 
-function link_item {
+link_item() {
     local target="$1"
     local src_item="$DOTFILES_HOME/$target"
     local dest_item="$HOME/$target"
     local save_item="$DOTFILES_SAVE_DIR/${dest_item/#\//}"
-    printf '\e[35m%s\e[m: Linking... \e[2m(src: %s)\e[m\n' "$(shorten_item "$dest_item")" "$(shorten_item "$src_item")"
+    print -P "%F{magenta}${dest_item/#$HOME/~}%f: Linking... %F{8}(src: ${src_item/#$HOME/~})%f"
     if [[ -e "$dest_item" || -L "$dest_item" ]]; then
-        mkdir -p "$(dirname "$save_item")"
+        mkdir -p "${save_item:h}"
         mv "$dest_item" "$save_item"
     fi
-    mkdir -p "$(dirname "$dest_item")"
+    mkdir -p "${dest_item:h}"
     ln -s "$src_item" "$dest_item"
 }
 
-function ensure_dir {
-    local target="$1" mode="${2:--}"
+ensure_dir() {
+    local target="$1"
+    local mode="${2:--}"
     local dest_item="$HOME/$target"
-    printf '\e[35m%s\e[m: Ensuring... \e[2m(mode: %s)\e[m\n' "$(shorten_item "$dest_item")" "$mode"
+    print -P "%F{magenta}${dest_item/#$HOME/~}%f: Ensuring... %F{8}(mode: $mode)%f"
     mkdir -p -m "$mode" "$dest_item"
 }
 
-function shorten_item {
-    local item="$1"
-    item="${item/#$HOME/~}"
-    printf '%s' "$item"
-}
-
-function report_results {
+report_results() {
     local code=$?
-    if (( ! $code )); then
-        printf '\e[32m✔ The dotfiles installation succeeded!\e[m\n'
+    if (( code == 0 )); then
+        print -P "%F{green}✔ The dotfiles installation succeeded!%f"
     else
-        printf '\e[31m✘ The dotfiles installation failed...\e[m\n'
+        print -P "%F{red}✘ The dotfiles installation failed...%f"
     fi
 }
 
@@ -66,6 +61,8 @@ trap report_results EXIT
 
 initialize_data
 link_fixed_home
+
+link_item ".Brewfile"
 
 link_item ".bash_profile"
 link_item ".bash_profile.d"
@@ -86,9 +83,12 @@ ensure_dir ".ssh" go-rwx
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
 
+link_item ".starship/config.toml"
+
 link_item ".vimrc"
 
-link_item ".Brewfile"
+link_item ".zshrc"
+link_item ".zshrc.d"
 
 link_item "Library/Application Support/iTerm2/DynamicProfiles/Akihiro Kondo.json"
 ensure_dir "Library/Logs/iTerm2/Sessions" go-rwx
