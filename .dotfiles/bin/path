@@ -1,6 +1,0 @@
-#!/bin/bash
-
-set -eu -o pipefail
-
-IFS=: read -r -a path <<<"$PATH"
-printf '%s\n' "${path[@]}"

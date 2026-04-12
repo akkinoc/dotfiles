@@ -64,11 +64,6 @@ link_fixed_home
 
 link_item ".Brewfile"
 
-link_item ".bash_profile"
-link_item ".bash_profile.d"
-
-link_item ".dotfiles/bin"
-
 link_item ".gitattributes"
 link_item ".gitconfig"
 link_item ".gitignore"

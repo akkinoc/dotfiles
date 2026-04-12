@@ -1,8 +1,0 @@
-#!/bin/bash
-
-set -eu -o pipefail
-
-args=("$@")
-(( ${#args[@]} )) || args=(.)
-
-open "${args[@]}"
