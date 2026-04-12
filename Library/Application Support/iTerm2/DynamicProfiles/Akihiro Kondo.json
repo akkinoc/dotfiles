@@ -153,42 +153,42 @@
             "//": "========== Keys ==========",
             "Keyboard Map": {
                 "0xf702-0x280000": {
-                    "//": "Option + Left: backward-word (M-b)",
+                    "//": "Option + Left: M-b (backward-word)",
                     "Action": 10,
                     "Text": "b"
                 },
                 "0xf703-0x280000": {
-                    "//": "Option + Right: forward-word (M-f)",
+                    "//": "Option + Right: M-f (forward-word)",
                     "Action": 10,
                     "Text": "f"
                 },
                 "0xf702-0x300000": {
-                    "//": "Command + Left: beginning-of-line (C-a)",
+                    "//": "Command + Left: C-A (beginning-of-line)",
                     "Action": 11,
                     "Text": "0x1"
                 },
                 "0xf703-0x300000": {
-                    "//": "Command + Right: end-of-line (C-e)",
+                    "//": "Command + Right: C-E (end-of-line)",
                     "Action": 11,
                     "Text": "0x5"
                 },
                 "0x7f-0x80000": {
-                    "//": "Option + Delete: backward-kill-word (M-Rubout)",
+                    "//": "Option + Delete: M-DEL (backward-kill-word)",
                     "Action": 11,
                     "Text": "0x1b 0x7f"
                 },
                 "0xf728-0x80000": {
-                    "//": "Option + Forward Delete: kill-word (M-d)",
+                    "//": "Option + Forward Delete: M-d (kill-word)",
                     "Action": 10,
                     "Text": "d"
                 },
                 "0x7f-0x100000": {
-                    "//": "Command + Delete: backward-kill-line (C-u)",
+                    "//": "Command + Delete: C-U (backward-kill-line)",
                     "Action": 11,
                     "Text": "0x15"
                 },
                 "0xf728-0x100000": {
-                    "//": "Command + Forward Delete: kill-line (C-k)",
+                    "//": "Command + Forward Delete: C-K (kill-line)",
                     "Action": 11,
                     "Text": "0xb"
                 }

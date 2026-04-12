@@ -12,3 +12,12 @@ if [[ -n "$LS_COLORS" ]]; then
 fi
 zstyle ":completion:*" matcher-list "m:{a-z}={A-Z}"
 zstyle ':completion:*' menu no
+
+bindkey "^[b"  backward-word
+bindkey "^[f"  forward-word
+bindkey "^A"   beginning-of-line
+bindkey "^E"   end-of-line
+bindkey "^[^?" backward-kill-word
+bindkey "^[d"  kill-word
+bindkey "^U"   backward-kill-line
+bindkey "^K"   kill-line
