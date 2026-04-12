@@ -47,7 +47,7 @@ Required: [Homebrew].
 Install Homebrew packages.
 
 ```console
-$ brew bundle --global
+$ brew bundle -g
 ```
 
 Change login shell to Zsh installed via Homebrew.
