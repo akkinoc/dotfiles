@@ -32,7 +32,7 @@ $ GIT_SSH_COMMAND="ssh -i ~/.ssh/akkinoc" git clone git@github.com:akkinoc/dotfi
 Install dotfiles and reload shell.
 
 ```console
-$ dotfiles/INSTALL.sh
+$ dotfiles/INSTALL.zsh
 $ exec -l "$SHELL"
 ```
 
@@ -50,12 +50,12 @@ Install Homebrew packages.
 $ brew bundle --global
 ```
 
-Change login shell to Bash installed via Homebrew.
+Change login shell to Zsh installed via Homebrew.
 
 ```console
-$ export SHELL="/opt/homebrew/bin/bash" # or "/usr/local/bin/bash"
-$ sudo dscl . -create "/Users/$USER" UserShell "$SHELL"
-$ reload
+$ shell="/opt/homebrew/bin/zsh" # or "/usr/local/bin/zsh"
+$ sudo dscl . -create "/Users/$USER" UserShell "$shell"
+$ exec -l "$shell"
 ```
 
 ### Setting GPG key

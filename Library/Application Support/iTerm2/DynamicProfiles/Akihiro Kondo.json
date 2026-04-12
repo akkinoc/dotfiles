@@ -133,7 +133,7 @@
             "Use Bright Bold": true,
             "Blink Allowed": true,
             "Use Italic Font": true,
-            "Ambiguous Double Width": true,
+            "Ambiguous Double Width": false,
             "Normal Font": "Cica-Regular 12",
             "//": "========== Window ==========",
             "Columns": 120,
@@ -152,16 +152,6 @@
             "Log Directory": "/Users/.akkinoc/Library/Logs/iTerm2/Sessions",
             "//": "========== Keys ==========",
             "Keyboard Map": {
-                "0xf702-0x300000": {
-                    "//": "Command + Left: beginning-of-line (C-a)",
-                    "Action": 11,
-                    "Text": "0x1"
-                },
-                "0xf703-0x300000": {
-                    "//": "Command + Right: end-of-line (C-e)",
-                    "Action": 11,
-                    "Text": "0x5"
-                },
                 "0xf702-0x280000": {
                     "//": "Option + Left: backward-word (M-b)",
                     "Action": 10,
@@ -172,15 +162,15 @@
                     "Action": 10,
                     "Text": "f"
                 },
-                "0x7f-0x100000": {
-                    "//": "Command + Delete: backward-kill-line (C-x Rubout)",
+                "0xf702-0x300000": {
+                    "//": "Command + Left: beginning-of-line (C-a)",
                     "Action": 11,
-                    "Text": "0x18 0x7f"
+                    "Text": "0x1"
                 },
-                "0xf728-0x100000": {
-                    "//": "Command + Forward Delete: kill-line (C-k)",
+                "0xf703-0x300000": {
+                    "//": "Command + Right: end-of-line (C-e)",
                     "Action": 11,
-                    "Text": "0xb"
+                    "Text": "0x5"
                 },
                 "0x7f-0x80000": {
                     "//": "Option + Delete: backward-kill-word (M-Rubout)",
@@ -191,6 +181,16 @@
                     "//": "Option + Forward Delete: kill-word (M-d)",
                     "Action": 10,
                     "Text": "d"
+                },
+                "0x7f-0x100000": {
+                    "//": "Command + Delete: backward-kill-line (C-u)",
+                    "Action": 11,
+                    "Text": "0x15"
+                },
+                "0xf728-0x100000": {
+                    "//": "Command + Forward Delete: kill-line (C-k)",
+                    "Action": 11,
+                    "Text": "0xb"
                 }
             }
         }

@@ -1,0 +1,79 @@
+continuation_prompt = '[❯](bold) '
+format = '''
+$status$cmd_duration$time
+$username$hostname$directory$git_branch$git_commit$git_state$git_status
+$character
+'''
+
+[status]
+disabled = false
+failure_style = 'red'
+format = '[$symbol $status]($style)'
+pipestatus = true
+pipestatus_format = '[$symbol $status]($style) \[$pipestatus\]'
+pipestatus_separator = ' | '
+recognize_signal_code = false
+success_style = 'green'
+success_symbol = '✔'
+symbol = '✘'
+
+[cmd_duration]
+disabled = false
+format = ' took [$duration]($style)'
+min_time = 0
+show_milliseconds = true
+style = 'underline'
+
+[time]
+disabled = false
+format = ' at [$time]($style)'
+style = 'underline'
+
+[username]
+disabled = false
+format = '[$user]($style)'
+show_always = true
+style_root = 'bold purple'
+style_user = 'purple'
+
+[hostname]
+disabled = false
+format = ' at [$hostname]($style)'
+ssh_only = false
+style = 'cyan'
+
+[directory]
+disabled = false
+format = ' in [$path]($style)'
+style = 'blue'
+truncate_to_repo = false
+truncation_length = 1000
+truncation_symbol = '.../'
+
+[git_branch]
+disabled = false
+format = ' on [$branch(:$remote_branch)]($style)'
+style = 'yellow'
+truncation_length = 1000
+truncation_symbol = '...'
+
+[git_commit]
+disabled = false
+format = ' [\($hash\)]($style)'
+style = 'yellow'
+
+[git_state]
+disabled = false
+format = ' [- $state( $progress_current/$progress_total)]($style)'
+style = 'bold yellow'
+
+[git_status]
+disabled = false
+format = ' ([\[$all_status$ahead_behind\]]($style))'
+style = 'bold yellow'
+
+[character]
+disabled = false
+format = '$symbol '
+success_symbol = '[❯](bold)'
+error_symbol = '[❯](bold)'
