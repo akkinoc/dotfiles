@@ -57,8 +57,6 @@ ensure_dir ".gnupg" go-rwx
 link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
 
-link_item ".inputrc"
-
 ensure_dir ".ssh" go-rwx
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
