@@ -2,30 +2,19 @@
     "Profiles": [
         {
             "Guid": "7096D1B9-8B33-423A-80C7-59CA99F030FC",
+            "Name": "Akihiro Kondo",
             "//": "========== General ==========",
-            "Name": "Akihiro Kondo: Default",
-            "//": "========== Colors ==========",
-            "Foreground Color": {
-                "Red Component": 0.72378784418106079,
-                "Green Component": 0.73772752285003662,
-                "Blue Component": 0.72799122333526611
-            },
+            "Title Components": 390,
+            "Load Shell Integration Automatically": true,
+            "Custom Directory": "Recycle",
+            "//": "========== Colors (based on Dimmed Monokai) ==========",
+            "Use Separate Colors for Light and Dark Mode": false,
             "Background Color": {
                 "Red Component": 0.1205105185508728,
                 "Green Component": 0.12050691246986389,
                 "Blue Component": 0.12050896137952805
             },
-            "Bold Color": {
-                "Red Component": 0.99575066566467285,
-                "Green Component": 1,
-                "Blue Component": 0.69725716114044189
-            },
-            "Selection Color": {
-                "Red Component": 0.16332042217254639,
-                "Green Component": 0.17529888451099396,
-                "Blue Component": 0.19518557190895081
-            },
-            "Selected Text Color": {
+            "Foreground Color": {
                 "Red Component": 0.72378784418106079,
                 "Green Component": 0.73772752285003662,
                 "Blue Component": 0.72799122333526611
@@ -42,9 +31,33 @@
             },
             "Use Cursor Guide": true,
             "Cursor Guide Color": {
-                "Red Component" : 0.23137254901960785,
-                "Green Component" : 0.23137254901960785,
-                "Blue Component" : 0.23137254901960785
+                "Color Space": "P3",
+                "Red Component": 0.74862593412399292,
+                "Green Component": 0.92047786712646484,
+                "Blue Component": 0.99125725030899048,
+                "Alpha Component": 0.05
+            },
+            "Bold Color": {
+                "Red Component": 0.99575066566467285,
+                "Green Component": 1,
+                "Blue Component": 0.69725716114044189
+            },
+            "Link Color": {
+                "Color Space": "P3",
+                "Red Component": 0.14513972401618958,
+                "Green Component": 0.35333043336868286,
+                "Blue Component": 0.7093239426612854,
+                "Alpha Component": 1
+            },
+            "Selection Color": {
+                "Red Component": 0.16332042217254639,
+                "Green Component": 0.17529888451099396,
+                "Blue Component": 0.19518557190895081
+            },
+            "Selected Text Color": {
+                "Red Component": 0.72378784418106079,
+                "Green Component": 0.73772752285003662,
+                "Blue Component": 0.72799122333526611
             },
             "Ansi 0 Color": {
                 "Red Component": 0.22909823060035706,
@@ -126,30 +139,27 @@
                 "Green Component": 1,
                 "Blue Component": 0.72441869974136353
             },
+            "Badge Color": {
+                "Color Space": "P3",
+                "Red Component": 0.92929404973983765,
+                "Green Component": 0.25479039549827576,
+                "Blue Component": 0.13960540294647217,
+                "Alpha Component": 0.5
+            },
             "//": "========== Text ==========",
             "Cursor Type": 1,
             "Blinking Cursor": true,
-            "Use Bold Font": true,
-            "Use Bright Bold": true,
             "Blink Allowed": true,
-            "Use Italic Font": true,
-            "Ambiguous Double Width": false,
             "Normal Font": "Cica-Regular 12",
             "//": "========== Window ==========",
-            "Columns": 120,
-            "Rows": 30,
+            "Columns": 160,
+            "Rows": 50,
             "//": "========== Terminal ==========",
             "Scrollback Lines": 100000,
             "//": "========== Session ==========",
             "Prompt Before Closing 2": 2,
-            "Jobs to Ignore": [
-                "rlogin",
-                "slogin",
-                "ssh",
-                "telnet"
-            ],
             "Automatically Log": true,
-            "Log Directory": "/Users/.akkinoc/Library/Logs/iTerm2/Sessions",
+            "Log Directory": "~/Library/Logs/iTerm2/Sessions",
             "//": "========== Keys ==========",
             "Keyboard Map": {
                 "0xf702-0x280000": {
