@@ -6,24 +6,10 @@ DOTFILES_HOME="${${(%):-%x}:A:h}"
 DOTFILES_DATA_DIR="$HOME/.dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history"
 DOTFILES_SAVE_DIR="$DOTFILES_HIST_DIR/$(date "+%Y%m%dT%H%M%S")"
-DOTFILES_FIXED_HOME="/Users/.akkinoc"
 
 initialize_data() {
     print -P "%F{magenta}${DOTFILES_DATA_DIR/#$HOME/~}%f: Initializing..."
     mkdir -p -m go-rwx "$DOTFILES_DATA_DIR" "$DOTFILES_HIST_DIR" "$DOTFILES_SAVE_DIR"
-}
-
-link_fixed_home() {
-    local src_item="$HOME"
-    local dest_item="$DOTFILES_FIXED_HOME"
-    local save_item="$DOTFILES_SAVE_DIR/${dest_item/#\//}"
-    print -P "%F{magenta}${dest_item/#$HOME/~}%f: Linking... %F{8}(src: ${src_item/#$HOME/~})%f"
-    if [[ -e "$dest_item" || -L "$dest_item" ]]; then
-        mkdir -p "${save_item:h}"
-        sudo mv "$dest_item" "$save_item"
-    fi
-    sudo ln -s "$src_item" "$dest_item"
-    sudo chown -h "$(id -nu):$(id -gn)" "$dest_item"
 }
 
 link_item() {
@@ -60,7 +46,6 @@ report_results() {
 trap report_results EXIT
 
 initialize_data
-link_fixed_home
 
 link_item ".Brewfile"
 
@@ -85,5 +70,5 @@ link_item ".vimrc"
 link_item ".zshrc"
 link_item ".zshrc.d"
 
-link_item "Library/Application Support/iTerm2/DynamicProfiles/Akihiro Kondo.json"
+link_item "Library/Application Support/iTerm2/DynamicProfiles/akkinoc.json"
 ensure_dir "Library/Logs/iTerm2/Sessions" go-rwx
