@@ -64,7 +64,7 @@ link_item ".ssh/github.hosts"
 link_item ".starship/config.toml"
 
 ensure_dir ".vim/swap" go-rwx
-link_item ".vimrc"
+link_item ".vim/vimrc"
 
 link_item ".zshrc"
 link_item ".zshrc.d"
