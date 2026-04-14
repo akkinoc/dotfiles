@@ -1,7 +1,6 @@
 set autoindent
 set belloff=backspace,cursor,error,esc
 set clipboard=unnamed
-set directory=~/.vim/swap//
 set expandtab
 set hlsearch
 set ignorecase
@@ -9,6 +8,7 @@ set incsearch
 set laststatus=2
 set list
 set listchars=tab:>-,trail:-,extends:>,precedes:<
+set noswapfile
 set number
 set scrolloff=5
 set shiftround
