@@ -49,7 +49,6 @@ initialize_data
 
 link_item ".Brewfile"
 
-link_item ".gitattributes"
 link_item ".gitconfig"
 link_item ".gitignore"
 
