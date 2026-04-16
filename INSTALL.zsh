@@ -57,6 +57,7 @@ link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
 
 ensure_dir ".ssh" go-rwx
+link_item ".ssh/allowed_signers"
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
 

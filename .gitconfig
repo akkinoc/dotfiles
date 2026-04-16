@@ -54,6 +54,11 @@
     prunetags = true
 [format]
     pretty = fuller
+[gpg]
+    format = ssh
+[gpg "ssh"]
+    allowedsignersfile = ~/.ssh/allowed_signers
+    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [grep]
     linenumber = true
     patterntype = extended
@@ -93,4 +98,4 @@
 [user]
     email = akkinoc@gmail.com
     name = Akihiro Kondo
-    signingkey = C1C97CE293FB5803
+    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYj9wZToXvS+htCYkdkRCz393B/t07vAsvxNLgezuWS

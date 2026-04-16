@@ -12,21 +12,21 @@
 
 My personal dotfiles for macOS.
 
+## Requirements
+
+- [1Password]
+- [Homebrew]
+
+[1Password]: https://1password.com/
+[Homebrew]: https://brew.sh/
+
 ## Installation
-
-### Setting SSH key
-
-Place my SSH key.
-
-* SSH secret key: `~/.ssh/akkinoc`
-* SSH public key: `~/.ssh/akkinoc.pub`
-
-### Installing dotfiles
 
 Clone this Git repository.
 
 ```console
-$ GIT_SSH_COMMAND="ssh -i ~/.ssh/akkinoc" git clone git@github.com:akkinoc/dotfiles.git
+$ SSH_AUTH_SOCK="$HOME/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock" \
+  git clone git@github.com:akkinoc/dotfiles.git
 ```
 
 Install dotfiles and reload shell.
@@ -35,14 +35,6 @@ Install dotfiles and reload shell.
 $ dotfiles/INSTALL.zsh
 $ exec -l "$SHELL"
 ```
-
-## Additional installation
-
-### Installing Homebrew packages
-
-Required: [Homebrew].
-
-[Homebrew]: https://brew.sh/
 
 Install Homebrew packages.
 
@@ -58,13 +50,7 @@ $ sudo dscl . -create "/Users/$USER" UserShell "$shell"
 $ exec -l "$shell"
 ```
 
-### Setting GPG key
-
-Required: [GnuPG].
-
-[GnuPG]: https://gnupg.org/
-
-Disable option to store password in macOS keychain.
+Disable option to store GPG key password in macOS keychain.
 
 ```console
 $ defaults write org.gpgtools.common DisableKeychain -bool yes
