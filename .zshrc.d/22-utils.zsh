@@ -12,9 +12,7 @@ elif [[ -n "$EDITOR" ]]; then
     alias e="$EDITOR"
 fi
 
-if command -v hub &>/dev/null; then
-    alias g="hub"
-elif command -v git &>/dev/null; then
+if command -v git &>/dev/null; then
     alias g="git"
 fi
 
