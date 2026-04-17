@@ -1,101 +1,123 @@
 [alias]
-    a = add
-    aa = add -A
-    ap = add -p
-    b = branch -vv
-    ba = branch -avv
-    br = browse
-    c = commit
-    ca = commit --amend --no-edit
-    cl = clean -df
-    co = checkout
-    cp = cherry-pick
-    d = diff -p --stat
-    f = fetch --all
-    ge = grep -I
-    l = log --graph --name-status
-    ll = log --date=short --pretty=line
-    ls = ls-files -s --abbrev
-    m = merge --no-edit
-    p = pull
-    r = rebase
-    ri = rebase -i
-    s = status
-    sh = show -p --stat
-    st = stash
-    std = stash drop
-    sti = stash push -u
-    stl = stash list
-    sto = stash pop
-    sts = stash show
-    t = tag
-    tl = tag -ln
-    u = push -u
+a = add
+aa = add -A
+ap = add -p
+b = branch -vv
+ba = branch -avv
+br = browse
+c = commit
+ca = commit --amend --no-edit
+cl = clean -df
+co = checkout
+cp = cherry-pick
+d = diff -p --stat
+f = fetch --all
+ge = grep -I
+l = log --graph --name-status
+ll = log --date=short --pretty=line
+ls = ls-files -s --abbrev
+m = merge --no-edit
+p = pull
+r = rebase
+ri = rebase -i
+s = status
+sh = show -p --stat
+st = stash
+std = stash drop
+sti = stash push -u
+stl = stash list
+sto = stash pop
+sts = stash show
+t = tag
+tl = tag -ln
+u = push -u
+
 [color]
-    ui = auto
+ui = auto
+
 [color "grep"]
-    filename = magenta
-    linenumber = green
-    match = bold red
-    separator = cyan
+filename = magenta
+linenumber = green
+match = bold red
+separator = cyan
+
 [commit]
-    cleanup = scissors
-    gpgsign = true
-    verbose = true
+cleanup = scissors
+gpgsign = true
+verbose = true
+
 [core]
-    attributesfile = ~/.gitattributes
-    autocrlf = false
-    excludesfile = ~/.gitignore
-    quotepath = false
+attributesfile = ~/.gitattributes
+autocrlf = false
+excludesfile = ~/.gitignore
+quotepath = false
+
 [diff]
-    colormoved = dimmed_zebra
+colormoved = dimmed_zebra
+
 [fetch]
-    prune = true
-    prunetags = true
+prune = true
+prunetags = true
+
 [format]
-    pretty = fuller
+pretty = fuller
+
 [gpg]
-    format = ssh
+format = ssh
+
 [gpg "ssh"]
-    allowedsignersfile = ~/.ssh/allowed_signers
-    program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+allowedsignersfile = ~/.ssh/allowed_signers
+program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+
 [grep]
-    linenumber = true
-    patterntype = extended
+linenumber = true
+patterntype = extended
+
 [init]
-    defaultbranch = main
+defaultbranch = main
+
 [interactive]
-    singlekey = true
+singlekey = true
+
 [log]
-    abbrevcommit = true
-    date = iso
-    decorate = short
-    follow = true
+abbrevcommit = true
+date = iso
+decorate = short
+follow = true
+
 [merge]
-    ff = false
-    stat = true
+ff = false
+stat = true
+
 [pretty]
-    line = %C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(magenta)%<(13,trunc)%an%C(reset) %s%C(auto)%d%C(reset)
+line = %C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(magenta)%<(13,trunc)%an%C(reset) %s%C(auto)%d%C(reset)
+
 [pull]
-    ff = only
+ff = only
+
 [push]
-    default = current
-    followtags = true
+default = current
+followtags = true
+
 [rebase]
-    abbreviatecommands = true
-    autostash = true
-    backend = apply
-    stat = true
+abbreviatecommands = true
+autostash = true
+backend = apply
+stat = true
+
 [stash]
-    showstat = true
+showstat = true
+
 [status]
-    branch = true
-    short = true
-    showuntrackedfiles = all
+branch = true
+short = true
+showuntrackedfiles = all
+
 [tag]
-    gpgsign = true
-    sort = -version:refname
+gpgsign = true
+sort = -version:refname
+
 [user]
-    email = akkinoc@gmail.com
-    name = Akihiro Kondo
-    signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYj9wZToXvS+htCYkdkRCz393B/t07vAsvxNLgezuWS
+email = akkinoc@gmail.com
+name = Akihiro Kondo
+signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYj9wZToXvS+htCYkdkRCz393B/t07vAsvxNLgezuWS
