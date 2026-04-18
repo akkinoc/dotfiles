@@ -54,12 +54,23 @@ initialize_data
 
 link_item ".Brewfile"
 
+ensure_dir ".cache"
+ensure_dir ".cache/zsh"
+
+ensure_dir ".config"
+link_item ".config/zsh"
+
 link_item ".gitconfig"
 link_item ".gitignore"
 
 ensure_dir ".gnupg" go-rwx
 link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
+
+ensure_dir ".local/share"
+
+ensure_dir ".local/state"
+ensure_dir ".local/state/zsh"
 
 ensure_dir ".ssh" go-rwx
 link_item ".ssh/allowed_signers"
@@ -70,8 +81,7 @@ link_item ".starship/config.toml"
 
 link_item ".vimrc"
 
-link_item ".zshrc"
-link_item ".zshrc.d"
+link_item ".zshenv"
 
 link_item "Library/Application Support/iTerm2/DynamicProfiles/akkinoc.json"
 ensure_dir "Library/Logs/iTerm2/Sessions" go-rwx
