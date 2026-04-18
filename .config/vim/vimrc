@@ -1,3 +1,4 @@
+runtime xdg.vim
 set autoindent
 set belloff=backspace,cursor,error,esc
 set clipboard=unnamed

@@ -59,6 +59,7 @@ ensure_dir ".cache/zsh"
 ensure_dir ".config"
 link_item ".config/homebrew"
 link_item ".config/starship"
+link_item ".config/vim"
 link_item ".config/zsh"
 
 link_item ".gitconfig"
@@ -77,8 +78,6 @@ ensure_dir ".ssh" go-rwx
 link_item ".ssh/allowed_signers"
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
-
-link_item ".vimrc"
 
 link_item ".zshenv"
 
