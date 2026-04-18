@@ -53,7 +53,6 @@ trap report_results EXIT
 initialize_data
 
 ensure_dir ".cache"
-ensure_dir ".cache/starship"
 ensure_dir ".cache/zsh"
 
 ensure_dir ".config"
