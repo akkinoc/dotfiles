@@ -52,12 +52,11 @@ trap report_results EXIT
 
 initialize_data
 
-link_item ".Brewfile"
-
 ensure_dir ".cache"
 ensure_dir ".cache/zsh"
 
 ensure_dir ".config"
+link_item ".config/homebrew"
 link_item ".config/zsh"
 
 link_item ".gitconfig"
