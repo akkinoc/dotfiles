@@ -53,10 +53,12 @@ trap report_results EXIT
 initialize_data
 
 ensure_dir ".cache"
+ensure_dir ".cache/starship"
 ensure_dir ".cache/zsh"
 
 ensure_dir ".config"
 link_item ".config/homebrew"
+link_item ".config/starship"
 link_item ".config/zsh"
 
 link_item ".gitconfig"
@@ -75,8 +77,6 @@ ensure_dir ".ssh" go-rwx
 link_item ".ssh/allowed_signers"
 link_item ".ssh/config"
 link_item ".ssh/github.hosts"
-
-link_item ".starship/config.toml"
 
 link_item ".vimrc"
 
