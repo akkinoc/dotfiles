@@ -74,9 +74,9 @@ ensure_dir ".local/state"
 ensure_dir ".local/state/zsh"
 
 ensure_dir ".ssh" go-rwx
-link_item  ".ssh/allowed_signers"
+link_item  ".ssh/allowed-signers"
 link_item  ".ssh/config"
-link_item  ".ssh/github.hosts"
+link_item  ".ssh/github-hosts"
 
 link_item  ".zshenv"
 
