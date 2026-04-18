@@ -57,17 +57,16 @@ ensure_dir ".cache/starship"
 ensure_dir ".cache/zsh"
 
 ensure_dir ".config"
-link_item ".config/git"
-link_item ".config/homebrew"
-link_item ".config/starship"
-link_item ".config/vim"
-link_item ".config/zsh"
-
-ensure_dir ".gnupg" go-rwx
-link_item ".gnupg/gpg.conf"
-link_item ".gnupg/gpg-agent.conf"
+link_item  ".config/git"
+link_item  ".config/homebrew"
+link_item  ".config/starship"
+link_item  ".config/vim"
+link_item  ".config/zsh"
 
 ensure_dir ".local/share"
+ensure_dir ".local/share/gnupg" go-rwx
+link_item  ".local/share/gnupg/gpg.conf"
+link_item  ".local/share/gnupg/gpg-agent.conf"
 ensure_dir ".local/share/nvm"
 ensure_dir ".local/share/rbenv"
 
@@ -75,11 +74,11 @@ ensure_dir ".local/state"
 ensure_dir ".local/state/zsh"
 
 ensure_dir ".ssh" go-rwx
-link_item ".ssh/allowed_signers"
-link_item ".ssh/config"
-link_item ".ssh/github.hosts"
+link_item  ".ssh/allowed_signers"
+link_item  ".ssh/config"
+link_item  ".ssh/github.hosts"
 
-link_item ".zshenv"
+link_item  ".zshenv"
 
-link_item "Library/Application Support/iTerm2/DynamicProfiles/akkinoc.json"
+link_item  "Library/Application Support/iTerm2/DynamicProfiles/akkinoc.json"
 ensure_dir "Library/Logs/iTerm2/Sessions" go-rwx
