@@ -68,6 +68,7 @@ link_item ".gnupg/gpg.conf"
 link_item ".gnupg/gpg-agent.conf"
 
 ensure_dir ".local/share"
+ensure_dir ".local/share/rbenv"
 
 ensure_dir ".local/state"
 ensure_dir ".local/state/zsh"
