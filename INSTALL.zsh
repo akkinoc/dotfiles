@@ -28,10 +28,15 @@ link_item() {
 
 ensure_dir() {
     local target="$1"
-    local mode="${2:--}"
+    local mode="${2:-}"
     local dest_item="$HOME/$target"
-    print -P "%F{magenta}${(D)dest_item}%f: Ensuring... %F{8}(mode: $mode)%f"
-    mkdir -p -m "$mode" "$dest_item"
+    if [[ -n "$mode" ]]; then
+        print -P "%F{magenta}${(D)dest_item}%f: Ensuring... %F{8}(mode: $mode)%f"
+        mkdir -p -m "$mode" "$dest_item"
+    else
+        print -P "%F{magenta}${(D)dest_item}%f: Ensuring..."
+        mkdir -p "$dest_item"
+    fi
 }
 
 report_results() {
