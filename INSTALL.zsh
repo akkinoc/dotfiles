@@ -64,14 +64,15 @@ link_item  ".config/vim"
 link_item  ".config/zsh"
 
 ensure_dir ".local/share"
-ensure_dir ".local/share/gnupg" go-rwx
-link_item  ".local/share/gnupg/gpg.conf"
-link_item  ".local/share/gnupg/gpg-agent.conf"
 ensure_dir ".local/share/nvm"
 ensure_dir ".local/share/rbenv"
 
 ensure_dir ".local/state"
 ensure_dir ".local/state/zsh"
+
+ensure_dir ".gnupg" go-rwx
+link_item  ".gnupg/gpg.conf"
+link_item  ".gnupg/gpg-agent.conf"
 
 ensure_dir ".ssh" go-rwx
 link_item  ".ssh/allowed-signers"
