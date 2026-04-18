@@ -57,6 +57,7 @@ ensure_dir ".cache/starship"
 ensure_dir ".cache/zsh"
 
 ensure_dir ".config"
+link_item  ".config/bat"
 link_item  ".config/git"
 link_item  ".config/homebrew"
 link_item  ".config/starship"
