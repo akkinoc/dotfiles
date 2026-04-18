@@ -57,13 +57,11 @@ ensure_dir ".cache/starship"
 ensure_dir ".cache/zsh"
 
 ensure_dir ".config"
+link_item ".config/git"
 link_item ".config/homebrew"
 link_item ".config/starship"
 link_item ".config/vim"
 link_item ".config/zsh"
-
-link_item ".gitconfig"
-link_item ".gitignore"
 
 ensure_dir ".gnupg" go-rwx
 link_item ".gnupg/gpg.conf"
