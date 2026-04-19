@@ -1,3 +1,7 @@
+if command -v cp &>/dev/null; then
+    alias cp="cp -i"
+fi
+
 if command -v code &>/dev/null; then
     alias d="code -d"
 elif command -v diff &>/dev/null; then
@@ -30,11 +34,19 @@ else
     alias la="l -a"
 fi
 
+if command -v mv &>/dev/null; then
+    alias mv="mv -i"
+fi
+
 if command -v open &>/dev/null; then
     alias o="open"
 fi
 
 alias p="print"
+
+if command -v rm &>/dev/null; then
+    alias rm="rm -i"
+fi
 
 if command -v bat &>/dev/null; then
     alias v="bat"
