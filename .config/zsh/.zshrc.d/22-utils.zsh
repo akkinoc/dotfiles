@@ -34,6 +34,10 @@ else
     alias la="l -a"
 fi
 
+if command -v trash &>/dev/null; then
+    alias mt="trash"
+fi
+
 if command -v mv &>/dev/null; then
     alias mv="mv -i"
 fi
