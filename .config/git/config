@@ -31,34 +31,28 @@ sts = stash show
 sw = switch
 t = tag
 tl = tag -ln
-u = push -u
-
-[color]
-ui = auto
+u = push
 
 [color "grep"]
 filename = magenta
-linenumber = green
+lineNumber = green
 match = bold red
 separator = cyan
 
 [commit]
 cleanup = scissors
-gpgsign = true
+gpgSign = true
 verbose = true
 
 [core]
-attributesfile = ~/.gitattributes
-autocrlf = false
-excludesfile = ~/.gitignore
-quotepath = false
+quotePath = false
 
 [diff]
-colormoved = dimmed_zebra
+colorMoved = dimmed-zebra
 
 [fetch]
 prune = true
-prunetags = true
+pruneTags = true
 
 [format]
 pretty = fuller
@@ -67,58 +61,53 @@ pretty = fuller
 format = ssh
 
 [gpg "ssh"]
-allowedsignersfile = ~/.ssh/allowed-signers
+allowedSignersFile = ~/.ssh/allowed-signers
 program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [grep]
-linenumber = true
-patterntype = extended
+lineNumber = true
+patternType = extended
 
 [init]
-defaultbranch = main
+defaultBranch = main
 
 [interactive]
-singlekey = true
+singleKey = true
 
 [log]
-abbrevcommit = true
+abbrevCommit = true
 date = iso
-decorate = short
 follow = true
 
 [merge]
 ff = false
-stat = true
 
 [pretty]
 line = %C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(magenta)%<(13,trunc)%an%C(reset) %s%C(auto)%d%C(reset)
 
 [pull]
-ff = only
+rebase = true
 
 [push]
-default = current
-followtags = true
+autoSetupRemote = true
+default = simple
+followTags = true
 
 [rebase]
-abbreviatecommands = true
-autostash = true
-backend = apply
+abbreviateCommands = true
+autoStash = true
 stat = true
-
-[stash]
-showstat = true
 
 [status]
 branch = true
 short = true
-showuntrackedfiles = all
+showUntrackedFiles = all
 
 [tag]
-gpgsign = true
+gpgSign = true
 sort = -version:refname
 
 [user]
 email = akkinoc@gmail.com
 name = Akihiro Kondo
-signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAICYj9wZToXvS+htCYkdkRCz393B/t07vAsvxNLgezuWS
+signingKey = ~/.ssh/akkinoc.pub
