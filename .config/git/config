@@ -89,8 +89,7 @@ line = %C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(magenta)%<(13,trunc)%an%C(res
 rebase = true
 
 [push]
-autoSetupRemote = true
-default = simple
+default = current
 followTags = true
 
 [rebase]
