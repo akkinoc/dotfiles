@@ -31,7 +31,7 @@ sts = stash show
 sw = switch
 t = tag
 tl = tag -ln
-u = push
+u = push -u
 
 [color "grep"]
 filename = magenta
