@@ -3,7 +3,7 @@
 setopt err_exit no_unset pipe_fail
 
 DOTFILES_HOME="${${(%):-%x}:A:h}"
-DOTFILES_DATA_DIR="$HOME/.dotfiles"
+DOTFILES_DATA_DIR="$HOME/.local/state/dotfiles"
 DOTFILES_HIST_DIR="$DOTFILES_DATA_DIR/history"
 DOTFILES_SAVE_DIR="$DOTFILES_HIST_DIR/$(date "+%Y%m%dT%H%M%S")"
 
