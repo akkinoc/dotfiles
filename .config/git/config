@@ -72,7 +72,7 @@ patternType = extended
 defaultBranch = main
 
 [interactive]
-diffFilter = $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight
+diffFilter = \"$HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight\"
 singleKey = true
 
 [log]
@@ -84,9 +84,9 @@ follow = true
 ff = false
 
 [pager]
-diff = $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight | less
-log = $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight | less
-show = $HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight | less
+diff = \"$HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight\" | less
+log = \"$HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight\" | less
+show = \"$HOMEBREW_PREFIX/share/git-core/contrib/diff-highlight/diff-highlight\" | less
 
 [pretty]
 line = %C(auto)%h%C(reset) %C(blue)%ad%C(reset) %C(magenta)%<(13,trunc)%an%C(reset) %s%C(auto)%d%C(reset)
