@@ -1,16 +1,16 @@
+if command -v code &>/dev/null; then
+    alias c="code"
+fi
+
 if command -v cp &>/dev/null; then
     alias cp="cp -i"
 fi
 
-if command -v code &>/dev/null; then
-    alias d="code -d"
-elif command -v diff &>/dev/null; then
+if command -v diff &>/dev/null; then
     alias d="diff -u"
 fi
 
-if command -v code &>/dev/null; then
-    alias e="code"
-elif [[ -n "$VISUAL" ]]; then
+if [[ -n "$VISUAL" ]]; then
     alias e="$VISUAL"
 elif [[ -n "$EDITOR" ]]; then
     alias e="$EDITOR"
