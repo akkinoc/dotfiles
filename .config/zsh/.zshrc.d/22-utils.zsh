@@ -6,7 +6,9 @@ if command -v cp &>/dev/null; then
     alias cp="cp -i"
 fi
 
-if command -v diff &>/dev/null; then
+if command -v git &>/dev/null; then
+    alias d="git diff"
+elif command -v diff &>/dev/null; then
     alias d="diff -u"
 fi
 
