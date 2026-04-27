@@ -54,7 +54,6 @@ initialize_data
 
 ensure_dir ".cache"
 ensure_dir ".cache/zsh"
-
 ensure_dir ".config"
 link_item  ".config/bat"
 link_item  ".config/git"
@@ -62,11 +61,9 @@ link_item  ".config/homebrew"
 link_item  ".config/starship"
 link_item  ".config/vim"
 link_item  ".config/zsh"
-
 ensure_dir ".local/share"
 ensure_dir ".local/share/nvm"
 ensure_dir ".local/share/rbenv"
-
 ensure_dir ".local/state"
 ensure_dir ".local/state/zsh"
 
