@@ -97,6 +97,7 @@ rebase = true
 [push]
 default = current
 followTags = true
+gpgSign = if-asked
 
 [rebase]
 abbreviateCommands = true
