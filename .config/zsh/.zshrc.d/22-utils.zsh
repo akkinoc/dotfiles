@@ -7,7 +7,7 @@ if command -v cp &>/dev/null; then
 fi
 
 if command -v git &>/dev/null; then
-    alias d="git diff"
+    alias d="git diff --no-index"
 elif command -v diff &>/dev/null; then
     alias d="diff -u"
 fi
