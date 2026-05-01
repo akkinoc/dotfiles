@@ -45,7 +45,7 @@ $ brew bundle -g
 Change login shell to Zsh installed via Homebrew.
 
 ```console
-$ shell="/opt/homebrew/bin/zsh" # or "/usr/local/bin/zsh"
+$ shell="$HOMEBREW_PREFIX/bin/zsh"
 $ sudo dscl . -create "/Users/$USER" UserShell "$shell"
 $ exec -l "$shell"
 ```
