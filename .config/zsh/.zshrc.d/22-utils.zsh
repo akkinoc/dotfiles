@@ -28,6 +28,11 @@ elif command -v grep &>/dev/null; then
     alias ge="grep -EIn"
 fi
 
+if command -v gradle &>/dev/null; then
+    alias gr="gradle"
+    alias gw="./gradlew"
+fi
+
 if command -v gls &>/dev/null; then
     alias l="gls -Flv --time-style=+'%Y-%m-%d %H:%M'"
     alias la="l -a"
