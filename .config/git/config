@@ -12,6 +12,7 @@ cp = cherry-pick
 d = diff -p --stat
 f = fetch --all
 ge = grep -I
+ig = "!f() { IFS=,; curl -LSfs \"https://www.toptal.com/developers/gitignore/api/$*\"; }; f"
 l = log --graph --name-status
 ll = log --date=short --pretty=line
 ls = ls-files -s --abbrev
