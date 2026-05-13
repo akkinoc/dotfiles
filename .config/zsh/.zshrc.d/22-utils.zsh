@@ -29,8 +29,11 @@ elif command -v grep &>/dev/null; then
 fi
 
 if command -v gradle &>/dev/null; then
-    alias gr="gradle"
-    alias gw="./gradlew"
+    gr() {
+        local gradle=gradle
+        [[ -x ./gradlew ]] && gradle=./gradlew
+        "$gradle" "$@"
+    }
 fi
 
 if command -v gls &>/dev/null; then
