@@ -3,4 +3,3 @@ compile = false
 
 [settings.status]
 missing_tools = "always"
-show_tools = true
