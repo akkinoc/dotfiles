@@ -63,8 +63,6 @@ link_item  ".config/starship"
 link_item  ".config/vim"
 link_item  ".config/zsh"
 ensure_dir ".local/share"
-ensure_dir ".local/share/nvm"
-ensure_dir ".local/share/rbenv"
 ensure_dir ".local/state"
 ensure_dir ".local/state/zsh"
 
